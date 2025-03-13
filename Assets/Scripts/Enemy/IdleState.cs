@@ -5,6 +5,7 @@ public class IdleState : IEnemyState
     public void Enter(Enemy enemy)
     {
         Debug.Log("Enter Idle");
+        enemy.animator.SetBool("isChase", false);
     }
 
     public void Update(Enemy enemy)
