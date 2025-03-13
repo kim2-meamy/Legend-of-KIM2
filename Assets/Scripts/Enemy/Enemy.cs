@@ -5,8 +5,16 @@ public class Enemy : MonoBehaviour
 {
     public Transform target;
     public float detectionRange = 10f;
+
+    [HideInInspector]
+    public Animator animator;
     
     private IEnemyState currentState;
+
+    void Awake()
+    {
+        animator = GetComponent<Animator>();
+    }
 
     void Start()
     {
@@ -17,6 +25,12 @@ public class Enemy : MonoBehaviour
     {
         if (currentState != null)
             currentState.Update(this);
+    }
+
+    void FixedUpdate()
+    {
+        if (currentState != null)
+            currentState.FixedUpdate(this);
     }
 
     public void ChangeState(IEnemyState newState)

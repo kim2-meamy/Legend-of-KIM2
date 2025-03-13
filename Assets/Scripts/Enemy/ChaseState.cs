@@ -6,11 +6,20 @@ public class ChaseState : IEnemyState
     public void Enter(Enemy enemy)
     {
         Debug.Log("Enter Chase");
+        enemy.animator.SetBool("isChase", true);
     }
 
     public void Update(Enemy enemy)
     {
-        Debug.Log("Chase Update È£Ãâ");
+        if (enemy.target != null &&
+        Vector3.Distance(enemy.transform.position, enemy.target.position) >= enemy.detectionRange)
+        {
+            enemy.ChangeState(new IdleState());
+        }
+    }
+
+    public void FixedUpdate(Enemy enemy)
+    {
         if (enemy.target != null)
         {
             NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
@@ -19,12 +28,11 @@ public class ChaseState : IEnemyState
             {
                 agent.SetDestination(enemy.target.position);
             }
-
         }
     }
 
     public void Exit(Enemy enemy)
     {
-        Debug.Log("Exiting Chase State");
+        Debug.Log("Exit Chase");
     }
 }

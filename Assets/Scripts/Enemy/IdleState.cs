@@ -15,9 +15,11 @@ public class IdleState : IEnemyState
             enemy.ChangeState(new ChaseState());
         }
     }
+
+    public void FixedUpdate(Enemy enemy) { }
     
     public void Exit(Enemy enemy)
     {
-        Debug.Log("Exiting Idle State");
+        Debug.Log("Exit Idle State");
     }
 }
