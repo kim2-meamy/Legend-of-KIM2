@@ -1,20 +1,25 @@
 using UnityEngine;
-using UnityEngine.AI;
 
 public class ChaseState : IEnemyState
 {
     public void Enter(Enemy enemy)
     {
         Debug.Log("Enter Chase");
+        enemy.agent.isStopped = false;
         enemy.animator.SetBool("isChase", true);
     }
 
     public void Update(Enemy enemy)
     {
-        if (enemy.target != null &&
-        Vector3.Distance(enemy.transform.position, enemy.target.position) >= enemy.detectionRange)
+        float distance = Vector3.Distance(enemy.transform.position, enemy.target.position);
+        
+        if (enemy.target == null || distance >= enemy.stats.detectionRange)
         {
             enemy.ChangeState(new IdleState());
+        }
+        else if (distance <= enemy.stats.attackRange)
+        {
+            enemy.ChangeState(new AttackState());
         }
     }
 
@@ -22,11 +27,9 @@ public class ChaseState : IEnemyState
     {
         if (enemy.target != null)
         {
-            NavMeshAgent agent = enemy.GetComponent<NavMeshAgent>();
-
-            if (agent != null)
+            if (enemy.agent != null)
             {
-                agent.SetDestination(enemy.target.position);
+                enemy.agent.SetDestination(enemy.target.position);
             }
         }
     }
@@ -34,5 +37,9 @@ public class ChaseState : IEnemyState
     public void Exit(Enemy enemy)
     {
         Debug.Log("Exit Chase");
+        if (enemy.agent != null)
+        {
+            enemy.agent.isStopped = true;
+        }
     }
 }
