@@ -10,7 +10,7 @@ public class ChaseState : IEnemyState
         enemy.animator.SetBool("isChase", true);
     }
 
-    public void Update(Enemy enemy)
+    public virtual void Update(Enemy enemy)
     {
         float distance = Vector3.Distance(enemy.transform.position, enemy.target.position);
         Debug.Log($"distance: {distance}, attackRange: {enemy.stats.attackRange}");
@@ -24,7 +24,7 @@ public class ChaseState : IEnemyState
         }
     }
 
-    public void FixedUpdate(Enemy enemy)
+    public virtual void FixedUpdate(Enemy enemy)
     {
         if (enemy.target != null)
         {

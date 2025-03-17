@@ -18,7 +18,7 @@ public class Enemy : MonoBehaviour
 
     private SphereCollider meleeArea;
 
-    void Awake()
+    protected virtual void Awake()
     {
         animator = GetComponentInChildren<Animator>();
         agent = GetComponent<NavMeshAgent>();
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
             meleeArea = meleeTransform.GetComponent<SphereCollider>();
     }
 
-    void Start()
+    protected virtual void Start()
     {
         ChangeState(new IdleState());
     }
