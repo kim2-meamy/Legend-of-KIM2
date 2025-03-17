@@ -147,6 +147,7 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
   animator: {fileID: 0}
   agent: {fileID: 0}
+  playerAttackPattern: 0
 --- !u!1 &801980869931452737
 GameObject:
   m_ObjectHideFlags: 0
@@ -179,7 +180,7 @@ Transform:
   - {fileID: 839912588257203118}
   - {fileID: 9067471919615604119}
   m_Father: {fileID: 5112135480473267314}
-  m_LocalEulerAnglesHint: {x: 89.98021, y: -0.000013459835, z: 0}
+  m_LocalEulerAnglesHint: {x: 89.74743, y: -0.0030930685, z: -0.0030930988}
 --- !u!1 &1132800320642512148
 GameObject:
   m_ObjectHideFlags: 0
@@ -211,7 +212,7 @@ Transform:
   m_Children:
   - {fileID: 8986622935842777001}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 0.856694, y: -0.00024758914, z: 11.923626}
+  m_LocalEulerAnglesHint: {x: 0.26176268, y: -0.0000075539733, z: 11.940343}
 --- !u!1 &4800624966035112810
 GameObject:
   m_ObjectHideFlags: 0
@@ -274,7 +275,7 @@ Transform:
   m_Children:
   - {fileID: 442364460182760895}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 0.9645055, y: 0.0005076068, z: -11.913222}
+  m_LocalEulerAnglesHint: {x: 0.3417427, y: 0.000006106591, z: -11.94467}
 --- !u!1 &6557038941830394805
 GameObject:
   m_ObjectHideFlags: 0
@@ -479,7 +480,7 @@ SphereCollider:
   m_LayerOverridePriority: 0
   m_IsTrigger: 1
   m_ProvidesContacts: 0
-  m_Enabled: 1
+  m_Enabled: 0
   serializedVersion: 3
   m_Radius: 1
-  m_Center: {x: 0, y: 1, z: 0.02}
+  m_Center: {x: 0, y: 1, z: 0}
