@@ -10,4 +10,5 @@ public class EnemyStats : ScriptableObject
     public float detectionRange = 10f;
     public float hitboxAcitvaionTime = 0.2f;
     public float hitboxDeactivationTime = 1f;
+    public float hitRecoveryTime = 2f;
 }

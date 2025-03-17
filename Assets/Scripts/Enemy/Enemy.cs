@@ -11,8 +11,11 @@ public class Enemy : MonoBehaviour
     public Animator animator;
     [HideInInspector]
     public NavMeshAgent agent;
+    [HideInInspector]
+    public int playerAttackPattern;
+    [HideInInspector]
+    public IEnemyState currentState;
 
-    private IEnemyState currentState;
     private SphereCollider meleeArea;
 
     void Awake()
@@ -75,10 +78,10 @@ public class Enemy : MonoBehaviour
         StartCoroutine(AttackCoroutine());
     }
 
-    // 감지 범위 시각화
-    private void OnDrawGizmosSelected()
+    public void TakeDamage(int damage)
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawWireSphere(transform.position, stats.detectionRange);
+        stats.health -= damage;
+        playerAttackPattern = damage;
+        ChangeState(new HitState());
     }
 }

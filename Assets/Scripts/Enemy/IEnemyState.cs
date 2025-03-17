@@ -1,7 +1,7 @@
 public interface IEnemyState
 {
-    void Enter(Enemy enemy);
-    void Update(Enemy enemy);
-    void FixedUpdate(Enemy enemy);
-    void Exit(Enemy enemy);
+    public void Enter(Enemy enemy);
+    public void Update(Enemy enemy);
+    public void FixedUpdate(Enemy enemy);
+    public void Exit(Enemy enemy);
 }
