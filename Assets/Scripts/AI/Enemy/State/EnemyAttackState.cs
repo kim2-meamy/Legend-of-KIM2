@@ -1,10 +1,9 @@
+using System;
 using UnityEngine;
 
-public class AttackState : IEnemyState
+public class EnemyAttackState : AttackState<Enemy>
 {
-    private float timer;
-
-    public void Enter(Enemy enemy)
+    public override void Enter(Enemy enemy)
     {
         Debug.Log("Enter Attack");
         enemy.agent.isStopped = true;
@@ -13,27 +12,26 @@ public class AttackState : IEnemyState
         timer = 0f;
     }
 
-    public void Update(Enemy enemy)
+    public override void Update(Enemy enemy)
     {
         if (enemy.target == null)
         {
-            enemy.ChangeState(new IdleState());
+            enemy.ChangeState(new EnemyIdleState());
             return;
         }
 
-        if (!(enemy.currentState is AttackState))
+        if (!(enemy.currentState is EnemyAttackState))
             return;
 
-        timer += Time.deltaTime;
+        base.Update(enemy);
+
         if (timer >= enemy.stats.attackDelay)
         {
-            enemy.ChangeState(new ChaseState());
+            enemy.ChangeState(new EnemyChaseState());
         }
     }
 
-    public void FixedUpdate(Enemy enemy) {}
-
-    public void Exit(Enemy enemy)
+    public virtual void Exit(Enemy enemy)
     {
         enemy.agent.isStopped = false;
         enemy.animator.SetTrigger("AttackEnd");
