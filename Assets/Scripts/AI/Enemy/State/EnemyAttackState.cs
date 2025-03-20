@@ -30,11 +30,4 @@ public class EnemyAttackState : AttackState<Enemy>
             enemy.ChangeState(new EnemyChaseState());
         }
     }
-
-    public virtual void Exit(Enemy enemy)
-    {
-        enemy.agent.isStopped = false;
-        enemy.animator.SetTrigger("AttackEnd");
-        Debug.Log("Exit Attack");
-    }
 }

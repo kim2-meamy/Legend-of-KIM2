@@ -14,9 +14,9 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     [HideInInspector]
     public IBaseAIState<T> currentState;
 
-    public T GetStats<T>() where T : BaseAIStats
+    public U GetStats<U>() where U : BaseAIStats
     {
-        return stat as T;
+        return stat as U;
     }
 
     [SerializeField]

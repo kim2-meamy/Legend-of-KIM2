@@ -4,10 +4,10 @@ using UnityEngine;
 public class Boss : BaseAI<Boss>
 {
     [HideInInspector]
-    protected Collider meleeArea;
-    [HideInInspector]
     public BossStats stats;
 
+    private Collider axeArea;
+    //private Collider bodyArea;
     private CharacterController controller;
     private float verticalVelocity = 0f;
     private float gravityMultiplier = 1f;
@@ -15,7 +15,9 @@ public class Boss : BaseAI<Boss>
     protected override void Awake()
     {
         base.Awake();
-        meleeArea = GetComponentInChildren<BoxCollider>();
+        axeArea = GetComponentInChildren<BoxCollider>();
+        Debug.Log(axeArea.gameObject.name);
+        //bodyArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         stats = GetStats<BossStats>();
     }
@@ -32,7 +34,7 @@ public class Boss : BaseAI<Boss>
         return new BossIdleState();
     }
 
-    protected void OnTriggerEnter(Collider other)
+    private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("Player"))
         {
@@ -60,25 +62,25 @@ public class Boss : BaseAI<Boss>
     private IEnumerator Attack1Coroutine()
     {
         yield return new WaitForSeconds(stats.Attack1hitboxAcitvaionTime);
-        meleeArea.enabled = true;
+        axeArea.enabled = true;
         yield return new WaitForSeconds(stats.Attack1hitboxDeactivationTime);
-        meleeArea.enabled = false;
+        axeArea.enabled = false;
     }
 
     private IEnumerator Attack2Coroutine()
     {
         yield return new WaitForSeconds(stats.Attack2hitboxAcitvaionTime);
-        meleeArea.enabled = true;
+        //bodyArea.enabled = true;
         yield return new WaitForSeconds(stats.Attack2hitboxDeactivationTime);
-        meleeArea.enabled = false;
+        //bodyArea.enabled = false;
     }
 
     private IEnumerator Attack3Coroutine()
     {
         yield return new WaitForSeconds(stats.Attack3hitboxAcitvaionTime);
-        meleeArea.enabled = true;
+        axeArea.enabled = true;
         yield return new WaitForSeconds(stats.Attack3hitboxDeactivationTime);
-        meleeArea.enabled = false;
+        axeArea.enabled = false;
     }
 
     public override void Attack() { }
