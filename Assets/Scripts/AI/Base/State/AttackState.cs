@@ -14,8 +14,6 @@ public class AttackState<T> : IBaseAIState<T> where T : BaseAI<T>
         timer += Time.deltaTime;
     }
 
-    public void FixedUpdate(T ai) { }
-
     public void Exit(T ai)
     {
         Debug.Log("Exit Attack");

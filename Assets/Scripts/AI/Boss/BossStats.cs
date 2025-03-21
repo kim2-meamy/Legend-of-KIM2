@@ -4,6 +4,7 @@ using UnityEngine;
 public class BossStats : BaseAIStats
 {
     //detecttion range = 20;
+    public int armor = 100;
     public int Attack1damage = 10;
     public int Attack2damage = 10;
     public int Attack3damage = 10;
@@ -18,4 +19,6 @@ public class BossStats : BaseAIStats
     public float Attack2hitboxDeactivationTime = 4f;
     public float Attack3hitboxAcitvaionTime = 0.2f;
     public float Attack3hitboxDeactivationTime = 1.5f;
+    public float hitTime = 5f;
+    public float hitRecoveryTime = 10f;
 }

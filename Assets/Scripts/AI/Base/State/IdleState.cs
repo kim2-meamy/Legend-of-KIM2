@@ -10,8 +10,6 @@ public class IdleState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Update(T ai) { }
 
-    public void FixedUpdate(T ai) { }
-
     public virtual void Exit(T ai)
     {
         Debug.Log("Exit Idle State");

@@ -46,7 +46,6 @@ public class Enemy : BaseAI<Enemy>
     public void TakeDamage(int damage)
     {
         stats.health -= damage;
-        playerAttackPattern = damage;
         ChangeState(new EnemyHitState());
     }
 }

@@ -24,7 +24,4 @@ public class BossChaseState : ChaseState<Boss>
             boss.ChangeState(new BossAttackState());
         }
     }
-    public override void FixedUpdate(Boss boss)
-    {
-    }
 }

@@ -38,11 +38,6 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
         currentState?.Update((T)this);
     }
 
-    protected virtual void FixedUpdate()
-    {
-        currentState?.FixedUpdate((T)this);
-    }
-
     public void ChangeState(IBaseAIState<T> newState)
     {
         currentState?.Exit((T)this);

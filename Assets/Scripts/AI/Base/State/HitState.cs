@@ -1,4 +1,5 @@
 using System.Buffers.Text;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
@@ -17,11 +18,7 @@ public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
         timer += Time.deltaTime;
     }
 
-    public virtual void FixedUpdate(T ai)
-    {
-    }
-
-    public void Exit(T ai)
+    public virtual void Exit(T ai)
     {
         ai.agent.isStopped = false;
         Debug.Log("Exit Hit");

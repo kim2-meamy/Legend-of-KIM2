@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Boss : BaseAI<Boss>
@@ -99,5 +100,22 @@ public class Boss : BaseAI<Boss>
                 StartCoroutine(Attack3Coroutine());
                 break;
         }
+    }
+
+    public void TakeDamage(int damage)
+    {
+        stats.health -= damage;
+        stats.armor -= damage * 2;
+
+        if (stats.armor <= 0)
+        {
+            OnStun();
+        }
+    }
+
+    public void OnStun()
+    {
+        ChangeState(new BossHitState());
+        stats.armor = 100;
     }
 }
