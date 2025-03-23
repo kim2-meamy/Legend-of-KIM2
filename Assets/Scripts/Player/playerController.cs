@@ -48,12 +48,13 @@ public class playerController : MonoBehaviour
     private float moveInput; // 플레이어의 앞뒤 이동
     private float turnInput; // 플레이어 회전값
     
-    [Header("Health")]
+    [Header("Stat")]
     private int hp =100;
+    public int damage = 10;
     //나중에 값을 받아오면 hp=0이 되면 animDie실행되게 만들기
-    
-    
-    
+
+
+
     private void Start()
     {
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
@@ -71,8 +72,8 @@ public class playerController : MonoBehaviour
         Movement(); // 움직임 함수 호출 //이 안에 GroundMovement / Turn 함수 => 중복된 함수를 호출하는 것 같지만 이렇게 하면 업데이트와 유지 관리가 쉽다
         Dodging(); // 업데이트에서 이 함수를 호출
         Attack(); // attack 함수가 매 프레임마다 업데이트
-        Hit();
-        Die();
+        //Hit();
+        //Die();
         
         //마우스 ESC키를 누르면 마우스를 다시 보이게 하고 잠금 해제 
         if (Input.GetKeyDown(KeyCode.Escape))
@@ -90,18 +91,10 @@ public class playerController : MonoBehaviour
     {
         
     }
+
     private void Die()
     {
-        // if(hp==0)
-        // {
-        //     animator.SetInteger(animDie, Input.GetKeyDown(KeyCode.R));
-        // }
-        if(Input.GetKeyDown(KeyCode.R))
-        {
-            animator.SetTrigger(animDie);
-        }
-        
-        
+        animator.SetTrigger(animDie);
     }
 
     private void Attack()
@@ -153,11 +146,14 @@ public class playerController : MonoBehaviour
         
     }
 
-    private void Hit()
+    public void Hit(int damage)
     {
-        if (Input.GetKeyDown(KeyCode.Q)) //감지코드 //나중에는 if문 필요 없음.// 피격을 감지하는 조건을 넣기 // 피격되면 애니메이션이 실행되게
+        animator.SetTrigger(animHit);
+        
+        hp -= damage;
+        if (hp <= 0)
         {
-            animator.SetTrigger(animHit); //실제 코드
+            Die();
         }
     }
     
@@ -206,16 +202,19 @@ public class playerController : MonoBehaviour
         // 플레이어가 움직이는지 확인하는 if문으로 래핑 -> 정지해 있을 때 캐릭터의 회전을 방지
         if(Mathf.Abs(turnInput) > 0 || Mathf.Abs(moveInput) > 0) // 움직임이 있을 때만 실행하도록 
         {
-        Vector3 currentLookDirection = controller.velocity.normalized;
-        //2)캐릭터의 시선 방향을 플레이어가 실제로 향하고 있는 위치로 다시 정의
-        // 1)회전 함수의 현재 시선 방향을 camera.forward;에서 캐릭터의 정규화된 속도로 바꾸기 ->캐릭터가 현재 이동하고 있는 방향을 나타냄
+            Vector3 currentLookDirection = controller.velocity.normalized;
+            //2)캐릭터의 시선 방향을 플레이어가 실제로 향하고 있는 위치로 다시 정의
+            // 1)회전 함수의 현재 시선 방향을 camera.forward;에서 캐릭터의 정규화된 속도로 바꾸기 ->캐릭터가 현재 이동하고 있는 방향을 나타냄
         
-        currentLookDirection.y = 0; // y값을 0으로 맞춰서 수평을 이루도록 함 
+            currentLookDirection.y = 0; // y값을 0으로 맞춰서 수평을 이루도록 함 
 
-        currentLookDirection.Normalize(); //3) 캐릭터의 정규화된 속도로 표현 charator's normalized velocity
+            currentLookDirection.Normalize(); //3) 캐릭터의 정규화된 속도로 표현 charator's normalized velocity
 
-        Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection); // 카메라의 현재 look방향과 일치하는 새로운 회전 생성 -> 플레이어가 이 새로운 방향을 향하도록 부드럽게 회전
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed); // 부드러운 전환을 위해 회전 속도 적용
+            if (currentLookDirection != Vector3.zero) // 캐릭터가 움직이는지 확인
+            {
+                Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection); // 카메라의 현재 look방향과 일치하는 새로운 회전 생성 -> 플레이어가 이 새로운 방향을 향하도록 부드럽게 회전
+                transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed); // 부드러운 전환을 위해 회전 속도 적용
+            }
         }
     }
 
@@ -283,6 +282,9 @@ public class playerController : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        
+        //if (other.CompareTag("Player"))
+        //{
+        //    hp -= 10;
+        //}
     }
 }

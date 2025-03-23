@@ -4,6 +4,7 @@ using UnityEngine.AI;
 public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 {
     public Transform target;
+    public ParticleSystem hitEffect;
 
     [HideInInspector]
     public Animator animator;
@@ -13,6 +14,7 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public int playerAttackPattern;
     [HideInInspector]
     public IBaseAIState<T> currentState;
+
 
     public U GetStats<U>() where U : BaseAIStats
     {

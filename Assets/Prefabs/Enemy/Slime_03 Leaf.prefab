@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5868942995936377861}
   - component: {fileID: 1409507082895108902}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1103900172778241272}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -138,7 +138,7 @@ GameObject:
   - component: {fileID: 7661964930396551384}
   - component: {fileID: 7425292200140145298}
   - component: {fileID: 786351054442207267}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime_03 Leaf
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -188,7 +188,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!135 &8367366846127220359
 SphereCollider:
@@ -268,10 +268,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
+  hitEffect: {fileID: 0}
   animator: {fileID: 0}
   agent: {fileID: 0}
   playerAttackPattern: 0
+  stat: {fileID: 0}
+  stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
 --- !u!1 &2055004755556271999
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +283,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3852088869152899559}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -314,7 +316,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6051240052875744902}
   - component: {fileID: 85732126289755714}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -366,7 +368,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8636100999830287644}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -397,7 +399,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9202206844932684524}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -428,7 +430,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6538871685426895086}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4590939763562023380}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -540,6 +542,10 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: fc38eb1d15aad094cafb3cb0e7542241, type: 3}
       propertyPath: m_Name
       value: Leaf
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: fc38eb1d15aad094cafb3cb0e7542241, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

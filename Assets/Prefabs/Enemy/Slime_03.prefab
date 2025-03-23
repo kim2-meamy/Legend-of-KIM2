@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1020811242689299260}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_R
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -42,7 +42,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7926677244657621576}
   - component: {fileID: 3295657004968499090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -133,7 +133,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7783108472841676692}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_L_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -164,7 +164,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4314793228851025430}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -202,7 +202,7 @@ GameObject:
   - component: {fileID: 4519649400186633291}
   - component: {fileID: 9213200770624044627}
   - component: {fileID: 9151395965105663403}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Slime_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -252,7 +252,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!135 &7020594457493182406
 SphereCollider:
@@ -332,10 +332,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 0}
-  stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
+  hitEffect: {fileID: 0}
   animator: {fileID: 0}
   agent: {fileID: 0}
   playerAttackPattern: 0
+  stat: {fileID: 0}
+  stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
 --- !u!1 &4451537198955399216
 GameObject:
   m_ObjectHideFlags: 0
@@ -345,7 +347,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8841469008733721054}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_L
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -377,7 +379,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 253551418225267653}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Rig
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -410,7 +412,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1590178629333886494}
   - component: {fileID: 8689430673216027884}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: MeleeArea
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -462,7 +464,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4913278953460151287}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Bone.003_R_end
   m_TagString: Untagged
   m_Icon: {fileID: 0}
