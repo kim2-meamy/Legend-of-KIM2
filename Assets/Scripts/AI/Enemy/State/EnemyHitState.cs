@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class EnemyHitState : HitState<Enemy>
 {
     public override void Enter(Enemy enemy)
@@ -13,9 +11,6 @@ public class EnemyHitState : HitState<Enemy>
                 break;
             case 2:
                 enemy.animator.SetTrigger("Hit2");
-                break;
-            case 3:
-                enemy.animator.SetTrigger("Hit3");
                 break;
         }
     }
