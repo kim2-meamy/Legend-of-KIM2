@@ -1,0 +1,463 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/indexLayout.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/projectSettingsUpdater.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Archer Shield 1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Archer Shield 1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Barier_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Barier_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bricks.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bricks.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bridge_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bridge_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building 1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building 1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building 3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building 3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Building_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Bush_4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Clif_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Clif_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Clif_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Clif_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Cloud_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Cloud_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Fence_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Fence_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Fence_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Fence_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Field_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Field_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Grass 1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Grass 1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/GrassPlane_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/GrassPlane_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/GrassPlane_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/GrassPlane_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Hill_4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Island_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Island_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pal_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pal_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pal_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pal_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pillar_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pillar_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pillar_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Pillar_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_F_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_F_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_W_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_W_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_W_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Platform_W_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_1_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_1_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_4.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Rocks_4.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Stairs Corner.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Stairs Corner.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Sword_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Sword_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Sztandar.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Sztandar.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tent 2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tent 2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tent_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tent_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/TowerStairs_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/TowerStairs_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tower_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tower_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tower_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tower_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tree 3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tree 3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tree_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Tree_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_1.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_1.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_2.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_2.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_3.fbx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/3D Models/Wall_3.fbx.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Bricks 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Bricks 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Bricks 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Bricks 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Concrate 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Concrate 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Concrate 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Concrate 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 3.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass 3.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass4.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Grass4.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Ground 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Ground 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Metal 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Metal 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Red.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Red.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Rocks 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Rocks 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Rocks 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Rocks 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Roof 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Roof 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Siano.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Siano.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Sky Material.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Sky Material.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Walls 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Walls 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wave Brown.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wave Brown.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/White.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/White.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 2.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 2.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 3.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 3.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 4.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/Wood 4.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/water 1.mat" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Materials/water 1.mat.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Archer Shield 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Archer Shield 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Barier_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Barier_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bricks.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bricks.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bridge_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bridge_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building 3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building 3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Building_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_4.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Bush_4.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Clif_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Clif_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Clif_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Clif_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Cloud_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Cloud_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Fence_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Fence_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Fence_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Fence_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Field_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Field_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Grass 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Grass 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/GrassPlane_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/GrassPlane_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/GrassPlane_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/GrassPlane_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_4.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Hill_4.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Island_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Island_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pal_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pal_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pal_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pal_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pillar_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pillar_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pillar_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Pillar_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_F_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_F_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_W_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_W_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_W_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Platform_W_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_1_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_1_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2 2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2 2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3 1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3 1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3 2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3 2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_4.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Rocks_4.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Stairs Corner.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Stairs Corner.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Sword_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Sword_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Sztandar.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Sztandar.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tent 2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tent 2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tent_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tent_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/TowerStairs_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/TowerStairs_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tower_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tower_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tower_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tower_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tree 3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tree 3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tree_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Tree_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_1.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_1.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_2.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_2.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_3.prefab" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Prefabs/Wall_3.prefab.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In.unity" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In.unity.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In/LightingData.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In/LightingData.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In/ReflectionProbe-0.exr" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Scene/Medieval Cute Built In/ReflectionProbe-0.exr.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Settings.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Settings/Lighting Medieval Cute.lighting" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Settings/Lighting Medieval Cute.lighting.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Settings/PPV Medieval.asset" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Settings/PPV Medieval.asset.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Grass_2.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Grass_2.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Ground.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Ground.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Sky Map.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/Medieval Cute Series/Textures/Sky Map.png.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/CHANGELOG.md" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/CHANGELOG.md.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/DisableUFolderGizmo.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/DisableUFolderGizmo.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/GroupObjectsEditor.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/GroupObjectsEditor.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/HierarchyGUI.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/HierarchyGUI.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/HierarchyWindowAdapter.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/HierarchyWindowAdapter.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/NKStudio.UFolder.Editor.asmdef" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/NKStudio.UFolder.Editor.asmdef.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/UFolderUtility.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/Editor/UFolderUtility.cs.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/package.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/UFolder/package.json.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ProjectSettings/Packages/com.unity.probuilder/Settings.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Prefabs.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Prefabs.meta" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Readme.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Scenes/SampleScene.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Packages/packages-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/Packages/packages-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;9ot9am&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kim2-meamy/Legend-of-KIM2.git&quot;,
+    &quot;accountId&quot;: &quot;0fbeb3cb-828a-4c3b-93bb-c39d3d595a45&quot;
+  }
+}</component>
+  <component name="HighlightingSettingsPerFile">
+    <setting file="file://$PROJECT_DIR$/Assets/Scripts/Gamehandler.cs" root0="FORCE_HIGHLIGHTING" />
+  </component>
+  <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2uDB87saIEbY7ut9Ldjyg3XNVNI" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;8-level-design&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.sourceCode&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  }
+}</component>
+  <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
+    <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-runTests -batchmode -projectPath C:\Projects\Legend-of-KIM2 -testResults Logs/results.xml -logFile Logs/Editor.log -testPlatform EditMode -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Projects\Legend-of-KIM2" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unity 시작" type="RunUnityExe" factoryName="Unity Executable">
+      <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
+      <option name="PROGRAM_PARAMETERS" value="-projectPath C:\Projects\Legend-of-KIM2 -debugCodeOptimization" />
+      <option name="WORKING_DIRECTORY" value="C:\Projects\Legend-of-KIM2" />
+      <option name="PASS_PARENT_ENVS" value="1" />
+      <option name="USE_EXTERNAL_CONSOLE" value="0" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unity 에디터에 연결" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+    <configuration name="Unreal 에디터에 연결 후 재생" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="UNITY_ATTACH_AND_PLAY" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+      <option name="allowRunningInParallel" value="false" />
+      <option name="listenPortForConnections" value="false" />
+      <option name="pid" />
+      <option name="projectPathOnTarget" />
+      <option name="runtimes">
+        <list />
+      </option>
+      <option name="selectedOptions">
+        <list />
+      </option>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="애플리케이션 수준" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="디폴트 작업">
+      <changelist id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="" />
+      <created>1741773101683</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1741773101683</updated>
+      <workItem from="1741773103164" duration="17000" />
+      <workItem from="1741773139552" duration="211000" />
+      <workItem from="1741773367499" duration="18000" />
+      <workItem from="1741773451846" duration="81000" />
+      <workItem from="1741773657958" duration="391000" />
+      <workItem from="1741870565960" duration="3460000" />
+      <workItem from="1741932761985" duration="28000" />
+      <workItem from="1741932871188" duration="32000" />
+      <workItem from="1741933715675" duration="4765000" />
+      <workItem from="1741943875046" duration="798000" />
+      <workItem from="1741950177725" duration="4258000" />
+      <workItem from="1742195219331" duration="12000" />
+      <workItem from="1742198821827" duration="20000" />
+      <workItem from="1742279624818" duration="3000" />
+      <workItem from="1742281615884" duration="3603000" />
+      <workItem from="1742288021976" duration="5000" />
+      <workItem from="1742288041880" duration="2956000" />
+      <workItem from="1742291600992" duration="17000" />
+      <workItem from="1742291894555" duration="4096000" />
+      <workItem from="1742382207407" duration="1968000" />
+      <workItem from="1742456428260" duration="12140000" />
+      <workItem from="1742480534580" duration="197000" />
+      <workItem from="1742535597990" duration="11684000" />
+      <workItem from="1742547682834" duration="14084000" />
+      <workItem from="1742564800995" duration="1826000" />
+      <workItem from="1742627946299" duration="1986000" />
+      <workItem from="1742633162775" duration="5269000" />
+      <workItem from="1742651372999" duration="4413000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="UnityCheckinConfiguration" checkUnsavedScenes="true" />
+  <component name="UnityProjectConfiguration" hasMinimizedUI="true" />
+  <component name="UnityProjectDiscoverer">
+    <option name="hasUnityReference" value="true" />
+    <option name="unityProject" value="true" />
+    <option name="unityProjectFolder" value="true" />
+  </component>
+  <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="VcsManagerConfiguration">
+    <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+</project>
