@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Enemy : BaseAI<Enemy>
 {
-    public GameObject dieEffect;
+    public ParticleSystem dieEffect;
     public GameObject skin;
 
     [HideInInspector]
@@ -16,7 +16,6 @@ public class Enemy : BaseAI<Enemy>
         base.Awake();
         meleeArea = GetComponentsInChildren<SphereCollider>()[1];
         stats = GetStats<EnemyStats>();
-        hitEffect.Stop();
     }
 
     protected override IBaseAIState<Enemy> GetInitialState()
@@ -62,7 +61,7 @@ public class Enemy : BaseAI<Enemy>
     public void Die()
     {
         skin.SetActive(false);
-        dieEffect.SetActive(true);
+        dieEffect.Play();
         Destroy(gameObject, 1f);
     }
 }

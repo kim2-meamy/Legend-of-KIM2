@@ -1,3 +1,4 @@
+using CartoonFX;
 using System;
 using System.Collections;
 using System.Runtime.CompilerServices;
@@ -9,6 +10,7 @@ using UnityEngine.UI;
 public class playerController : MonoBehaviour
 {
     public Collider collider;
+    public GameObject damageEffect;
     
     [Header("References")] 
     private CharacterController controller; // 캐릭터 컨트롤러에 대한 개인 변수를 정의 // 후에 캐릭터 컨트롤러 메서드 호출 가능
@@ -149,7 +151,8 @@ public class playerController : MonoBehaviour
     public void Hit(int damage)
     {
         animator.SetTrigger(animHit);
-        
+        damageEffect.GetComponent<CFXR_ParticleText>().UpdateText("-" + damage.ToString());
+        damageEffect.GetComponent<ParticleSystem>().Play();
         hp -= damage;
         if (hp <= 0)
         {
