@@ -19,6 +19,4 @@ public class BossStats : BaseAIStats
     public float Attack2hitboxDeactivationTime = 4f;
     public float Attack3hitboxAcitvaionTime = 0.2f;
     public float Attack3hitboxDeactivationTime = 1.5f;
-    public float hitTime = 5f;
-    public float hitRecoveryTime = 10f;
 }

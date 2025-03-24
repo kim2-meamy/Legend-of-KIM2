@@ -1,14 +1,17 @@
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class HitControll : MonoBehaviour
 {
     private Enemy enemy;
     private playerController player;
+    private Boss boss;
 
     private void Awake()
     {
         enemy = GetComponentInParent<Enemy>();
         player = GetComponentInParent<playerController>();
+        boss = GetComponentInParent<Boss>();
     }
 
     private void OnTriggerEnter(Collider other)
@@ -27,6 +30,14 @@ public class HitControll : MonoBehaviour
             if (hitPlayer != null)
             {
                 hitPlayer.Hit(enemy.stats.damage);
+            }
+        }
+        else if (other.CompareTag("Boss") && player != null)
+        {
+            Boss hitBoss = other.GetComponentInParent<Boss>();
+            if (hitBoss != null)
+            {
+                hitBoss.TakeDamage(player.damage);
             }
         }
     }

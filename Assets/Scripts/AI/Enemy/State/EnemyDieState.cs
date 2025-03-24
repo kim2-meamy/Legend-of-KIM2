@@ -1,6 +1,3 @@
-using System.Threading;
-using UnityEngine;
-
 public class EnemyDieState : DieState<Enemy>
 {
     public override void Enter(Enemy enemy)
@@ -14,7 +11,7 @@ public class EnemyDieState : DieState<Enemy>
         base.Update(enemy);
         if (timer >= enemy.stats.deathTime)
         {
-            Exit(enemy);
+            enemy.ChangeState(null);
         }
     }
 

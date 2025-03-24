@@ -9,9 +9,9 @@ using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
-    public Collider collider;
     public GameObject damageEffect;
-    
+    public Collider collider;
+
     [Header("References")] 
     private CharacterController controller; // 캐릭터 컨트롤러에 대한 개인 변수를 정의 // 후에 캐릭터 컨트롤러 메서드 호출 가능
     [SerializeField] private Transform camera; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
@@ -55,6 +55,8 @@ public class playerController : MonoBehaviour
     public int damage = 10;
     //나중에 값을 받아오면 hp=0이 되면 animDie실행되게 만들기
 
+    [HideInInspector]
+    public bool alreadyAttack = false;
 
 
     private void Start()
@@ -103,19 +105,31 @@ public class playerController : MonoBehaviour
     {
         animator.SetBool(animAttack, Input.GetMouseButton(0));
 
-        if (Input.GetMouseButtonDown(0))
-        {
-            // collider.enabled = false;
-            StartCoroutine((AttackCoroutine()));
-        }
+        //if (Input.GetMouseButtonDown(0))
+        //{
+        //    // collider.enabled = false;
+        //    StartCoroutine((AttackCoroutine()));
+        //}
     }
 
-    IEnumerator AttackCoroutine()
+    public void AttackStart()
     {
         collider.enabled = true;
-        yield return new WaitForSeconds(0.533f);
-        collider.enabled = false;
+        alreadyAttack = true;
     }
+
+    public void AttackEnd()
+    {
+        collider.enabled = false;
+        alreadyAttack = false;
+    }
+
+    //IEnumerator AttackCoroutine()
+    //{
+    //    collider.enabled = true;
+    //    yield return new WaitForSeconds(0.533f);
+    //    collider.enabled = false;
+    //}
 
     // private void AttackDelay()
     // {
@@ -130,7 +144,7 @@ public class playerController : MonoBehaviour
     //         yield return WaitForSeconds(attackDelay);
     //     }
     // }
-   
+
     private void Dodging()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -283,11 +297,5 @@ public class playerController : MonoBehaviour
         turnInput = Input.GetAxis("Horizontal"); // a 및 d 키의 수평 입력을 캡처
     }
 
-    private void OnTriggerEnter(Collider other)
-    {
-        //if (other.CompareTag("Player"))
-        //{
-        //    hp -= 10;
-        //}
-    }
+
 }

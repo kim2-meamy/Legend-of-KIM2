@@ -3,7 +3,6 @@ using UnityEngine;
 
 public class Enemy : BaseAI<Enemy>
 {
-    public ParticleSystem dieEffect;
     public GameObject skin;
 
     [HideInInspector]
@@ -45,9 +44,9 @@ public class Enemy : BaseAI<Enemy>
         StartCoroutine(AttackCoroutine());
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        stats.health -= damage;
+        base.TakeDamage(damage);
         if (stats.health <= 0)
         {
             ChangeState(new EnemyDieState());
@@ -58,7 +57,7 @@ public class Enemy : BaseAI<Enemy>
         }
     }
 
-    public void Die()
+    public override void Die()
     {
         skin.SetActive(false);
         dieEffect.Play();

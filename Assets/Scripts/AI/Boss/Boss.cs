@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Boss : BaseAI<Boss>
 {
+    public ParticleSystem armorBreakHit;
+
     [HideInInspector]
     public BossStats stats;
 
@@ -16,7 +18,6 @@ public class Boss : BaseAI<Boss>
     {
         base.Awake();
         axeArea = GetComponentInChildren<BoxCollider>();
-        Debug.Log(axeArea.gameObject.name);
         //bodyArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         stats = GetStats<BossStats>();
@@ -101,20 +102,42 @@ public class Boss : BaseAI<Boss>
         }
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        stats.health -= damage;
+        base.TakeDamage(damage);
         stats.armor -= damage * 2;
 
-        if (stats.armor <= 0)
+        if (stats.health <= 0)
         {
-            OnStun();
+            Debug.Log("Take Damage");
+            ChangeState(new BossDieState());
+            return;
+        }
+        
+        if (stats.armor <= 0 && !(currentState is BossHitState))
+        {
+            if (!(currentState is BossHitState))
+                OnStun();
+        }
+        else if (currentState is BossHitState)
+        {
+            armorBreakHit.Play();
+        }
+        else
+        {
+            hitEffect.Play();
         }
     }
 
     public void OnStun()
     {
         ChangeState(new BossHitState());
-        stats.armor = 100;
+    }
+
+    public override void Die()
+    {
+        //skin.SetActive(false);
+        dieEffect.Play();
+        //Destroy(gameObject, 1f);
     }
 }

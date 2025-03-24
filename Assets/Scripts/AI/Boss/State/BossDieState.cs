@@ -1,24 +1,23 @@
-public class BossHitState : HitState<Boss>
+public class BossDieState : DieState<Boss>
 {
     public override void Enter(Boss boss)
     {
         base.Enter(boss);
-        boss.animator.SetTrigger("Stun");
+        boss.armorBreakHit.Play();
     }
 
     public override void Update(Boss boss)
     {
         base.Update(boss);
-        if (timer >= boss.stats.hitRecoveryTime)
+        if (timer >= boss.stats.deathTime)
         {
-            boss.animator.SetTrigger("StunEnd");
-            boss.ChangeState(new BossIdleState());
+            boss.ChangeState(null);
         }
     }
 
     public override void Exit(Boss boss)
     {
         base.Exit(boss);
-        boss.stats.armor = 100;
+        boss.Die();
     }
 }
