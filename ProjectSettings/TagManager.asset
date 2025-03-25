@@ -4,11 +4,11 @@
 TagManager:
   serializedVersion: 3
   tags:
-  - Folder
   - Script
   - Folder
   - Enemy
   - Boss
+  - Npc
   layers:
   - Default
   - TransparentFX
