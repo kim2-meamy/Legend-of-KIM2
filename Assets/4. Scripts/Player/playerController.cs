@@ -21,8 +21,8 @@ public class playerController : MonoBehaviour
     
 
     [Header("Movement Settings")] 
-    [SerializeField] private float walkSpeed = 5f; // 캐릭터의 이동 속도를 제어
-    [SerializeField] private float sprintspeed = 10f;//캐릭터가 스프린트 하는 속도 
+    [SerializeField] private float walkSpeed = 1f; // 캐릭터의 이동 속도를 제어
+    [SerializeField] private float sprintspeed = 2f;//캐릭터가 스프린트 하는 속도 
     [SerializeField] private float sprintTrasitSpeed = 5f; // 캐릭터가 달리는 속도로 얼마나 빨리 전환되는지를 결정하는 속도 
     [SerializeField] private float turningSpeed = 2f; // 카메라와 일치하도록 플레이어가 회전하는 속도 제어
     [SerializeField] private float gravity = 9.81f; // 중력이라는 새 float변수를 추가하여 사용자 지정 중력 구현 // 지구의 중력을 모방
@@ -89,12 +89,6 @@ public class playerController : MonoBehaviour
     }
     //시간 누적은 Time.delta
     //attack delay 시간 추가..
-    
-
-    private void FixedUpdate()
-    {
-        
-    }
 
     private void Die()
     {
@@ -124,27 +118,6 @@ public class playerController : MonoBehaviour
         alreadyAttack = false;
     }
 
-    //IEnumerator AttackCoroutine()
-    //{
-    //    collider.enabled = true;
-    //    yield return new WaitForSeconds(0.533f);
-    //    collider.enabled = false;
-    //}
-
-    // private void AttackDelay()
-    // {
-    //     if (attackDelay>delay)
-    //     {
-    //         StartCoroutine(AttackDelayCoroutine());
-    //     }
-    //
-    //     attackDelay = delay * Time.deltaTime;
-    //     IEnumerator AttackDelayCoroutine()
-    //     {
-    //         yield return WaitForSeconds(attackDelay);
-    //     }
-    // }
-
     private void Dodging()
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
@@ -165,8 +138,6 @@ public class playerController : MonoBehaviour
     public void Hit(int damage)
     {
         animator.SetTrigger(animHit);
-        damageEffect.GetComponent<CFXR_ParticleText>().UpdateText("-" + damage.ToString());
-        damageEffect.GetComponent<ParticleSystem>().Play();
         hp -= damage;
         if (hp <= 0)
         {

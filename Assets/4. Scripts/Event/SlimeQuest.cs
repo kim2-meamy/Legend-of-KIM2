@@ -9,13 +9,12 @@ public class SlimeQuest : MonoBehaviour
     public GameObject player;
     public GameObject playerUIText;
     
-    void OnTriggerEnter()
+    void OnTriggerEnter(Collider other)
     {
         foreach(GameObject obj in list)
         {
             obj.GetComponent<Enemy>().target = player.transform;
         }
-        Debug.Log("여기", playerUIText);
     }
 
     private void Update()

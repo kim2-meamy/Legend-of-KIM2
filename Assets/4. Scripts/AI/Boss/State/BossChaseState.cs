@@ -18,7 +18,7 @@ public class BossChaseState : ChaseState<Boss>
             direction.y = 0;
             float angleDifference = Vector3.Angle(boss.transform.forward, direction);
 
-            if (angleDifference > 0.1f)
+            if (angleDifference > 5f)
                 return;
             
             boss.ChangeState(new BossAttackState());

@@ -1,4 +1,5 @@
 using System.IO;
+using CartoonFX;
 using UnityEngine;
 using UnityEngine.AI;
 
@@ -7,6 +8,7 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public Transform target;
     public ParticleSystem hitEffect;
     public ParticleSystem dieEffect;
+    public ParticleSystem damageEffect;
 
     [HideInInspector]
     public Animator animator;
@@ -68,6 +70,8 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public virtual void TakeDamage(int damage)
     {
         stat.health -= damage;
+        damageEffect.GetComponent<CFXR_ParticleText>().UpdateText("-" + damage.ToString());
+        damageEffect.Play();
     }
 
     public virtual void Die()

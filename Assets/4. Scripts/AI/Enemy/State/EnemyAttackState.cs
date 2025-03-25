@@ -4,7 +4,6 @@ public class EnemyAttackState : AttackState<Enemy>
 {
     public override void Enter(Enemy enemy)
     {
-        Debug.Log("Enter Attack");
         enemy.agent.isStopped = true;
         enemy.animator.SetTrigger("Attack");
         enemy.Attack();

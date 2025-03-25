@@ -104,7 +104,7 @@ public class Boss : BaseAI<Boss>
         lastHittedTime = Time.time;
 
         base.TakeDamage(damage);
-        stats.armor -= damage * 2;
+        stats.armor -= damage;
 
         if (stats.health <= 0)
         {
