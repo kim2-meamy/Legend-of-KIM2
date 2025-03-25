@@ -1,23 +1,29 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
-
 public class HealthBarEvent : MonoBehaviour
 {
-    private NpcStats npcStats;
+    public GameObject obj;
+    
+    private int hp;
     private Image healthBar;
     private TextMeshProUGUI healthText;
+    private TextMeshProUGUI name;
+    private Enemy enemy;
 
     void Awake()
     {
-        npcStats = GameObject.FindGameObjectWithTag("Npc").GetComponent<NpcStats>();
+        enemy = GetComponentInParent<Enemy>();
         healthBar = GetComponent<Image>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();
+        name = GetComponentInParent<TextMeshProUGUI>();
+        name.text = obj.name;
     }
     
     void Update()
     {
-        healthBar.fillAmount = npcStats.Hp * 0.01f;
-        healthText.text = npcStats.Hp.ToString();
+        hp = enemy.stats.health;
+        healthBar.fillAmount = hp * 0.01f;
+        healthText.text = hp.ToString();
     }
 }

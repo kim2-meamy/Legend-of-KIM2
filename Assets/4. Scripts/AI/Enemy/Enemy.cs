@@ -22,14 +22,14 @@ public class Enemy : BaseAI<Enemy>
         return new EnemyIdleState();
     }
 
-    protected virtual void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Player.Damaged(stats.damage);
-            Debug.Log("Player Damaged");
-        }
-    }
+    // protected virtual void OnTriggerEnter(Collider other)
+    // {
+    //     if (other.CompareTag("Player"))
+    //     {
+    //         // Player.Damaged(stats.damage);
+    //         Debug.Log("Player Damaged");
+    //     }
+    // }
 
     private IEnumerator AttackCoroutine()
     {

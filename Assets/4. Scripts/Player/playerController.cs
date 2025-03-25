@@ -48,7 +48,7 @@ public class playerController : MonoBehaviour
     
     [Header("Input")] // 입력값
     private float moveInput; // 플레이어의 앞뒤 이동
-    private float turnInput; // 플레이어 회전값
+    private float turnInput; // 플레이어 회전
     
     [Header("Stat")]
     private int hp =100;

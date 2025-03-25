@@ -9,17 +9,18 @@ TagManager:
   - Enemy
   - Boss
   - Npc
+  - FxTemporaire
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - NPC
   - Water
   - UI
   - Enemy
   - Plane
   - Player
-  - 
+  - Event
   - 
   - 
   - 
