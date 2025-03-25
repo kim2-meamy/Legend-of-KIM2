@@ -1,0 +1,66 @@
+using System.Collections;
+using UnityEngine;
+
+public class Enemy : BaseAI<Enemy>
+{
+    public GameObject skin;
+
+    [HideInInspector]
+    protected Collider meleeArea;
+    [HideInInspector]
+    public EnemyStats stats;
+
+    protected override void Awake()
+    {
+        base.Awake();
+        meleeArea = GetComponentsInChildren<SphereCollider>()[1];
+        stats = GetStats<EnemyStats>();
+    }
+
+    protected override IBaseAIState<Enemy> GetInitialState()
+    {
+        return new EnemyIdleState();
+    }
+
+    protected virtual void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            // Player.Damaged(stats.damage);
+            Debug.Log("Player Damaged");
+        }
+    }
+
+    private IEnumerator AttackCoroutine()
+    {
+        yield return new WaitForSeconds(stats.hitboxAcitvaionTime);
+        meleeArea.enabled = true;
+        yield return new WaitForSeconds(stats.hitboxDeactivationTime);
+        meleeArea.enabled = false;
+    }
+
+    public override void Attack()
+    {
+        StartCoroutine(AttackCoroutine());
+    }
+
+    public override void TakeDamage(int damage)
+    {
+        base.TakeDamage(damage);
+        if (stats.health <= 0)
+        {
+            ChangeState(new EnemyDieState());
+        }
+        else
+        {
+            ChangeState(new EnemyHitState());
+        }
+    }
+
+    public override void Die()
+    {
+        skin.SetActive(false);
+        dieEffect.Play();
+        Destroy(gameObject, 1f);
+    }
+}
