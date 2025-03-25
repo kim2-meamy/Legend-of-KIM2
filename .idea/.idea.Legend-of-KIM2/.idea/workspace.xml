@@ -7,12 +7,7 @@
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/3. Scenes/Medieval Cute Built In.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Scenes/Medieval Cute Built In.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/AI/Boss/State/BossChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/AI/Boss/State/BossChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/AI/Enemy/State/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/AI/Enemy/State/EnemyAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Event/SlimeQuest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Event/SlimeQuest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Player/playerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Player/playerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/5. Animations/Enemy/Boss/AC_BullTank.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/5. Animations/Enemy/Boss/AC_BullTank.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/6. ScriptableObjects/BossStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/6. ScriptableObjects/BossStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/UI/QuestData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/UI/QuestData.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -28,12 +23,12 @@
     &quot;assignee&quot;: &quot;9ot9am&quot;
   }
 }</component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/kim2-meamy/Legend-of-KIM2.git",
-    "accountId": "a39a6772-ee00-45fc-843d-7aee2403520f"
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/kim2-meamy/Legend-of-KIM2.git&quot;,
+    &quot;accountId&quot;: &quot;a39a6772-ee00-45fc-843d-7aee2403520f&quot;
   }
-}]]></component>
+}</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Event/SlimeQuest.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
