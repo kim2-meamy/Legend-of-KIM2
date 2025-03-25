@@ -18,7 +18,13 @@ public class QuestData : MonoBehaviour
                 "Why don't you just go to deal with him?\n" }
     };
 
-    public void CheckIfCompleteQuest_1001(ref int npcHp)
+    public bool CheckIfCompleteQuest_1001(ref int bossHp)
     {
+        if (bossHp <= 0)
+        {
+            return true;
+        }
+        
+        return false;
     }
 }

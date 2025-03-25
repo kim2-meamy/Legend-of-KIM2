@@ -1,26 +1,40 @@
 using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Build.Player;
 using UnityEngine;
 using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
     public Dictionary<int, string> questContents;
     public QuestData questData;
     private TextMeshProUGUI playerQuestList;
+    private Boss boss;
+    private NpcStats npcStats;
+    private GameObject endUI;
 
     void Awake()
     {
         questData = GetComponent<QuestData>();
         questContents = new Dictionary<int, string>();
         playerQuestList = GameObject.Find("PlayerQuestList").GetComponentInChildren<TextMeshProUGUI>();
+        boss = GameObject.Find("Boss").GetComponent<Boss>();
+        npcStats = GameObject.FindGameObjectWithTag("Npc").GetComponent<NpcStats>();
+        endUI = GameObject.FindGameObjectWithTag("End");
+        endUI.SetActive(false);
     }
 
     private void Update()
     {
         if (questContents.ContainsKey(1001))
         {
+            if (questData.CheckIfCompleteQuest_1001(ref boss.stats.health))
+            {
+                QuestComplete(1001, ref npcStats.questCount);
+                endUI.SetActive(true);
+            }
         }
     }
 
@@ -33,7 +47,6 @@ public class QuestManager : MonoBehaviour
     {
         questContents.Remove(questID);
         questData.CompletedQuestCheck[questID] = true;
-        Debug.Log($"Quest {questID} completed!");
         playerQuestList.text = playerQuestList.text.Replace(questData.questDatas[questID], "");
         questCount -= 1;
     }

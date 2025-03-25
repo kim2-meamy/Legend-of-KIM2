@@ -10,10 +10,15 @@ public class HealthBarEvent : MonoBehaviour
     private TextMeshProUGUI healthText;
     private TextMeshProUGUI name;
     private Enemy enemy;
+    private Boss boss;
 
     void Awake()
     {
         enemy = GetComponentInParent<Enemy>();
+        if (enemy == null)
+        {
+            boss = GameObject.Find("Boss").GetComponent<Boss>();
+        }
         healthBar = GetComponent<Image>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();
         name = GetComponentInParent<TextMeshProUGUI>();
@@ -22,7 +27,14 @@ public class HealthBarEvent : MonoBehaviour
     
     void Update()
     {
-        hp = enemy.stats.health;
+        if (enemy != null)
+        {
+            hp = enemy.stats.health;
+        }
+        else
+        {
+            hp = boss.stats.health;
+        }
         healthBar.fillAmount = hp * 0.01f;
         healthText.text = hp.ToString();
     }

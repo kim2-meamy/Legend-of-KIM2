@@ -10,6 +10,7 @@ TagManager:
   - Boss
   - Npc
   - FxTemporaire
+  - End
   layers:
   - Default
   - TransparentFX

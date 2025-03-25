@@ -100,6 +100,5 @@ public class NpcScripts : MonoBehaviour
         playerQuestList.text += (questManager.questData.questDatas[status.Id * 1000 + status.questCount] + "\n" + "\n");
         testText.text = status.defaultScriptContents;
         testText.pageToDisplay = 1;
-        Debug.Log($"Quest {status.Id * 1000 + status.questCount} registered!");
     }
 }
