@@ -35,7 +35,7 @@ public class HealthBarEvent : MonoBehaviour
         {
             hp = boss.stats.health;
         }
-        healthBar.fillAmount = hp * 0.01f;
+        healthBar.fillAmount = hp * 0.03333f;
         healthText.text = hp.ToString();
     }
 }

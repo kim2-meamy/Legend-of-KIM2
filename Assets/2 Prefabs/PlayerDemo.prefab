@@ -24938,18 +24938,20 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b009f540acb68ae4386a14dd45d89d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  collider: {fileID: 5554392625860445340}
   damageEffect: {fileID: 2106167186858397967}
+  collider: {fileID: 5554392625860445340}
   camera: {fileID: 0}
   animator: {fileID: 2591768070041163161}
-  walkSpeed: 5
-  sprintspeed: 10
+  walkSpeed: 3
+  sprintspeed: 6
   sprintTrasitSpeed: 5
   turningSpeed: 8
   gravity: 9.81
   jumpHeight: 2
   delay: 0.5
+  hp: 100
   damage: 10
+  alreadyAttack: 0
 --- !u!95 &2591768070041163161
 Animator:
   serializedVersion: 7

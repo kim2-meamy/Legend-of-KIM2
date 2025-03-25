@@ -63,10 +63,10 @@ public class playerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
         SetupAnimator();
-        
+
         // //마우스
-        // Cursor.visible = false; // 마우스 커서를 숨김
-        // Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
+        //Cursor.visible = false; // 마우스 커서를 숨김
+        //Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
     }
 
     private void Update() //입력이 매 프레임마다 확인되고 업데이트
@@ -76,16 +76,16 @@ public class playerController : MonoBehaviour
         Movement(); // 움직임 함수 호출 //이 안에 GroundMovement / Turn 함수 => 중복된 함수를 호출하는 것 같지만 이렇게 하면 업데이트와 유지 관리가 쉽다
         Dodging(); // 업데이트에서 이 함수를 호출
         Attack(); // attack 함수가 매 프레임마다 업데이트
-        //Hit();
-        //Die();
-        
-        // //마우스 ESC키를 누르면 마우스를 다시 보이게 하고 잠금 해제 
-        // if (Input.GetKeyDown(KeyCode.Escape))
-        // {
-        //     Cursor.visible = true;
-        //     Cursor.lockState = CursorLockMode.None; // 마우스 이동 가능 
-        // }
-        
+                  //Hit();
+                  //Die();
+
+        //마우스 ESC키를 누르면 마우스를 다시 보이게 하고 잠금 해제 
+        //if (Input.GetKeyDown(KeyCode.Escape))
+        //{
+        //    Cursor.visible = true;
+        //    Cursor.lockState = CursorLockMode.None; // 마우스 이동 가능 
+        //}
+
     }
     //시간 누적은 Time.delta
     //attack delay 시간 추가..
@@ -129,9 +129,9 @@ public class playerController : MonoBehaviour
 
     IEnumerator DodgeCoroutine()
     {
-        walkSpeed = 20f;
+        walkSpeed = 8f;
         yield return new WaitForSeconds(0.4f);
-        walkSpeed = 5f;
+        walkSpeed = 3f;
         
     }
 
