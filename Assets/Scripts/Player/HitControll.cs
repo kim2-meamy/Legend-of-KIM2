@@ -26,7 +26,6 @@ public class HitControll : MonoBehaviour
         }
         else if (other.CompareTag("Player") && (enemy != null || boss != null))
         {
-            Debug.Log("Player Hit");
             playerController hitPlayer = other.GetComponentInParent<playerController>();
             if (hitPlayer != null)
             {

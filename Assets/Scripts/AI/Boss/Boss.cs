@@ -15,6 +15,7 @@ public class Boss : BaseAI<Boss>
     private CharacterController controller;
     private float verticalVelocity = 0f;
     private float gravityMultiplier = 1f;
+    private float lastHittedTime = float.MinValue;
 
     protected override void Awake()
     {
@@ -97,6 +98,11 @@ public class Boss : BaseAI<Boss>
 
     public override void TakeDamage(int damage)
     {
+        if (Time.time < lastHittedTime + 0.533f)
+            return;
+
+        lastHittedTime = Time.time;
+
         base.TakeDamage(damage);
         stats.armor -= damage * 2;
 
