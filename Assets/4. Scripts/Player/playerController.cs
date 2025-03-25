@@ -51,7 +51,7 @@ public class playerController : MonoBehaviour
     private float turnInput; // 플레이어 회전
     
     [Header("Stat")]
-    private int hp =100;
+    public int hp = 100;
     public int damage = 10;
     //나중에 값을 받아오면 hp=0이 되면 animDie실행되게 만들기
 
@@ -64,9 +64,9 @@ public class playerController : MonoBehaviour
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
         SetupAnimator();
         
-        //마우스
-        Cursor.visible = false; // 마우스 커서를 숨김
-        Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
+        // //마우스
+        // Cursor.visible = false; // 마우스 커서를 숨김
+        // Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
     }
 
     private void Update() //입력이 매 프레임마다 확인되고 업데이트
@@ -79,12 +79,12 @@ public class playerController : MonoBehaviour
         //Hit();
         //Die();
         
-        //마우스 ESC키를 누르면 마우스를 다시 보이게 하고 잠금 해제 
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None; // 마우스 이동 가능 
-        }
+        // //마우스 ESC키를 누르면 마우스를 다시 보이게 하고 잠금 해제 
+        // if (Input.GetKeyDown(KeyCode.Escape))
+        // {
+        //     Cursor.visible = true;
+        //     Cursor.lockState = CursorLockMode.None; // 마우스 이동 가능 
+        // }
         
     }
     //시간 누적은 Time.delta

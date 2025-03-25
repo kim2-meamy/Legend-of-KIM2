@@ -63,6 +63,18 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 7620157537634274956}
     m_Modifications:
+    - target: {fileID: 2314984322647072266, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
+      propertyPath: m_fontAsset
+      value: 
+      objectReference: {fileID: 11400000, guid: 53b32a273ff156943af5d14cff80b5fd, type: 2}
+    - target: {fileID: 2314984322647072266, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
+      propertyPath: m_sharedMaterial
+      value: 
+      objectReference: {fileID: -4117749518333849289, guid: 53b32a273ff156943af5d14cff80b5fd, type: 2}
+    - target: {fileID: 2314984322647072266, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
+      propertyPath: m_hasFontAssetChanged
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3629293752690859575, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
       propertyPath: m_text
       value: 
@@ -392,9 +404,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   Id: 1
   questCount: 0
-  Name: test
-  Hp: 100
-  defaultScriptContents: 111111111111111111111111111111111111111111111111111111111111111222222222222222222222222222222222222222222222222222222222222222333333333333333333333333333333333333333333333333333333333333333333444444444444444444444444444444444444444444444444444444444444444444
+  Name: Stranger
+  defaultScriptContents: Thank you for saving me!
 --- !u!4 &7620157537634274956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}

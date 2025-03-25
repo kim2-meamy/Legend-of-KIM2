@@ -9,13 +9,11 @@ public class QuestManager : MonoBehaviour
     public Dictionary<int, string> questContents;
     public QuestData questData;
     private TextMeshProUGUI playerQuestList;
-    private NpcStats npcStats;
 
     void Awake()
     {
         questData = GetComponent<QuestData>();
         questContents = new Dictionary<int, string>();
-        npcStats = GameObject.FindGameObjectWithTag("Npc").GetComponent<NpcStats>();
         playerQuestList = GameObject.Find("PlayerQuestList").GetComponentInChildren<TextMeshProUGUI>();
     }
 
@@ -23,10 +21,6 @@ public class QuestManager : MonoBehaviour
     {
         if (questContents.ContainsKey(1001))
         {
-            if (questData.CheckIfCompleteQuest_1001(ref npcStats.Hp))
-            {
-                QuestComplete(1001, ref npcStats.questCount);
-            }
         }
     }
 

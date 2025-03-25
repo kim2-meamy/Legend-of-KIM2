@@ -8,6 +8,7 @@ public class Talkable : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     private SphereCollider sphereCollider;
     public TextMeshProUGUI text;
+    private GameObject scriptObject;
     public bool isOpenScript = false;
     public bool canOpenScript = false;
 
@@ -22,6 +23,8 @@ public class Talkable : MonoBehaviour
         {
             sphereCollider = GetComponent<SphereCollider>();
         }
+        
+        scriptObject = GameObject.FindGameObjectWithTag("Script");
     }
 
     // Update is called once per frame
@@ -46,6 +49,12 @@ public class Talkable : MonoBehaviour
                     text.enabled = false;
                 }
             }
+        }
+
+        if (canOpenScript == false)
+        {
+            scriptObject.SetActive(false);
+            isOpenScript = false;
         }
     }
 }

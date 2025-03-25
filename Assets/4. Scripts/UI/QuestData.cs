@@ -5,16 +5,20 @@ using UnityEngine;
 public class QuestData : MonoBehaviour
 {
     public Dictionary<int, string> questDatas = new Dictionary<int, string>()
-        { {1001, "Hit npc until his HP becomes lower or equal than 50."} };
+    {
+        { 1001, "Take down the boss monster." }
+    };
+    
     public Dictionary<int, bool> CompletedQuestCheck = new Dictionary<int, bool>();
 
-    public bool CheckIfCompleteQuest_1001(ref int npcHp)
+    public Dictionary<int, string> questScripts = new Dictionary<int, string>()
     {
-        if (npcHp <= 50)
-        {
-            return true;
-        }
-        
-        return false;
+        { 1001, "Thank you for saving me. I saw the giant monster kidnapped someone.\n" +
+                "I guess that someone is who your looking for.\n" +
+                "Why don't you just go to deal with him?\n" }
+    };
+
+    public void CheckIfCompleteQuest_1001(ref int npcHp)
+    {
     }
 }

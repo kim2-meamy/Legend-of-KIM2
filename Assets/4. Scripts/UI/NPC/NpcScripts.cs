@@ -31,6 +31,7 @@ public class NpcScripts : MonoBehaviour
         
         talkState = GetComponent<Talkable>();
         scriptObject = GameObject.FindGameObjectWithTag("Script");
+        
         playerQuestList = GameObject.Find("PlayerQuestList").GetComponentInChildren<TextMeshProUGUI>();
         testText = scriptObject.GetComponentInChildren<TextMeshProUGUI>();
         status = GetComponent<NpcStats>();
@@ -38,7 +39,7 @@ public class NpcScripts : MonoBehaviour
         defaultScript = new DefaultScript();
         defaultScript.next = scriptObject.GetComponentsInChildren<Button>()[0];
         defaultScript.prev = scriptObject.GetComponentsInChildren<Button>()[1];
-        testText.text = status.defaultScriptContents;
+        testText.text = questManager.questData.questScripts[status.Id * 1000 + (status.questCount + 1)];
         testText.pageToDisplay = 1;
         defaultScript.next.onClick.AddListener(OnNextPage);
         defaultScript.prev.onClick.AddListener(OnPrevPage);
@@ -97,6 +98,8 @@ public class NpcScripts : MonoBehaviour
         questContent.SetActive(false);
         questManager.RegisterQuest(status.Id, ref status.questCount);
         playerQuestList.text += (questManager.questData.questDatas[status.Id * 1000 + status.questCount] + "\n" + "\n");
+        testText.text = status.defaultScriptContents;
+        testText.pageToDisplay = 1;
         Debug.Log($"Quest {status.Id * 1000 + status.questCount} registered!");
     }
 }

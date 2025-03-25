@@ -65,10 +65,12 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Hit me!
+  m_text: 'Accept
+
+'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 3368b84811defec47b3dfd5e543a99e8, type: 2}
-  m_sharedMaterial: {fileID: 5100707425202590084, guid: 3368b84811defec47b3dfd5e543a99e8, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: 53b32a273ff156943af5d14cff80b5fd, type: 2}
+  m_sharedMaterial: {fileID: -4117749518333849289, guid: 53b32a273ff156943af5d14cff80b5fd, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -99,7 +101,7 @@ MonoBehaviour:
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 7
-  m_HorizontalAlignment: 1
+  m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
   m_characterSpacing: 0
