@@ -6,7 +6,6 @@ public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Enter(T ai)
     {
-        Debug.Log("Enter Hit");
         ai.agent.isStopped = true;
         timer = 0f;
     }
@@ -19,6 +18,5 @@ public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
     public virtual void Exit(T ai)
     {
         ai.agent.isStopped = false;
-        Debug.Log("Exit Hit");
     }
 }

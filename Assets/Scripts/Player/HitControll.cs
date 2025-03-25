@@ -24,12 +24,16 @@ public class HitControll : MonoBehaviour
                 hitEnemy.TakeDamage(player.damage);
             }
         }
-        else if (other.CompareTag("Player") && enemy != null)
+        else if (other.CompareTag("Player") && (enemy != null || boss != null))
         {
+            Debug.Log("Player Hit");
             playerController hitPlayer = other.GetComponentInParent<playerController>();
             if (hitPlayer != null)
             {
-                hitPlayer.Hit(enemy.stats.damage);
+                if (enemy != null)
+                    hitPlayer.Hit(enemy.stats.damage);
+                else if (boss != null)
+                    hitPlayer.Hit(boss.stats.damage);
             }
         }
         else if (other.CompareTag("Boss") && player != null)

@@ -4,12 +4,14 @@ using UnityEngine;
 public class Boss : BaseAI<Boss>
 {
     public ParticleSystem armorBreakHit;
+    public Collider axeArea;
+    public Collider headButtArea;
 
     [HideInInspector]
     public BossStats stats;
 
-    private Collider axeArea;
-    //private Collider bodyArea;
+    //private Collider axeArea;
+    //private Collider headButtArea;
     private CharacterController controller;
     private float verticalVelocity = 0f;
     private float gravityMultiplier = 1f;
@@ -17,8 +19,8 @@ public class Boss : BaseAI<Boss>
     protected override void Awake()
     {
         base.Awake();
-        axeArea = GetComponentInChildren<BoxCollider>();
-        //bodyArea = GetComponentInChildren<CapsuleCollider>();
+        //axeArea = GetComponentInChildren<BoxCollider>();
+        //headButtArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         stats = GetStats<BossStats>();
     }
@@ -33,15 +35,6 @@ public class Boss : BaseAI<Boss>
     protected override IBaseAIState<Boss> GetInitialState()
     {
         return new BossIdleState();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Player.Damaged(stats.damage);
-            Debug.Log("Player Damaged");
-        }
     }
 
     void OnAnimatorMove()
@@ -71,9 +64,9 @@ public class Boss : BaseAI<Boss>
     private IEnumerator Attack2Coroutine()
     {
         yield return new WaitForSeconds(stats.Attack2hitboxAcitvaionTime);
-        //bodyArea.enabled = true;
+        headButtArea.enabled = true;
         yield return new WaitForSeconds(stats.Attack2hitboxDeactivationTime);
-        //bodyArea.enabled = false;
+        headButtArea.enabled = false;
     }
 
     private IEnumerator Attack3Coroutine()
@@ -109,7 +102,6 @@ public class Boss : BaseAI<Boss>
 
         if (stats.health <= 0)
         {
-            Debug.Log("Take Damage");
             ChangeState(new BossDieState());
             return;
         }

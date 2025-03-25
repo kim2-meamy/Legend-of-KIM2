@@ -147,11 +147,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 0}
   hitEffect: {fileID: 5018468401501700052}
+  dieEffect: {fileID: 4561831041337079662}
   animator: {fileID: 0}
   agent: {fileID: 0}
   playerAttackPattern: 0
   stat: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
-  dieEffect: {fileID: 4561831041337079662}
   skin: {fileID: 6840383427266463119}
   stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
 --- !u!1 &801980869931452737
@@ -186,7 +186,7 @@ Transform:
   - {fileID: 839912588257203118}
   - {fileID: 9067471919615604119}
   m_Father: {fileID: 5112135480473267314}
-  m_LocalEulerAnglesHint: {x: 85.45032, y: -0.00017559378, z: -0.00017514954}
+  m_LocalEulerAnglesHint: {x: 2.6145115, y: 0.0000014231746, z: -0.000014008173}
 --- !u!1 &1132800320642512148
 GameObject:
   m_ObjectHideFlags: 0
@@ -218,7 +218,7 @@ Transform:
   m_Children:
   - {fileID: 8986622935842777001}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 3.2882478, y: 0.0000016301899, z: 11.945448}
+  m_LocalEulerAnglesHint: {x: 3.329631, y: 0.008645194, z: 12.180717}
 --- !u!1 &4800624966035112810
 GameObject:
   m_ObjectHideFlags: 0
@@ -281,7 +281,7 @@ Transform:
   m_Children:
   - {fileID: 442364460182760895}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 3.7025368, y: 0.000025640044, z: -11.945452}
+  m_LocalEulerAnglesHint: {x: 3.7489355, y: -0.009655248, z: -12.1798}
 --- !u!1 &6557038941830394805
 GameObject:
   m_ObjectHideFlags: 0

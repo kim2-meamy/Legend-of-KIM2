@@ -7,7 +7,6 @@ public class DieState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Enter(T ai)
     {
-        Debug.Log("Enter Die");
         ai.agent.isStopped = true;
         ai.animator.SetTrigger("Die");
     }
@@ -19,6 +18,5 @@ public class DieState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Exit(T ai)
     {
-        Debug.Log("Exit Die");
     }
 }
