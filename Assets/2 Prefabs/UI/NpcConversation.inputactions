@@ -1,0 +1,34 @@
+{
+    "name": "NpcConversation",
+    "maps": [
+        {
+            "name": "Conversation",
+            "id": "580f56b2-3cfd-400c-a770-42349e8456da",
+            "actions": [
+                {
+                    "name": "Click",
+                    "type": "Button",
+                    "id": "19861c32-d6df-42ce-9641-7c5f3f8eecd2",
+                    "expectedControlType": "",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "f9dae7d2-06d4-4f66-93ab-eceee2378852",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Click",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}

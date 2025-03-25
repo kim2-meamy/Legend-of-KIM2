@@ -15,7 +15,7 @@ public class NpcScripts : MonoBehaviour
     private GameObject scriptObject;
     private TextMeshProUGUI playerQuestList;
     private Talkable talkState;
-    private InputAction moveAction;
+    public InputAction moveAction;
     private GameObject player;
     private TextMeshProUGUI testText;
     private GameObject questContent;
