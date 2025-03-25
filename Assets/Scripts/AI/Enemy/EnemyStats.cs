@@ -7,5 +7,4 @@ public class EnemyStats : BaseAIStats
     public float attackDelay = 5f;
     public float hitboxAcitvaionTime = 0.2f;
     public float hitboxDeactivationTime = 1f;
-    public float hitRecoveryTime = 2f;
 }

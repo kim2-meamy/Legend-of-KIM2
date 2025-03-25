@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class EnemyIdleState : IdleState<Enemy>
 {
-
     public override void Update(Enemy enemy)
     {
         if (enemy.target != null &&

@@ -55,7 +55,7 @@ public class BossAttackState : AttackState<Boss>
         float distance = Vector3.Distance(boss.transform.position, boss.target.position);
 
         if (distance <= boss.stats.meleeAttackRange)
-            return Random.Range(1, 3);
+            return Random.Range(1, 3);//
         else
             return Random.Range(2, 4);
     }

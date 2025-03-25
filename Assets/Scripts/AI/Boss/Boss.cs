@@ -3,11 +3,15 @@ using UnityEngine;
 
 public class Boss : BaseAI<Boss>
 {
+    public ParticleSystem armorBreakHit;
+    public Collider axeArea;
+    public Collider headButtArea;
+
     [HideInInspector]
     public BossStats stats;
 
-    private Collider axeArea;
-    //private Collider bodyArea;
+    //private Collider axeArea;
+    //private Collider headButtArea;
     private CharacterController controller;
     private float verticalVelocity = 0f;
     private float gravityMultiplier = 1f;
@@ -15,9 +19,8 @@ public class Boss : BaseAI<Boss>
     protected override void Awake()
     {
         base.Awake();
-        axeArea = GetComponentInChildren<BoxCollider>();
-        Debug.Log(axeArea.gameObject.name);
-        //bodyArea = GetComponentInChildren<CapsuleCollider>();
+        //axeArea = GetComponentInChildren<BoxCollider>();
+        //headButtArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
         stats = GetStats<BossStats>();
     }
@@ -32,15 +35,6 @@ public class Boss : BaseAI<Boss>
     protected override IBaseAIState<Boss> GetInitialState()
     {
         return new BossIdleState();
-    }
-
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.CompareTag("Player"))
-        {
-            // Player.Damaged(stats.damage);
-            Debug.Log("Player Damaged");
-        }
     }
 
     void OnAnimatorMove()
@@ -70,9 +64,9 @@ public class Boss : BaseAI<Boss>
     private IEnumerator Attack2Coroutine()
     {
         yield return new WaitForSeconds(stats.Attack2hitboxAcitvaionTime);
-        //bodyArea.enabled = true;
+        headButtArea.enabled = true;
         yield return new WaitForSeconds(stats.Attack2hitboxDeactivationTime);
-        //bodyArea.enabled = false;
+        headButtArea.enabled = false;
     }
 
     private IEnumerator Attack3Coroutine()
@@ -101,20 +95,41 @@ public class Boss : BaseAI<Boss>
         }
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        stats.health -= damage;
+        base.TakeDamage(damage);
         stats.armor -= damage * 2;
 
-        if (stats.armor <= 0)
+        if (stats.health <= 0)
         {
-            OnStun();
+            ChangeState(new BossDieState());
+            return;
+        }
+        
+        if (stats.armor <= 0 && !(currentState is BossHitState))
+        {
+            if (!(currentState is BossHitState))
+                OnStun();
+        }
+        else if (currentState is BossHitState)
+        {
+            armorBreakHit.Play();
+        }
+        else
+        {
+            hitEffect.Play();
         }
     }
 
     public void OnStun()
     {
         ChangeState(new BossHitState());
-        stats.armor = 100;
+    }
+
+    public override void Die()
+    {
+        //skin.SetActive(false);
+        dieEffect.Play();
+        //Destroy(gameObject, 1f);
     }
 }

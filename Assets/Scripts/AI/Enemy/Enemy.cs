@@ -3,6 +3,8 @@ using UnityEngine;
 
 public class Enemy : BaseAI<Enemy>
 {
+    public GameObject skin;
+
     [HideInInspector]
     protected Collider meleeArea;
     [HideInInspector]
@@ -14,7 +16,6 @@ public class Enemy : BaseAI<Enemy>
         meleeArea = GetComponentsInChildren<SphereCollider>()[1];
         stats = GetStats<EnemyStats>();
     }
-
 
     protected override IBaseAIState<Enemy> GetInitialState()
     {
@@ -43,9 +44,23 @@ public class Enemy : BaseAI<Enemy>
         StartCoroutine(AttackCoroutine());
     }
 
-    public void TakeDamage(int damage)
+    public override void TakeDamage(int damage)
     {
-        stats.health -= damage;
-        ChangeState(new EnemyHitState());
+        base.TakeDamage(damage);
+        if (stats.health <= 0)
+        {
+            ChangeState(new EnemyDieState());
+        }
+        else
+        {
+            ChangeState(new EnemyHitState());
+        }
+    }
+
+    public override void Die()
+    {
+        skin.SetActive(false);
+        dieEffect.Play();
+        Destroy(gameObject, 1f);
     }
 }

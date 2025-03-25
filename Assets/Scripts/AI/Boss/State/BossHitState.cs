@@ -11,16 +11,14 @@ public class BossHitState : HitState<Boss>
         base.Update(boss);
         if (timer >= boss.stats.hitRecoveryTime)
         {
-            boss.ChangeState(new BossIdleState());
-        }
-        else if (timer >= boss.stats.hitTime)
-        {
             boss.animator.SetTrigger("StunEnd");
+            boss.ChangeState(new BossIdleState());
         }
     }
 
     public override void Exit(Boss boss)
     {
         base.Exit(boss);
+        boss.stats.armor = 100;
     }
 }

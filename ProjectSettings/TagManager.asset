@@ -5,6 +5,9 @@ TagManager:
   serializedVersion: 3
   tags:
   - Script
+  - Folder
+  - Enemy
+  - Boss
   layers:
   - Default
   - TransparentFX
@@ -14,7 +17,7 @@ TagManager:
   - UI
   - Enemy
   - Plane
-  - 
+  - Player
   - 
   - 
   - 

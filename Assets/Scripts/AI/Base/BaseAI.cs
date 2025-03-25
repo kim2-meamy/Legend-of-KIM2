@@ -1,9 +1,12 @@
+using System.IO;
 using UnityEngine;
 using UnityEngine.AI;
 
 public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 {
     public Transform target;
+    public ParticleSystem hitEffect;
+    public ParticleSystem dieEffect;
 
     [HideInInspector]
     public Animator animator;
@@ -14,13 +17,16 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     [HideInInspector]
     public IBaseAIState<T> currentState;
 
+    [SerializeField]
+    private BaseAIStats stat;
+
+    private float lastHittedTime = float.MinValue;
+
     public U GetStats<U>() where U : BaseAIStats
     {
         return stat as U;
     }
 
-    [SerializeField]
-    private BaseAIStats stat;
 
     protected virtual void Awake()
     {
@@ -35,6 +41,9 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 
     protected virtual void Update()
     {
+        if (currentState == null)
+                return;
+
         currentState?.Update((T)this);
     }
 
@@ -42,7 +51,11 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     {
         currentState?.Exit((T)this);
         currentState = newState;
-        currentState?.Enter((T)this);
+        
+        if (currentState != null)
+        {
+            currentState?.Enter((T)this);
+        }
     }
 
     protected abstract IBaseAIState<T> GetInitialState();
@@ -52,5 +65,21 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public virtual void Attack(int attackPattern)
     {
         Attack();
+    }
+
+    public virtual void TakeDamage(int damage)
+    {
+        if (Time.time < lastHittedTime + 0.533f)
+            return;
+
+        lastHittedTime = Time.time;
+
+        stat.health -= damage;
+    }
+
+    public virtual void Die()
+    {
+        currentState = null;
+        //Destroy(gameObject);
     }
 }
