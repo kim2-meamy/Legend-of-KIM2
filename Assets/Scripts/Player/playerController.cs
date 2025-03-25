@@ -14,10 +14,7 @@ public class playerController : MonoBehaviour
     private CharacterController controller; // 캐릭터 컨트롤러에 대한 개인 변수를 정의 // 후에 캐릭터 컨트롤러 메서드 호출 가능
     [SerializeField] private Transform camera; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
     [SerializeField] private Animator animator;
-    //private Rigidbody rg; // 선언
-  
     
-
     [Header("Movement Settings")] 
     [SerializeField] private float walkSpeed = 5f; // 캐릭터의 이동 속도를 제어
     [SerializeField] private float sprintspeed = 10f;//캐릭터가 스프린트 하는 속도 
@@ -30,7 +27,7 @@ public class playerController : MonoBehaviour
     private float verticalVelocity; // 수직 속도 변수 -> 캐릭터의 수직 이동 속도 추적 ( 중력에 필요 )
     private float speed; //이동 함수에서 현재 속도 값을 저장하기 위한 speed 변수 만듬
     
-    [Header("Animation")]  //
+    [Header("Animation")]  
     private int animMoveSpeed; 
     private int animJump;
     private int animGrounded;
@@ -49,14 +46,15 @@ public class playerController : MonoBehaviour
     private float turnInput; // 플레이어 회전값
     
     [Header("Health")]
-    private int hp =100;
+    private int hp = 100;
     //나중에 값을 받아오면 hp=0이 되면 animDie실행되게 만들기
     
     
     
     private void Start()
     {
-        controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
+        // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
+        controller = GetComponent<CharacterController>(); 
         SetupAnimator();
         
         //마우스
@@ -92,15 +90,10 @@ public class playerController : MonoBehaviour
     }
     private void Die()
     {
-        // if(hp==0)
-        // {
-        //     animator.SetInteger(animDie, Input.GetKeyDown(KeyCode.R));
-        // }
         if(Input.GetKeyDown(KeyCode.R))
         {
             animator.SetTrigger(animDie);
         }
-        
         
     }
 
@@ -195,27 +188,27 @@ public class playerController : MonoBehaviour
         move.y = VerticalForceCalculation(); // 이동을 수직 속도로 설정  //(처음에는 0으로 설정. 캐릭터가 위아래로 이동하지 않아야 하기 때문에)
         
         controller.Move(move * Time.deltaTime); // 백터에 보행 속도를 곱한 후 캐릭터를 움직이기 위한 컨트롤러 사용 * 이동 벡터를 시간에 곱함 // 델타 시간을 사용해 움직임이 부드럽고 프레임 속도에 독립적이도록 함
-        
         //Animations
         //speed 변수를 사용하여 캐릭터가 달리고 있는지 걷는지 확인 -> 이 속도를 moveinput or turninput의 최대값에 곱함
         animator.SetFloat(animMoveSpeed, speed * Mathf.Max(Mathf.Abs(moveInput), Mathf.Abs(turnInput)));
     }
+    
 
     private void Turn()
     {
         // 플레이어가 움직이는지 확인하는 if문으로 래핑 -> 정지해 있을 때 캐릭터의 회전을 방지
         if(Mathf.Abs(turnInput) > 0 || Mathf.Abs(moveInput) > 0) // 움직임이 있을 때만 실행하도록 
         {
-        Vector3 currentLookDirection = controller.velocity.normalized;
-        //2)캐릭터의 시선 방향을 플레이어가 실제로 향하고 있는 위치로 다시 정의
-        // 1)회전 함수의 현재 시선 방향을 camera.forward;에서 캐릭터의 정규화된 속도로 바꾸기 ->캐릭터가 현재 이동하고 있는 방향을 나타냄
-        
-        currentLookDirection.y = 0; // y값을 0으로 맞춰서 수평을 이루도록 함 
+            Vector3 currentLookDirection = controller.velocity.normalized;
+            //2)캐릭터의 시선 방향을 플레이어가 실제로 향하고 있는 위치로 다시 정의
+            // 1)회전 함수의 현재 시선 방향을 camera.forward;에서 캐릭터의 정규화된 속도로 바꾸기 ->캐릭터가 현재 이동하고 있는 방향을 나타냄
+            
+            currentLookDirection.y = 0; // y값을 0으로 맞춰서 수평을 이루도록 함 
 
-        currentLookDirection.Normalize(); //3) 캐릭터의 정규화된 속도로 표현 charator's normalized velocity
+            currentLookDirection.Normalize(); //3) 캐릭터의 정규화된 속도로 표현 charator's normalized velocity
 
-        Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection); // 카메라의 현재 look방향과 일치하는 새로운 회전 생성 -> 플레이어가 이 새로운 방향을 향하도록 부드럽게 회전
-        transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed); // 부드러운 전환을 위해 회전 속도 적용
+            Quaternion targetRotation = Quaternion.LookRotation(currentLookDirection); // 카메라의 현재 look방향과 일치하는 새로운 회전 생성 -> 플레이어가 이 새로운 방향을 향하도록 부드럽게 회전
+            transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, Time.deltaTime * turningSpeed); // 부드러운 전환을 위해 회전 속도 적용
         }
     }
 
@@ -280,6 +273,7 @@ public class playerController : MonoBehaviour
         moveInput = Input.GetAxis("Vertical"); // w 및 s키의 수직 입력을 추적
         turnInput = Input.GetAxis("Horizontal"); // a 및 d 키의 수평 입력을 캡처
     }
+        float moveInput1 = Input.GetAxisRaw("Vertical"); // w 및 s키의 수직 입력을 추적
 
     private void OnTriggerEnter(Collider other)
     {
