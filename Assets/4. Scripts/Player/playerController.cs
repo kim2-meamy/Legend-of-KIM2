@@ -1,11 +1,5 @@
-using CartoonFX;
-using System;
 using System.Collections;
-using System.Runtime.CompilerServices;
-using Unity.VisualScripting;
-using UnityEditor.Rendering.Universal;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class playerController : MonoBehaviour
 {
@@ -63,7 +57,6 @@ public class playerController : MonoBehaviour
     {
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
         SetupAnimator();
-
         // //마우스
         //Cursor.visible = false; // 마우스 커서를 숨김
         //Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
@@ -227,27 +220,6 @@ public class playerController : MonoBehaviour
         }
 
         return verticalVelocity; // 수직 속도에 대한 델타 시간을 사용해 낙하를 시뮬레이션한 다음 수직속도를 반환하고 
-    }
-
-    private bool GroundCheck()
-    {
-        if (Physics.Raycast(
-                new Vector3(controller.center.x, controller.center.y - controller.height, controller.center.z),
-                -controller.transform.up, out RaycastHit hit, 2f))
-        {
-            return true;
-        }
-        else
-        {
-            return false;
-        }
-    }
- 
-    private IEnumerator StartJump()
-    {
-        yield return new WaitForSeconds(0.5f);
-
-        verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2);
     }
 
     private void SetupAnimator()

@@ -9062,6 +9062,10 @@ PrefabInstance:
       propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3826133522593009827, guid: 2be1922b852fab54c88c132bea5d3876, type: 3}
+      propertyPath: endUI
+      value: 
+      objectReference: {fileID: 368125962}
     - target: {fileID: 4567176796617919779, guid: 2be1922b852fab54c88c132bea5d3876, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -9231,6 +9235,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2be1922b852fab54c88c132bea5d3876, type: 3}
+--- !u!1 &368125962 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4567176796617919779, guid: 2be1922b852fab54c88c132bea5d3876, type: 3}
+  m_PrefabInstance: {fileID: 368125961}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &368284705
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -19159,10 +19168,6 @@ PrefabInstance:
       propertyPath: camera
       value: 
       objectReference: {fileID: 330585546}
-    - target: {fileID: 3854270100232118087, guid: 4de893ffe81d7fe4dac13157bd6bcb94, type: 3}
-      propertyPath: turningSpeed
-      value: 8
-      objectReference: {fileID: 0}
     - target: {fileID: 7213136569255952937, guid: 4de893ffe81d7fe4dac13157bd6bcb94, type: 3}
       propertyPath: m_Name
       value: PlayerDemo

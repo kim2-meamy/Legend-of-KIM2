@@ -1,11 +1,7 @@
-using System;
 using TMPro;
-using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.InputSystem;
 using UnityEngine.UI;
-using System.Collections.Generic;
-using UnityEditor.Rendering;
 
 public class NpcScripts : MonoBehaviour
 {

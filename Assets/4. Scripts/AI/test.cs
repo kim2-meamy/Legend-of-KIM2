@@ -2,13 +2,13 @@ using UnityEngine;
 
 public class test : MonoBehaviour
 {
-    public Enemy enemy;
+    public Boss boss;
 
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.Q))
         {
-            enemy.TakeDamage(10);
+            boss.TakeDamage(10);
         }
 
     }

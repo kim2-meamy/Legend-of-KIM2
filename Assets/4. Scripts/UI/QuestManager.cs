@@ -1,10 +1,6 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
-using UnityEditor.Build.Player;
 using UnityEngine;
-using UnityEngine.InputSystem.LowLevel;
-using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
