@@ -5,8 +5,21 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Player/AnimationEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Player/AnimationEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR.WelcomeScreen.asmdef" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR.WelcomeScreen.asmdef.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uss" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uss.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen_Background.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen_Background.png.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -145,6 +158,7 @@
       <workItem from="1742903270434" duration="613000" />
       <workItem from="1743058127088" duration="287000" />
       <workItem from="1743058535996" duration="3000" />
+      <workItem from="1743058626166" duration="1998000" />
     </task>
     <servers />
   </component>

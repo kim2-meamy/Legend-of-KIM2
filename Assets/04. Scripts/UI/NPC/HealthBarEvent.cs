@@ -8,7 +8,7 @@ public class HealthBarEvent : MonoBehaviour
     private int hp;
     private Image healthBar;
     private TextMeshProUGUI healthText;
-    private TextMeshProUGUI name;
+    private TextMeshProUGUI nameText;
     private Enemy enemy;
     private Boss boss;
 
@@ -23,8 +23,8 @@ public class HealthBarEvent : MonoBehaviour
         healthBar = GetComponent<Image>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();
         
-        name = GetComponentInParent<TextMeshProUGUI>();
-        name.text = obj.name;
+        nameText = GetComponentInParent<TextMeshProUGUI>();
+        nameText.text = obj.name;
     }
     
     void Update()

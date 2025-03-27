@@ -3,16 +3,13 @@ using UnityEngine;
 
 public class PlayerController : MonoBehaviour
 {
-    public GameObject damageEffect;
-    public Collider collider;
+    public Collider meleeArea;
 
     [Header("References")] 
     private CharacterController controller; // 캐릭터 컨트롤러에 대한 개인 변수를 정의 // 후에 캐릭터 컨트롤러 메서드 호출 가능
-    [SerializeField] private Transform camera; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
+    [SerializeField] private Transform cameraDirection; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
     [SerializeField] private Animator animator;
     //private Rigidbody rg; // 선언
-  
-    
 
     [Header("Movement Settings")] 
     [SerializeField] private float walkSpeed = 1f; // 캐릭터의 이동 속도를 제어
@@ -21,7 +18,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float turningSpeed = 2f; // 카메라와 일치하도록 플레이어가 회전하는 속도 제어
     [SerializeField] private float gravity = 9.81f; // 중력이라는 새 float변수를 추가하여 사용자 지정 중력 구현 // 지구의 중력을 모방
     [SerializeField] private float jumpHeight = 2f; // 캐릭터가 얼마나 높이 점프할 지 결정
-    [SerializeField] private float delay = 0.5f;
 
     private float verticalVelocity; // 수직 속도 변수 -> 캐릭터의 수직 이동 속도 추적 ( 중력에 필요 )
     private float speed; //이동 함수에서 현재 속도 값을 저장하기 위한 speed 변수 만듬
@@ -94,20 +90,20 @@ public class PlayerController : MonoBehaviour
 
         //if (Input.GetMouseButtonDown(0))
         //{
-        //    // collider.enabled = false;
+        //    // meleeArea.enabled = false;
         //    StartCoroutine((AttackCoroutine()));
         //}
     }
 
     public void AttackStart()
     {
-        collider.enabled = true;
+        meleeArea.enabled = true;
         alreadyAttack = true;
     }
 
     public void AttackEnd()
     {
-        collider.enabled = false;
+        meleeArea.enabled = false;
         alreadyAttack = false;
     }
 
@@ -149,7 +145,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(turnInput, 0, moveInput);//옆으로 이동 turn 앞뒤로 이동은 moveInput
         
-        move = camera.transform.TransformDirection(move);// 카메라의 로컬 축과 일치하도록 변경 
+        move = cameraDirection.transform.TransformDirection(move);// 카메라의 로컬 축과 일치하도록 변경 
         
         //transform을 사용해서 move 벡터3를 플레이어의 로컬 축으로 변환 
         // 카메라 방향이 글로벌 방향 + 플레이어가 현재 바라보는 위치에 올바르게 정렬되도록 보장 //=> 이 후 turn();을 Movemnet();안에 추가

@@ -19175,9 +19175,9 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 330585546}
     - target: {fileID: 3854270100232118087, guid: 4de893ffe81d7fe4dac13157bd6bcb94, type: 3}
-      propertyPath: turningSpeed
-      value: 8
-      objectReference: {fileID: 0}
+      propertyPath: cameraDirection
+      value: 
+      objectReference: {fileID: 330585546}
     - target: {fileID: 7213136569255952937, guid: 4de893ffe81d7fe4dac13157bd6bcb94, type: 3}
       propertyPath: m_Name
       value: PlayerDemo
