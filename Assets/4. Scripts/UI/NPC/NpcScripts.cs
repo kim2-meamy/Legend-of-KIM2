@@ -5,17 +5,20 @@ using UnityEngine.UI;
 
 public class NpcScripts : MonoBehaviour
 {
+    public InputAction moveAction;
+
     private NpcStats status;
     private DefaultScript defaultScript;
     private QuestManager questManager;
-    private GameObject scriptObject;
-    private TextMeshProUGUI playerQuestList;
     private Talkable talkState;
-    public InputAction moveAction;
+    
+    private GameObject scriptObject;
     private GameObject player;
-    private TextMeshProUGUI testText;
     private GameObject questContent;
+    
     private Button questButton;
+    private TextMeshProUGUI playerQuestList;
+    private TextMeshProUGUI testText;
     
     private void Start()
     {
@@ -52,21 +55,21 @@ public class NpcScripts : MonoBehaviour
      
     private void OnOpen(InputAction.CallbackContext context)
     {
-        if (talkState.canOpenScript == true)
+        if (!talkState.canOpenScript)
+            return;
+        
+        if (talkState.isOpenScript == false)
         {
-            if (talkState.isOpenScript == false)
-            {
-                talkState.isOpenScript = true;
-                scriptObject.SetActive(true);
-                defaultScript.prev.enabled = false;
-                transform.forward = (player.transform.position - transform.position).normalized;
-                transform.forward = new Vector3(transform.forward.x, 0, transform.forward.z);
-            }
-            else
-            {
-                talkState.isOpenScript = false;
-                scriptObject.SetActive(false);
-            }   
+            talkState.isOpenScript = true;
+            scriptObject.SetActive(true);
+            defaultScript.prev.enabled = false;
+            transform.forward = (player.transform.position - transform.position).normalized;
+            transform.forward = new Vector3(transform.forward.x, 0, transform.forward.z);
+        }
+        else
+        {
+            talkState.isOpenScript = false;
+            scriptObject.SetActive(false);
         }
     }
 

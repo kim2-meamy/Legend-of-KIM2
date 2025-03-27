@@ -1,11 +1,16 @@
+using System;
 using System.Collections.Generic;
 using TMPro;
+using UnityEditor.Build.Player;
 using UnityEngine;
+using UnityEngine.InputSystem.LowLevel;
+using UnityEngine.SceneManagement;
 
 public class QuestManager : MonoBehaviour
 {
     public Dictionary<int, string> questContents;
     public QuestData questData;
+    
     private TextMeshProUGUI playerQuestList;
     private Boss boss;
     private NpcStats npcStats;
@@ -36,7 +41,11 @@ public class QuestManager : MonoBehaviour
 
     public void RegisterQuest(int npcID, ref int questCount)
     {
-        questContents.Add((npcID * 1000) + (++questCount), questData.questDatas[(npcID * 1000) + (questCount)]);
+        ++questCount;
+
+        var key = npcID * 1000 + questCount;
+        var value = questData.questDatas[(npcID * 1000) + questCount];
+        questContents.Add(key, value);
     }
 
     public void QuestComplete(int questID, ref int questCount)

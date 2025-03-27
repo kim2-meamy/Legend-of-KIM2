@@ -1,6 +1,7 @@
 using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
+
 public class playerHealthBarEvent : MonoBehaviour
 {
     public GameObject obj;
@@ -8,11 +9,11 @@ public class playerHealthBarEvent : MonoBehaviour
     private int hp;
     private Image healthBar;
     private TextMeshProUGUI healthText;
-    private playerController player;
+    private PlayerController player;
 
     void Awake()
     {
-        player = GameObject.FindGameObjectWithTag("Player").GetComponent<playerController>();
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         healthBar = GetComponent<Image>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();
     }

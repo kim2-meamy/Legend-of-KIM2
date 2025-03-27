@@ -4,11 +4,12 @@ using UnityEngine.UI;
 
 public class EndUI : MonoBehaviour
 {
-    public GameObject endUI;
+    private GameObject endUI;
     private Button returnButton;
-
+    
     void Awake()
     {
+        endUI = GameObject.FindGameObjectWithTag("End");
         returnButton = endUI.GetComponentInChildren<Button>();
         returnButton.onClick.AddListener(OnReturn);
     }

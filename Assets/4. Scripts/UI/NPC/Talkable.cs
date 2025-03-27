@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Talkable : MonoBehaviour
 {
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     private SphereCollider sphereCollider;
     public TextMeshProUGUI text;
     private GameObject scriptObject;

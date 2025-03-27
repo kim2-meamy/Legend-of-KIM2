@@ -17,7 +17,7 @@ public class EnemyHitState : HitState<Enemy>
         //}
     }
 
-public override void Update(Enemy Enemy)
+    public override void Update(Enemy Enemy)
     {
         base.Update(Enemy);
         

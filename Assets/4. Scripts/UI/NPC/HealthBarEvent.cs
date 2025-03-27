@@ -19,8 +19,10 @@ public class HealthBarEvent : MonoBehaviour
         {
             boss = GameObject.Find("Boss").GetComponent<Boss>();
         }
+        
         healthBar = GetComponent<Image>();
         healthText = GetComponentInChildren<TextMeshProUGUI>();
+        
         name = GetComponentInParent<TextMeshProUGUI>();
         name.text = obj.name;
     }
@@ -35,6 +37,7 @@ public class HealthBarEvent : MonoBehaviour
         {
             hp = boss.stats.health;
         }
+        
         healthBar.fillAmount = hp * 0.03333f;
         healthText.text = hp.ToString();
     }

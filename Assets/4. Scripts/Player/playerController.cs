@@ -1,7 +1,7 @@
 using System.Collections;
 using UnityEngine;
 
-public class playerController : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     public GameObject damageEffect;
     public Collider collider;

@@ -1,23 +1,23 @@
+using System;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class StartMenuScript : MonoBehaviour
 {
-    private Button startButton, quitButton;
-    void Start()
+    [SerializeField] private Button startButton, quitButton;
+    
+    private const string SceneName = "Medieval Cute Built In";
+
+    private void Start()
     {
-        Button[] buttons = gameObject.GetComponentsInChildren<Button>();
-        startButton = buttons[0];
-        quitButton = buttons[1];
-        
         startButton.onClick.AddListener(OnStart);
         quitButton.onClick.AddListener(OnQuit);
     }
 
     void OnStart()
     {
-        SceneManager.LoadScene("Medieval Cute Built In");
+        SceneManager.LoadScene(SceneName);
     }
 
     void OnQuit()
