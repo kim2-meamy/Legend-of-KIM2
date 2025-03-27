@@ -2,15 +2,15 @@ using UnityEngine;
 
 public class AnimationEvent : MonoBehaviour
 {
-    // ºÎ¸ð ¿ÀºêÁ§Æ®¿¡ ÀÖ´Â playerController¸¦ Ä³½ÃÇÕ´Ï´Ù.
-    private playerController parentController;
+    // ï¿½Î¸ï¿½ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Æ®ï¿½ï¿½ ï¿½Ö´ï¿½ PlayerControllerï¿½ï¿½ Ä³ï¿½ï¿½ï¿½Õ´Ï´ï¿½.
+    private PlayerController parentController;
 
     private void Awake()
     {
-        parentController = GetComponentInParent<playerController>();
+        parentController = GetComponentInParent<PlayerController>();
     }
 
-    // ¾Ö´Ï¸ÞÀÌ¼Ç ÀÌº¥Æ®·Î È£ÃâµÇ´Â ÇÔ¼ö
+    // ï¿½Ö´Ï¸ï¿½ï¿½Ì¼ï¿½ ï¿½Ìºï¿½Æ®ï¿½ï¿½ È£ï¿½ï¿½Ç´ï¿½ ï¿½Ô¼ï¿½
     public void AttackStart()
     {
         if (parentController != null)

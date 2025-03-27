@@ -5,9 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/3. Scenes/Medieval Cute Built In.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/3. Scenes/Medieval Cute Built In.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/UI/QuestData.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/UI/QuestData.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/4. Scripts/Player/AnimationEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/4. Scripts/Player/AnimationEvent.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,6 +30,7 @@
 }</component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Event/SlimeQuest.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/IsAttacked.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -143,6 +143,8 @@
       <workItem from="1742889913204" duration="48000" />
       <workItem from="1742890010075" duration="2516000" />
       <workItem from="1742903270434" duration="613000" />
+      <workItem from="1743058127088" duration="287000" />
+      <workItem from="1743058535996" duration="3000" />
     </task>
     <servers />
   </component>
