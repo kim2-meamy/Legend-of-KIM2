@@ -6,6 +6,15 @@
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/AnimationEvent.cs" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/AnimationEvent.cs.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Player/Dodging.fbx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Player/Dodging.fbx.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Player/PlayerAnimation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animations/Player/PlayerAnimation.controller" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/08. Package/RPG Tiny Hero Duo/Animation/SwordAndShield/Attack02_SwordAndShiled.anim" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/08. Package/RPG Tiny Hero Duo/Animation/SwordAndShield/Attack02_SwordAndShiled.anim" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -152,7 +161,7 @@
       <workItem from="1743058127088" duration="287000" />
       <workItem from="1743058535996" duration="3000" />
       <workItem from="1743058626166" duration="22879000" />
-      <workItem from="1743141243516" duration="1548000" />
+      <workItem from="1743141243516" duration="18622000" />
     </task>
     <servers />
   </component>
