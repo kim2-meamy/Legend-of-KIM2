@@ -31,7 +31,7 @@ public class QuestManager : MonoBehaviour
     {
         if (questContents.ContainsKey(1001))
         {
-            if (questData.CheckIfCompleteQuest_1001(ref boss.stats.health))
+            if (questData.CheckIfCompleteQuest_1001(ref boss.bossData.health))
             {
                 QuestComplete(1001, ref npcStats.questCount);
                 endUI.SetActive(true);

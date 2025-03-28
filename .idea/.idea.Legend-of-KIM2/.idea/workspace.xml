@@ -6,20 +6,34 @@
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAI.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAIStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAIStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/Boss.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStateUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStateUtils.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossDieState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossHitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/ClassDiagram1.cd" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/ClassDiagram1.cd.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/Enemy.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/EnemyStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/EnemyStats.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyAttackState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyChaseState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyDieState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyHitState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyIdleState.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/HitControll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Player/HitControll.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR.WelcomeScreen.asmdef" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR.WelcomeScreen.asmdef.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uss.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen.uxml.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen_Background.png" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/08. Package/JMO Assets/Welcome Screen/CFXR_WelcomeScreen_Background.png.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestManager.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestManager.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/BossStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06. ScriptableObjects/BossStats.asset" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime2.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime2.asset.meta" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime3.asset" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime3.asset.meta" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -54,20 +68,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;editor.preferences.completion&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "main",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.keymap",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
@@ -158,7 +172,7 @@
       <workItem from="1742903270434" duration="613000" />
       <workItem from="1743058127088" duration="287000" />
       <workItem from="1743058535996" duration="3000" />
-      <workItem from="1743058626166" duration="1998000" />
+      <workItem from="1743058626166" duration="20259000" />
     </task>
     <servers />
   </component>
@@ -173,7 +187,22 @@
     <option name="unityProjectFolder" value="true" />
   </component>
   <component name="UnityUnitTestConfiguration" currentTestLauncher="Both" />
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
   <component name="VcsManagerConfiguration">
     <option name="CLEAR_INITIAL_COMMIT_MESSAGE" value="true" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

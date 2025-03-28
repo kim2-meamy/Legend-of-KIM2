@@ -31,11 +31,11 @@ public class HealthBarEvent : MonoBehaviour
     {
         if (enemy != null)
         {
-            hp = enemy.stats.health;
+            hp = enemy.enemyData.health;
         }
         else
         {
-            hp = boss.stats.health;
+            hp = boss.bossData.health;
         }
         
         healthBar.fillAmount = hp * 0.03333f;

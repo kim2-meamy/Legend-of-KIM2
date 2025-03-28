@@ -1,4 +1,5 @@
 using System.Collections;
+using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
 
 public class Enemy : BaseAI<Enemy>
@@ -8,13 +9,15 @@ public class Enemy : BaseAI<Enemy>
     [HideInInspector]
     protected Collider meleeArea;
     [HideInInspector]
-    public EnemyStats stats;
+    public EnemyData enemyData;
 
     protected override void Awake()
     {
         base.Awake();
         meleeArea = GetComponentsInChildren<SphereCollider>()[1];
-        stats = GetStats<EnemyStats>();
+        var stats = GetStats<EnemyStats>();
+        enemyData = new EnemyData(stats);
+        data = enemyData;
     }
 
     protected override IBaseAIState<Enemy> GetInitialState()
@@ -22,20 +25,11 @@ public class Enemy : BaseAI<Enemy>
         return new EnemyIdleState();
     }
 
-    // protected virtual void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         // Player.Damaged(stats.damage);
-    //         Debug.Log("Player Damaged");
-    //     }
-    // }
-
     private IEnumerator AttackCoroutine()
     {
-        yield return new WaitForSeconds(stats.hitboxAcitvaionTime);
+        yield return new WaitForSeconds(enemyData.hitboxAcitvaionTime);
         meleeArea.enabled = true;
-        yield return new WaitForSeconds(stats.hitboxDeactivationTime);
+        yield return new WaitForSeconds(enemyData.hitboxDeactivationTime);
         meleeArea.enabled = false;
     }
 
@@ -47,7 +41,8 @@ public class Enemy : BaseAI<Enemy>
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        if (stats.health <= 0)
+        Debug.Log(enemyData.health);
+        if (enemyData.health <= 0)
         {
             ChangeState(new EnemyDieState());
         }

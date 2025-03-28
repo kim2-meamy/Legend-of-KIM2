@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 public class HitControll : MonoBehaviour
@@ -37,7 +38,6 @@ public class HitControll : MonoBehaviour
             {
                 return;
             }
-            
             var hitPlayer = other.GetComponentInParent<PlayerController>();
             if (hitPlayer == null)
             {
@@ -45,9 +45,9 @@ public class HitControll : MonoBehaviour
             }
 
             if (enemy != null)
-                hitPlayer.Hit(enemy.stats.damage);
+                hitPlayer.Hit(enemy.enemyData.damage);
             else if (boss != null)
-                hitPlayer.Hit(boss.stats.damage);
+                hitPlayer.Hit(boss.bossData.damage);
             return;
         }
         

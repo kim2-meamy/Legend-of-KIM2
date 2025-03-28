@@ -9,7 +9,7 @@ public class EnemyDieState : DieState<Enemy>
     public override void Update(Enemy enemy)
     {
         base.Update(enemy);
-        if (timer >= enemy.stats.deathTime)
+        if (timer >= enemy.enemyData.deathTime)
         {
             enemy.ChangeState(null);
         }

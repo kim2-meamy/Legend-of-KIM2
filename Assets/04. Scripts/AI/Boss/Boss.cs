@@ -1,29 +1,28 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Boss : BaseAI<Boss>
 {
     public ParticleSystem armorBreakHit;
     public Collider axeArea;
     public Collider headButtArea;
-
+    
     [HideInInspector]
-    public BossStats stats;
+    public BossData bossData;
 
-    //private Collider axeArea;
-    //private Collider headButtArea;
     private CharacterController controller;
-    private float verticalVelocity = 0f;
-    private float gravityMultiplier = 1f;
-    private float lastHittedTime = float.MinValue;
+    private float verticalVelocity;
+    private readonly float gravityMultiplier = 1f;
+    private float lastHitTime = float.MinValue;
 
     protected override void Awake()
     {
         base.Awake();
-        //axeArea = GetComponentInChildren<BoxCollider>();
-        //headButtArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
-        stats = GetStats<BossStats>();
+        var stats = GetStats<BossStats>();
+        bossData = new BossData(stats);
+        data = bossData;
     }
 
     protected override void Start()
@@ -56,25 +55,25 @@ public class Boss : BaseAI<Boss>
 
     private IEnumerator Attack1Coroutine()
     {
-        yield return new WaitForSeconds(stats.Attack1hitboxAcitvaionTime);
+        yield return new WaitForSeconds(bossData.attack1HitboxAcitvaionTime);
         axeArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack1hitboxDeactivationTime);
+        yield return new WaitForSeconds(bossData.attack1HitboxDeactivationTime);
         axeArea.enabled = false;
     }
 
     private IEnumerator Attack2Coroutine()
     {
-        yield return new WaitForSeconds(stats.Attack2hitboxAcitvaionTime);
+        yield return new WaitForSeconds(bossData.attack2HitboxAcitvaionTime);
         headButtArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack2hitboxDeactivationTime);
+        yield return new WaitForSeconds(bossData.attack2HitboxDeactivationTime);
         headButtArea.enabled = false;
     }
 
     private IEnumerator Attack3Coroutine()
     {
-        yield return new WaitForSeconds(stats.Attack3hitboxAcitvaionTime);
+        yield return new WaitForSeconds(bossData.attack3HitboxAcitvaionTime);
         axeArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack3hitboxDeactivationTime);
+        yield return new WaitForSeconds(bossData.attack3HitboxDeactivationTime);
         axeArea.enabled = false;
     }
 
@@ -98,21 +97,21 @@ public class Boss : BaseAI<Boss>
 
     public override void TakeDamage(int damage)
     {
-        if (Time.time < lastHittedTime + 0.533f)
+        if (Time.time < lastHitTime + 0.533f)
             return;
 
-        lastHittedTime = Time.time;
+        lastHitTime = Time.time;
 
         base.TakeDamage(damage);
-        stats.armor -= damage;
+        bossData.armor -= damage;
 
-        if (stats.health <= 0)
+        if (bossData.health <= 0)
         {
             ChangeState(new BossDieState());
             return;
         }
         
-        if (stats.armor <= 0 && !(currentState is BossHitState))
+        if (bossData.armor <= 0 && !(currentState is BossHitState))
         {
             if (!(currentState is BossHitState))
                 OnStun();

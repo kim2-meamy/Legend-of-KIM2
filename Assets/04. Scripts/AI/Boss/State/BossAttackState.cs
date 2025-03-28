@@ -17,13 +17,13 @@ public class BossAttackState : AttackState<Boss>
         switch (attackPattern)
         {
             case 1:
-                attackDelay = boss.stats.attack1Delay;
+                attackDelay = boss.bossData.attack1Delay;
                 break;
             case 2:
-                attackDelay = boss.stats.attack2Delay;
+                attackDelay = boss.bossData.attack2Delay;
                 break;
             case 3:
-                attackDelay = boss.stats.attack3Delay;
+                attackDelay = boss.bossData.attack3Delay;
                 break;
         }
 
@@ -54,7 +54,7 @@ public class BossAttackState : AttackState<Boss>
     {
         float distance = Vector3.Distance(boss.transform.position, boss.target.position);
 
-        if (distance <= boss.stats.meleeAttackRange)
+        if (distance <= boss.bossData.meleeAttackRange)
             return Random.Range(1, 3);//
         else
             return Random.Range(2, 4);

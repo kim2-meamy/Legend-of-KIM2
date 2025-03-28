@@ -23,7 +23,7 @@ public class EnemyAttackState : AttackState<Enemy>
 
         base.Update(enemy);
 
-        if (timer >= enemy.stats.attackDelay)
+        if (timer >= enemy.enemyData.attackDelay)
         {
             enemy.ChangeState(new EnemyChaseState());
         }

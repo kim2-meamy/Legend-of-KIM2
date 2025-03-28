@@ -14,11 +14,11 @@ public class EnemyChaseState : ChaseState<Enemy>
             }
         }
 
-        if (enemy.target == null || distance >= enemy.stats.detectionRange)
+        if (enemy.target == null || distance >= enemy.enemyData.detectionRange)
         {
             enemy.ChangeState(new EnemyIdleState());
         }
-        else if (distance <= enemy.stats.attackRange)
+        else if (distance <= enemy.enemyData.attackRange)
         {
             enemy.ChangeState(new EnemyAttackState());
         }

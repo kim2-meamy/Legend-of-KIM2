@@ -12,7 +12,7 @@ public static class BossStateUtils
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
-            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, targetRotation, boss.stats.rotationSpeed * Time.deltaTime);
+            boss.transform.rotation = Quaternion.Slerp(boss.transform.rotation, targetRotation, boss.bossData.rotationSpeed * Time.deltaTime);
         }
     }
 }

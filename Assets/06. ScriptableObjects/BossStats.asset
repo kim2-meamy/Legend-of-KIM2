@@ -12,24 +12,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f37bfe4e5a855469fd4e1e2730a734, type: 3}
   m_Name: BossStats
   m_EditorClassIdentifier: 
-  health: 100
+  health: 200
   damage: 30
   rotationSpeed: 8
   detectionRange: 10
   deathTime: 1.5
   hitRecoveryTime: 5
-  armor: 50
-  Attack1damage: 10
-  Attack2damage: 10
-  Attack3damage: 10
+  maxArmor: 100
   meleeAttackRange: 3.5
   rangedAttackRange: 8
   attack1Delay: 2.5
   attack2Delay: 4.5
   attack3Delay: 2
-  Attack1hitboxAcitvaionTime: 1
-  Attack1hitboxDeactivationTime: 1.2
-  Attack2hitboxAcitvaionTime: 2
-  Attack2hitboxDeactivationTime: 3
-  Attack3hitboxAcitvaionTime: 1
-  Attack3hitboxDeactivationTime: 1.5
+  attack1HitboxAcitvaionTime: 0.2
+  attack1HitboxDeactivationTime: 1.5
+  attack2HitboxAcitvaionTime: 0.2
+  attack2HitboxDeactivationTime: 4
+  attack3HitboxAcitvaionTime: 0.2
+  attack3HitboxDeactivationTime: 1.5

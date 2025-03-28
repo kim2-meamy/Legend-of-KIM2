@@ -21,7 +21,7 @@ public class EnemyHitState : HitState<Enemy>
     {
         base.Update(Enemy);
         
-        if (timer >= Enemy.stats.hitRecoveryTime)
+        if (timer >= Enemy.enemyData.hitRecoveryTime)
         {
             Enemy.ChangeState(new EnemyChaseState());
         }
