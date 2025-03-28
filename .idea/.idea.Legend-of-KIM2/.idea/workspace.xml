@@ -6,9 +6,6 @@
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/PlayerDemo.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,8 +28,7 @@
   }
 }]]></component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/4. Scripts/Event/SlimeQuest.cs" root0="FORCE_HIGHLIGHTING" />
-    <setting file="file://$PROJECT_DIR$/Assets/IsAttacked.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/DecompilerCache/decompiler/5780850fc704417799e38550144b43932ac00/fc/0951a216/CharacterController.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="MetaFilesCheckinStateConfiguration" checkMetaFiles="true" />
   <component name="ProjectColorInfo">{
@@ -156,7 +152,7 @@
       <workItem from="1743058127088" duration="287000" />
       <workItem from="1743058535996" duration="3000" />
       <workItem from="1743058626166" duration="22879000" />
-      <workItem from="1743141243516" duration="354000" />
+      <workItem from="1743141243516" duration="1548000" />
     </task>
     <servers />
   </component>

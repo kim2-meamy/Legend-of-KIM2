@@ -8,7 +8,8 @@ public class PlayerController : MonoBehaviour
 
     [Header("References")] 
     private CharacterController controller; // 캐릭터 컨트롤러에 대한 개인 변수를 정의 // 후에 캐릭터 컨트롤러 메서드 호출 가능
-    [SerializeField] private Transform cameraDirection; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
+    //카메라의 위치와 회전 정보를 제공하는 변수
+    [SerializeField] private Transform cameraReference; // 카메라가 방향을 결정하는 데 사용되는 기본 카메라를 참조
     [SerializeField] private Animator animator;
     //private Rigidbody rg; // 선언
 
@@ -149,7 +150,7 @@ public class PlayerController : MonoBehaviour
     {
         Vector3 move = new Vector3(turnInput, 0, moveInput);//옆으로 이동 turn 앞뒤로 이동은 moveInput
         
-        move = cameraDirection.transform.TransformDirection(move);// 카메라의 로컬 축과 일치하도록 변경 
+        move = cameraReference.transform.TransformDirection(move);// 카메라의 로컬 축과 일치하도록 변경 
         
         //transform을 사용해서 move 벡터3를 플레이어의 로컬 축으로 변환 
         // 카메라 방향이 글로벌 방향 + 플레이어가 현재 바라보는 위치에 올바르게 정렬되도록 보장 //=> 이 후 turn();을 Movemnet();안에 추가
