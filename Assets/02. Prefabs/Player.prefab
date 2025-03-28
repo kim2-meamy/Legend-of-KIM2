@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 2591768070041163161}
   - component: {fileID: 3337652464506724113}
   m_Layer: 8
-  m_Name: PlayerDemo
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -74,7 +74,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   meleeArea: {fileID: 5554392625860445340}
-  camera: {fileID: 0}
+  cameraDirection: {fileID: 0}
   animator: {fileID: 2591768070041163161}
   walkSpeed: 3
   sprintspeed: 6
@@ -82,7 +82,6 @@ MonoBehaviour:
   turningSpeed: 8
   gravity: 9.81
   jumpHeight: 2
-  delay: 0.5
   hp: 100
   damage: 10
   alreadyAttack: 0

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 
@@ -49,13 +50,18 @@ public class PlayerController : MonoBehaviour
     public bool alreadyAttack = false;
 
 
-    private void Start()
+    private void Awake()
     {
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
         SetupAnimator();
+    }
+
+    private void Start()
+    {
         // //마우스
         //Cursor.visible = false; // 마우스 커서를 숨김
         //Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
+        
     }
 
     private void Update() //입력이 매 프레임마다 확인되고 업데이트
@@ -76,8 +82,6 @@ public class PlayerController : MonoBehaviour
         //}
 
     }
-    //시간 누적은 Time.delta
-    //attack delay 시간 추가..
 
     private void Die()
     {
