@@ -4,7 +4,7 @@ public class EnemyHitState : HitState<Enemy>
     {
         base.Enter(enemy);
 
-        enemy.animator.SetTrigger("Hit1");
+        enemy.animator.SetTrigger(enemy.animatorToHash.animHit1);
         enemy.hitEffect.Play();
     }
 

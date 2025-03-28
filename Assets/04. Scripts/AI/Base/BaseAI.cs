@@ -8,6 +8,7 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public ParticleSystem hitEffect;
     public ParticleSystem dieEffect;
     public ParticleSystem damageEffect;
+    public AnimatorToHash animatorToHash;
 
     [HideInInspector]
     public Animator animator;
@@ -32,6 +33,7 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
         animator = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         data = new BaseAIData(stats);
+        animatorToHash = new AnimatorToHash();
     }
 
     protected virtual void Start()

@@ -5,7 +5,7 @@ public class EnemyAttackState : AttackState<Enemy>
     public override void Enter(Enemy enemy)
     {
         enemy.agent.isStopped = true;
-        enemy.animator.SetTrigger("Attack");
+        enemy.animator.SetTrigger(enemy.animatorToHash.animAttack);
         enemy.Attack();
         timer = 0f;
     }

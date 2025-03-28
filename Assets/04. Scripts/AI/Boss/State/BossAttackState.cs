@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BossAttackState : AttackState<Boss>
 {
@@ -18,7 +20,7 @@ public class BossAttackState : AttackState<Boss>
 
         BossStateUtils.RotateTowardsTarget(boss);
         attackPattern = ChooseAttackPattern(boss);
-        boss.animator.SetTrigger($"Attack{attackPattern}");
+        boss.animator.SetInteger(boss.animatorToHash.animBossAttack, attackPattern);
         boss.Attack(attackPattern);
         attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
 

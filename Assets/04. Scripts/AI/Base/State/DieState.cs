@@ -7,7 +7,7 @@ public class DieState<T> : IBaseAIState<T> where T : BaseAI<T>
     public virtual void Enter(T ai)
     {
         ai.agent.isStopped = true;
-        ai.animator.SetTrigger("Die");
+        ai.animator.SetTrigger(ai.animatorToHash.animDie);
     }
 
     public virtual void Update(T ai)

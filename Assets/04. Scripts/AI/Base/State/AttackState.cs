@@ -16,6 +16,6 @@ public class AttackState<T> : IBaseAIState<T> where T : BaseAI<T>
     public void Exit(T ai)
     {
         ai.agent.isStopped = false;
-        ai.animator.SetTrigger("AttackEnd");
+        ai.animator.SetTrigger(ai.animatorToHash.animAttackEnd);
     }
 }
