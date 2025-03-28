@@ -1,6 +1,5 @@
 using System.Collections;
 using UnityEngine;
-using UnityEngine.AI;
 
 public class Boss : BaseAI<Boss>
 {
@@ -13,7 +12,6 @@ public class Boss : BaseAI<Boss>
 
     private CharacterController controller;
     private float verticalVelocity;
-    private readonly float gravityMultiplier = 1f;
     private float lastHitTime = float.MinValue;
 
     protected override void Awake()
@@ -45,7 +43,7 @@ public class Boss : BaseAI<Boss>
         }
         else
         {
-            verticalVelocity += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
         Vector3 deltaPosition = animator.deltaPosition;
@@ -97,7 +95,9 @@ public class Boss : BaseAI<Boss>
 
     public override void TakeDamage(int damage)
     {
-        if (Time.time < lastHitTime + 0.533f)
+        float animationLength = 0.533f;
+        
+        if (Time.time < lastHitTime + animationLength)
             return;
 
         lastHitTime = Time.time;
@@ -133,8 +133,6 @@ public class Boss : BaseAI<Boss>
 
     public override void Die()
     {
-        //skin.SetActive(false);
         dieEffect.Play();
-        //Destroy(gameObject, 1f);
     }
 }

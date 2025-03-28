@@ -1,4 +1,3 @@
-using System.Threading;
 using UnityEngine;
 
 public class DieState<T> : IBaseAIState<T> where T : BaseAI<T>

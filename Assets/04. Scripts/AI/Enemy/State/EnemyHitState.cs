@@ -6,15 +6,6 @@ public class EnemyHitState : HitState<Enemy>
 
         enemy.animator.SetTrigger("Hit1");
         enemy.hitEffect.Play();
-        //switch (enemy.playerAttackPattern)
-        //{
-        //    case 1:
-        //        enemy.animator.SetTrigger("Hit1");
-        //        break;
-        //    case 2:
-        //        enemy.animator.SetTrigger("Hit2");
-        //        break;
-        //}
     }
 
     public override void Update(Enemy Enemy)

@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class IdleState<T> : IBaseAIState<T> where T : BaseAI<T>
 {
     public void Enter(T ai)

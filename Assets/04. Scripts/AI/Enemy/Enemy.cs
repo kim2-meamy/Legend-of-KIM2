@@ -41,7 +41,6 @@ public class Enemy : BaseAI<Enemy>
     public override void TakeDamage(int damage)
     {
         base.TakeDamage(damage);
-        Debug.Log(enemyData.health);
         if (enemyData.health <= 0)
         {
             ChangeState(new EnemyDieState());

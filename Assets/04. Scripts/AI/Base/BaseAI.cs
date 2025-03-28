@@ -1,5 +1,3 @@
-using System;
-using System.IO;
 using CartoonFX;
 using UnityEngine;
 using UnityEngine.AI;

@@ -2,6 +2,13 @@ using UnityEngine;
 
 public class BossAttackState : AttackState<Boss>
 {
+    private enum BossAttackPattern
+    {
+        meleeAttack = 1,
+        chargeAttack = 2,
+        rangedAttack = 3
+    }
+    
     private int attackPattern;
     private float attackDelay;
 
@@ -13,19 +20,7 @@ public class BossAttackState : AttackState<Boss>
         attackPattern = ChooseAttackPattern(boss);
         boss.animator.SetTrigger($"Attack{attackPattern}");
         boss.Attack(attackPattern);
-
-        switch (attackPattern)
-        {
-            case 1:
-                attackDelay = boss.bossData.attack1Delay;
-                break;
-            case 2:
-                attackDelay = boss.bossData.attack2Delay;
-                break;
-            case 3:
-                attackDelay = boss.bossData.attack3Delay;
-                break;
-        }
+        attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
 
         timer = 0f;
     }
@@ -55,8 +50,23 @@ public class BossAttackState : AttackState<Boss>
         float distance = Vector3.Distance(boss.transform.position, boss.target.position);
 
         if (distance <= boss.bossData.meleeAttackRange)
-            return Random.Range(1, 3);//
+            return Random.Range(
+                (int)BossAttackPattern.meleeAttack,
+                (int)BossAttackPattern.chargeAttack + 1);
         else
-            return Random.Range(2, 4);
+            return Random.Range(
+                (int)BossAttackPattern.chargeAttack,
+                (int)BossAttackPattern.rangedAttack + 1);
+    }
+    
+    private float GetAttackDelay(Boss boss, BossAttackPattern pattern)
+    {
+        switch (pattern)
+        {
+            case BossAttackPattern.meleeAttack: return boss.bossData.attack1Delay;
+            case BossAttackPattern.chargeAttack: return boss.bossData.attack2Delay;
+            case BossAttackPattern.rangedAttack: return boss.bossData.attack3Delay;
+            default: return 1f;
+        }
     }
 }
