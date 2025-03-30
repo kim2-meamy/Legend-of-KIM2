@@ -14,6 +14,7 @@ public class BossData : BaseAIData
     public float attack2HitboxDeactivationTime;
     public float attack3HitboxAcitvaionTime;
     public float attack3HitboxDeactivationTime;
+    public float angleOffset;
     
     public BossData(BossStats stats) : base(stats)
     {
@@ -29,6 +30,7 @@ public class BossData : BaseAIData
         attack2HitboxDeactivationTime = stats.attack2HitboxDeactivationTime;
         attack3HitboxAcitvaionTime = stats.attack3HitboxAcitvaionTime;
         attack3HitboxDeactivationTime = stats.attack3HitboxDeactivationTime;
+        angleOffset = stats.angleOffset;
     }
 }
 
@@ -47,4 +49,5 @@ public class BossStats : BaseAIStats
     public float attack2HitboxDeactivationTime = 4f;
     public float attack3HitboxAcitvaionTime = 0.2f;
     public float attack3HitboxDeactivationTime = 1.5f;
+    public float angleOffset = 5f;
 }

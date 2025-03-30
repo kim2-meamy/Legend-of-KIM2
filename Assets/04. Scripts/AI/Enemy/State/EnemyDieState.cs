@@ -3,6 +3,7 @@ public class EnemyDieState : DieState<Enemy>
     public override void Enter(Enemy enemy)
     {
         base.Enter(enemy);
+        enemy.agent.isStopped = true;
         enemy.hitEffect.Play();
     }
 
