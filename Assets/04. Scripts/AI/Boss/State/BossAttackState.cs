@@ -21,7 +21,6 @@ public class BossAttackState : AttackState<Boss>
         BossStateUtils.RotateTowardsTarget(boss);
         attackPattern = ChooseAttackPattern(boss);
         boss.animator.SetInteger(boss.animatorToHash.animBossAttack, attackPattern);
-        boss.Attack(attackPattern);
         attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
     }
 
@@ -41,7 +40,7 @@ public class BossAttackState : AttackState<Boss>
 
         if (timer >= attackDelay)
         {
-            boss.ChangeState(new BossIdleState());
+            boss.ChangeState(new BossChaseState());
         }
     }
 

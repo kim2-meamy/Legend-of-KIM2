@@ -1,11 +1,8 @@
-using System.Collections;
 using UnityEngine;
 
 public class Boss : BaseAI<Boss>
 {
     public ParticleSystem armorBreakHit;
-    public Collider axeArea;
-    public Collider headButtArea;
     
     [HideInInspector]
     public BossData bossData;
@@ -49,50 +46,13 @@ public class Boss : BaseAI<Boss>
         controller.Move(deltaPosition);
     }
 
-    private IEnumerator Attack1Coroutine()
-    {
-        yield return new WaitForSeconds(bossData.attack1HitboxAcitvaionTime);
-        axeArea.enabled = true;
-        yield return new WaitForSeconds(bossData.attack1HitboxDeactivationTime);
-        axeArea.enabled = false;
-    }
-
-    private IEnumerator Attack2Coroutine()
-    {
-        yield return new WaitForSeconds(bossData.attack2HitboxAcitvaionTime);
-        headButtArea.enabled = true;
-        yield return new WaitForSeconds(bossData.attack2HitboxDeactivationTime);
-        headButtArea.enabled = false;
-    }
-
-    private IEnumerator Attack3Coroutine()
-    {
-        yield return new WaitForSeconds(bossData.attack3HitboxAcitvaionTime);
-        axeArea.enabled = true;
-        yield return new WaitForSeconds(bossData.attack3HitboxDeactivationTime);
-        axeArea.enabled = false;
-    }
-
     public override void Attack() { }
-
-    public override void Attack(int attackPattern)
-    {
-        switch(attackPattern)
-        {
-            case 1:
-                StartCoroutine(Attack1Coroutine());
-                break;
-            case 2:
-                StartCoroutine(Attack2Coroutine());
-                break;
-            case 3:
-                StartCoroutine(Attack3Coroutine());
-                break;
-        }
-    }
 
     public override void TakeDamage(int damage)
     {
+        if (currentState is BossDieState)
+            return;
+        
         float animationLength = 0.533f;
         
         if (Time.time < lastHitTime + animationLength)

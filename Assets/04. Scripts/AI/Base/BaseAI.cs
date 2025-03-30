@@ -1,6 +1,5 @@
 using CartoonFX;
 using UnityEngine;
-using UnityEngine.AI;
 
 public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 {
@@ -60,11 +59,6 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     protected abstract IBaseAIState<T> GetInitialState();
 
     public abstract void Attack();
-
-    public virtual void Attack(int attackPattern)
-    {
-        Attack();
-    }
 
     public virtual void TakeDamage(int damage)
     {
