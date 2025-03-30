@@ -15,18 +15,13 @@ MonoBehaviour:
   health: 200
   damage: 30
   rotationSpeed: 8
-  detectionRange: 10
+  detectionRange: 20
   deathTime: 1.5
   hitRecoveryTime: 5
-  maxArmor: 100
+  armor: 100
   meleeAttackRange: 3.5
   rangedAttackRange: 8
-  attack1Delay: 2.5
-  attack2Delay: 4.5
-  attack3Delay: 2
-  attack1HitboxAcitvaionTime: 0.2
-  attack1HitboxDeactivationTime: 1.5
-  attack2HitboxAcitvaionTime: 0.2
-  attack2HitboxDeactivationTime: 4
-  attack3HitboxAcitvaionTime: 0.2
-  attack3HitboxDeactivationTime: 1.5
+  attack1Delay: 3
+  attack2Delay: 6
+  attack3Delay: 3
+  angleOffset: 5

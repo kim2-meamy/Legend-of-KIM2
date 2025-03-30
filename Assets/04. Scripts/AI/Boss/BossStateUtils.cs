@@ -8,7 +8,7 @@ public static class BossStateUtils
             return;
 
         Vector3 direction = boss.target.position - boss.transform.position;
-        direction.y = boss.target.position.y;
+        direction.y = 0f;
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
