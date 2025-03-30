@@ -68,7 +68,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 80
+  m_Constraints: 112
   m_CollisionDetection: 0
 --- !u!135 &5833527043981374141
 SphereCollider:
@@ -5153,7 +5153,7 @@ Transform:
   - {fileID: 839912588257203118}
   - {fileID: 9067471919615604119}
   m_Father: {fileID: 5112135480473267314}
-  m_LocalEulerAnglesHint: {x: 2.6145115, y: 0.0000014231746, z: -0.000014008173}
+  m_LocalEulerAnglesHint: {x: 89.824165, y: -0.004435925, z: -0.0044359462}
 --- !u!1 &1132800320642512148
 GameObject:
   m_ObjectHideFlags: 0
@@ -5185,7 +5185,7 @@ Transform:
   m_Children:
   - {fileID: 8986622935842777001}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 3.329631, y: 0.008645194, z: 12.180717}
+  m_LocalEulerAnglesHint: {x: -0.1093629, y: 0.01251273, z: 11.942574}
 --- !u!1 &1610908996964517380
 GameObject:
   m_ObjectHideFlags: 0
@@ -25146,7 +25146,7 @@ Transform:
   m_Children:
   - {fileID: 442364460182760895}
   m_Father: {fileID: 7887484214842621178}
-  m_LocalEulerAnglesHint: {x: 3.7489355, y: -0.009655248, z: -12.1798}
+  m_LocalEulerAnglesHint: {x: -0.15040986, y: -0.01705748, z: -11.940022}
 --- !u!1 &6468432098837539016
 GameObject:
   m_ObjectHideFlags: 0

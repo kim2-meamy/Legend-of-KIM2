@@ -17,7 +17,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator animator;
     
     [Header("Movement Settings")] 
-    [SerializeField] private float walkSpeed = 1f;
+    public float walkSpeed = 1f;
     [SerializeField] private float sprintspeed = 2f;
     [SerializeField] private float sprintTrasitSpeed = 5f;
     [SerializeField] private float turningSpeed = 2f;
@@ -37,8 +37,6 @@ public class PlayerController : MonoBehaviour
     private void Awake()
     {
         controller = GetComponent<CharacterController>(); 
-        SetupAnimator();
-       
     }
 
     private void Start()
@@ -74,7 +72,7 @@ public class PlayerController : MonoBehaviour
 
     private void Attack()
     {
-        animator.SetBool(animatorToHash.animAttack, Input.GetMouseButton(0));
+        animator.SetBool(animatorToHash.animAttack, Input.GetMouseButtonDown(0));
     }
 
     private void Dodging()
