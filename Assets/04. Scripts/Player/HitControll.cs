@@ -16,46 +16,44 @@ public class HitControll : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Enemy"))
+        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
         {
-            if (player == null)
-            {
-                return;
-            }
-
+            if (player == null) return;
+        
             var hitEnemy = other.GetComponentInParent<Enemy>();
             if (hitEnemy != null)
             {
                 hitEnemy.TakeDamage(player.damage);
             }
-
             return;
         }
-        
-        if (other.CompareTag("Player"))
+    
+        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
         {
-            if (enemy == null && boss == null)
-            {
-                return;
-            }
+            if (enemy == null && boss == null) return;
+        
             var hitPlayer = other.GetComponentInParent<PlayerController>();
-            if (hitPlayer == null)
-            {
-                return;
-            }
-
+            if (hitPlayer == null) return;
+        
             if (enemy != null)
+            {
                 hitPlayer.Hit(enemy.enemyData.damage);
+            }
             else if (boss != null)
+            {
                 hitPlayer.Hit(boss.bossData.damage);
+            }
             return;
         }
-        
-        if (other.CompareTag("Boss"))
+    
+        if (other.gameObject.layer == LayerMask.NameToLayer("Boss"))
         {
+            if (player == null) return;
+        
             var hitBoss = other.GetComponentInParent<Boss>();
             hitBoss?.TakeDamage(player.damage);
             return;
         }
     }
+
 }

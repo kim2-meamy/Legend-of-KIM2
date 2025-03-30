@@ -68,7 +68,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 80
   m_CollisionDetection: 0
 --- !u!135 &5833527043981374141
 SphereCollider:
@@ -153,10 +153,8 @@ MonoBehaviour:
   damageEffect: {fileID: 8399775594612882134}
   animator: {fileID: 0}
   agent: {fileID: 0}
-  playerAttackPattern: 0
-  stat: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
-  skin: {fileID: 6840383427266463119}
   stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
+  skin: {fileID: 6840383427266463119}
 --- !u!1 &392489473588036421
 GameObject:
   m_ObjectHideFlags: 0
@@ -35544,6 +35542,12 @@ PrefabInstance:
       propertyPath: enemy
       value: 
       objectReference: {fileID: 47190397385648063}
+    - target: {fileID: 2314984322647072266, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
+      propertyPath: m_text
+      value: 'SeoYoung
+
+'
+      objectReference: {fileID: 0}
     - target: {fileID: 2433451333558667242, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
       propertyPath: m_Layer
       value: 6
