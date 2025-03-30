@@ -13,8 +13,6 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     [HideInInspector]
     public Animator animator;
     [HideInInspector]
-    public NavMeshAgent agent;
-    [HideInInspector]
     public IBaseAIState<T> currentState;
     [HideInInspector]
     public BaseAIData data;
@@ -31,7 +29,6 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
         data = new BaseAIData(stats);
         animatorToHash = new AnimatorToHash();
     }

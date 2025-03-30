@@ -25,8 +25,6 @@ public class Boss : BaseAI<Boss>
 
     protected override void Start()
     {
-        agent.updatePosition = false;
-        agent.updateRotation = false;
         ChangeState(new BossIdleState());
     }
 

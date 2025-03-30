@@ -19,6 +19,6 @@ public class BossHitState : HitState<Boss>
     public override void Exit(Boss boss)
     {
         base.Exit(boss);
-        boss.bossData.armor = 100;
+        boss.bossData.armor = boss.GetStats<BossStats>().armor;
     }
 }

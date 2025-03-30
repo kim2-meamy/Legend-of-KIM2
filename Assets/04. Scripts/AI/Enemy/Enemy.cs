@@ -1,13 +1,14 @@
 using System.Collections;
-using Unity.VisualScripting.Antlr3.Runtime.Misc;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : BaseAI<Enemy>
 {
     public GameObject skin;
-
-    [HideInInspector]
+    
     protected Collider meleeArea;
+    [HideInInspector]
+    public NavMeshAgent agent;
     [HideInInspector]
     public EnemyData enemyData;
 
@@ -15,6 +16,7 @@ public class Enemy : BaseAI<Enemy>
     {
         base.Awake();
         meleeArea = GetComponentsInChildren<SphereCollider>()[1];
+        agent = GetComponent<NavMeshAgent>();
         var stats = GetStats<EnemyStats>();
         enemyData = new EnemyData(stats);
         data = enemyData;

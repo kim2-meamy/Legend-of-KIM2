@@ -2,6 +2,12 @@ using UnityEngine;
 
 public class EnemyChaseState : ChaseState<Enemy>
 {
+    public override void Enter(Enemy enemy)
+    {
+        base.Enter(enemy);
+        enemy.agent.isStopped = false;
+    }
+    
     public override void Update(Enemy enemy)
     {
         float distance = Vector3.Distance(enemy.transform.position, enemy.target.position);

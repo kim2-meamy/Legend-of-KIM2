@@ -152,9 +152,9 @@ MonoBehaviour:
   dieEffect: {fileID: 4561831041337079662}
   damageEffect: {fileID: 8399775594612882134}
   animator: {fileID: 0}
-  agent: {fileID: 0}
   stats: {fileID: 11400000, guid: 1ac2e47c0fa97c74f88772620785de54, type: 2}
   skin: {fileID: 6840383427266463119}
+  agent: {fileID: 0}
 --- !u!1 &392489473588036421
 GameObject:
   m_ObjectHideFlags: 0
@@ -35153,7 +35153,7 @@ GameObject:
   - component: {fileID: 3447419253734256475}
   - component: {fileID: 8904659342311785790}
   m_Layer: 6
-  m_Name: Slime_01
+  m_Name: SeonA
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -35544,9 +35544,7 @@ PrefabInstance:
       objectReference: {fileID: 47190397385648063}
     - target: {fileID: 2314984322647072266, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
       propertyPath: m_text
-      value: 'SeoYoung
-
-'
+      value: SeonA
       objectReference: {fileID: 0}
     - target: {fileID: 2433451333558667242, guid: e17ab9203878afc4999724cf39a5d92f, type: 3}
       propertyPath: m_Layer
