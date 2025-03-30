@@ -50,6 +50,9 @@ public class Boss : BaseAI<Boss>
 
     public override void TakeDamage(int damage)
     {
+        if (currentState is BossDieState)
+            return;
+        
         float animationLength = 0.533f;
         
         if (Time.time < lastHitTime + animationLength)

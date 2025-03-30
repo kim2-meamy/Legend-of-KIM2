@@ -1,5 +1,3 @@
-using UnityEngine;
-
 public class EnemyAttackState : AttackState<Enemy>
 {
     public override void Enter(Enemy enemy)
