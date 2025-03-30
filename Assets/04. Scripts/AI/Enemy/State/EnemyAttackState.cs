@@ -1,13 +1,12 @@
-using UnityEngine;
-
 public class EnemyAttackState : AttackState<Enemy>
 {
     public override void Enter(Enemy enemy)
     {
+        base.Enter(enemy);
+        
         enemy.agent.isStopped = true;
-        enemy.animator.SetTrigger("Attack");
+        enemy.animator.SetTrigger(enemy.animatorToHash.animAttack);
         enemy.Attack();
-        timer = 0f;
     }
 
     public override void Update(Enemy enemy)
@@ -27,5 +26,10 @@ public class EnemyAttackState : AttackState<Enemy>
         {
             enemy.ChangeState(new EnemyChaseState());
         }
+    }
+
+    public override void Exit(Enemy enemy)
+    {
+        enemy.agent.isStopped = false;
     }
 }

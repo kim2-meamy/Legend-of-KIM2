@@ -1,6 +1,5 @@
 using CartoonFX;
 using UnityEngine;
-using UnityEngine.AI;
 
 public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 {
@@ -8,11 +7,10 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public ParticleSystem hitEffect;
     public ParticleSystem dieEffect;
     public ParticleSystem damageEffect;
+    public AnimatorToHash animatorToHash;
 
     [HideInInspector]
     public Animator animator;
-    [HideInInspector]
-    public NavMeshAgent agent;
     [HideInInspector]
     public IBaseAIState<T> currentState;
     [HideInInspector]
@@ -30,8 +28,8 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
         data = new BaseAIData(stats);
+        animatorToHash = new AnimatorToHash();
     }
 
     protected virtual void Start()
@@ -61,11 +59,6 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     protected abstract IBaseAIState<T> GetInitialState();
 
     public abstract void Attack();
-
-    public virtual void Attack(int attackPattern)
-    {
-        Attack();
-    }
 
     public virtual void TakeDamage(int damage)
     {

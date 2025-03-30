@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 public class BossAttackState : AttackState<Boss>
 {
@@ -18,11 +20,8 @@ public class BossAttackState : AttackState<Boss>
 
         BossStateUtils.RotateTowardsTarget(boss);
         attackPattern = ChooseAttackPattern(boss);
-        boss.animator.SetTrigger($"Attack{attackPattern}");
-        boss.Attack(attackPattern);
+        boss.animator.SetInteger(boss.animatorToHash.animBossAttack, attackPattern);
         attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
-
-        timer = 0f;
     }
 
     public override void Update(Boss boss)
@@ -41,7 +40,7 @@ public class BossAttackState : AttackState<Boss>
 
         if (timer >= attackDelay)
         {
-            boss.ChangeState(new BossIdleState());
+            boss.ChangeState(new BossChaseState());
         }
     }
 

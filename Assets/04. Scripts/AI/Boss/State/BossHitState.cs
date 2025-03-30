@@ -3,7 +3,7 @@ public class BossHitState : HitState<Boss>
     public override void Enter(Boss boss)
     {
         base.Enter(boss);
-        boss.animator.SetTrigger("Stun");
+        boss.animator.SetTrigger(boss.animatorToHash.animStun);
     }
 
     public override void Update(Boss boss)
@@ -11,7 +11,7 @@ public class BossHitState : HitState<Boss>
         base.Update(boss);
         if (timer >= boss.bossData.hitRecoveryTime)
         {
-            boss.animator.SetTrigger("StunEnd");
+            boss.animator.SetTrigger(boss.animatorToHash.animStunEnd);
             boss.ChangeState(new BossIdleState());
         }
     }
@@ -19,6 +19,6 @@ public class BossHitState : HitState<Boss>
     public override void Exit(Boss boss)
     {
         base.Exit(boss);
-        boss.bossData.armor = 100;
+        boss.bossData.armor = boss.GetStats<BossStats>().armor;
     }
 }
