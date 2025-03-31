@@ -19,10 +19,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float gravity = 9.81f; // 중력이라는 새 float변수를 추가하여 사용자 지정 중력 구현 // 지구의 중력을 모방
     [SerializeField] private float jumpHeight = 2f; // 캐릭터가 얼마나 높이 점프할 지 결정
 
-    private AnimatorToHash animatorToHash;
-    
     private float verticalVelocity; // 수직 속도 변수 -> 캐릭터의 수직 이동 속도 추적 ( 중력에 필요 )
     private float speed; //이동 함수에서 현재 속도 값을 저장하기 위한 speed 변수 만듬
+    
+    [Header("Animation")]  //
+    private int animMoveSpeed; 
+    private int animJump;
+    private int animGrounded;
+    //회피 매개변수에 대한 정수 변수를 만들기
+    private int animDodging;
+    //공격모션
+    private int animAttack;
+    //피격모션
+    private int animHit;
+    //다이 모션
+    private int animDie;
+    
     
     [Header("Input")] // 입력값
     private float moveInput; // 플레이어의 앞뒤 이동
@@ -40,7 +52,7 @@ public class PlayerController : MonoBehaviour
     private void Start()
     {
         controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
-        animatorToHash = new AnimatorToHash();
+        SetupAnimator();
         // //마우스
         //Cursor.visible = false; // 마우스 커서를 숨김
         //Cursor.lockState = CursorLockMode.Locked; // 마우스를 화면 중앙에 고정
@@ -69,12 +81,12 @@ public class PlayerController : MonoBehaviour
 
     private void Die()
     {
-        animator.SetTrigger(animatorToHash.animDie);
+        animator.SetTrigger(animDie);
     }
 
     private void Attack()
     {
-        animator.SetBool(animatorToHash.animAttack, Input.GetMouseButton(0));
+        animator.SetBool(animAttack, Input.GetMouseButton(0));
 
         //if (Input.GetMouseButtonDown(0))
         //{
@@ -99,7 +111,7 @@ public class PlayerController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.LeftControl))
         {
-            animator.SetTrigger(animatorToHash.animDodging);
+            animator.SetTrigger(animDodging);
             StartCoroutine((DodgeCoroutine()));
         }
     }
@@ -114,7 +126,7 @@ public class PlayerController : MonoBehaviour
 
     public void Hit(int damage)
     {
-        animator.SetTrigger(animatorToHash.animHit);
+        animator.SetTrigger(animHit);
         hp -= damage;
         if (hp <= 0)
         {
@@ -159,7 +171,7 @@ public class PlayerController : MonoBehaviour
         
         //Animations
         //speed 변수를 사용하여 캐릭터가 달리고 있는지 걷는지 확인 -> 이 속도를 moveinput or turninput의 최대값에 곱함
-        animator.SetFloat(animatorToHash.animMoveSpeed, speed * Mathf.Max(Mathf.Abs(moveInput), Mathf.Abs(turnInput)));
+        animator.SetFloat(animMoveSpeed, speed * Mathf.Max(Mathf.Abs(moveInput), Mathf.Abs(turnInput)));
     }
 
     private void Turn()
@@ -188,22 +200,34 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded) // 캐릭터 컨트롤러가 접지되었는지 확인
         {
             verticalVelocity = -1; // 캐릭터 속도를 작은 음수값으로 설정해서 캐릭터가 유지되도록 함
-            animator.SetBool(animatorToHash.animGrounded, true); // 캐릭터가 땅에 있을 때 grounded 부울을 true 로 설정
+            animator.SetBool(animGrounded, true); // 캐릭터가 땅에 있을 때 grounded 부울을 true 로 설정
             
             if (Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2); // 점프 높이의 제곱근에 중력 * 2 // 원하는 점프 높이에 도달하는 데 필요한 초기 속도 게산 
-                animator.SetTrigger(animatorToHash.animJump); //플레이어가 점프를 하면 
+                animator.SetTrigger(animJump); //플레이어가 점프를 하면 
             }
         }
         else
         {
             //사소한 부정확성으로 인해 떠다니지 않는 경우, 땅에 닿지 않았다면 캐릭터가 떨어지거나 점프하고 있다는 것을 의미하므로
             verticalVelocity -= gravity * Time.deltaTime; // 중력 값에 시간을 곱한 값을 뺴야함 // 낙하를 시뮬레이션한 후 
-            animator.SetBool(animatorToHash.animGrounded, false); // 땅에 있지 않으면 false
+            animator.SetBool(animGrounded, false); // 땅에 있지 않으면 false
         }
 
         return verticalVelocity; // 수직 속도에 대한 델타 시간을 사용해 낙하를 시뮬레이션한 다음 수직속도를 반환하고 
+    }
+
+    private void SetupAnimator()
+    {
+        animMoveSpeed = Animator.StringToHash("moveSpeed");
+        animJump = Animator.StringToHash("Jump");
+        animGrounded = Animator.StringToHash("Grounded");
+        //설정 애니메이터 함수에서 해시ID를 설정
+        animDodging = Animator.StringToHash("Dodging");
+        animAttack = Animator.StringToHash(("Attack"));
+        animHit = Animator.StringToHash("Hit");
+        animDie = Animator.StringToHash("Hp");
     }
         
     private void InputManagement()

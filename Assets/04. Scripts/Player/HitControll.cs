@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class HitControll : MonoBehaviour
@@ -16,44 +15,47 @@ public class HitControll : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.gameObject.layer == LayerMask.NameToLayer("Enemy"))
+        if (other.CompareTag("Enemy"))
         {
-            if (player == null) return;
-        
+            if (player == null)
+            {
+                return;
+            }
+
             var hitEnemy = other.GetComponentInParent<Enemy>();
             if (hitEnemy != null)
             {
                 hitEnemy.TakeDamage(player.damage);
             }
+
             return;
         }
-    
-        if (other.gameObject.layer == LayerMask.NameToLayer("Player"))
-        {
-            if (enemy == null && boss == null) return;
         
+        if (other.CompareTag("Player"))
+        {
+            if (enemy == null && boss == null)
+            {
+                return;
+            }
+            
             var hitPlayer = other.GetComponentInParent<PlayerController>();
-            if (hitPlayer == null) return;
-        
+            if (hitPlayer == null)
+            {
+                return;
+            }
+
             if (enemy != null)
-            {
-                hitPlayer.Hit(enemy.enemyData.damage);
-            }
+                hitPlayer.Hit(enemy.stats.damage);
             else if (boss != null)
-            {
-                hitPlayer.Hit(boss.bossData.damage);
-            }
+                hitPlayer.Hit(boss.stats.damage);
             return;
         }
-    
-        if (other.gameObject.layer == LayerMask.NameToLayer("Boss"))
-        {
-            if (player == null) return;
         
+        if (other.CompareTag("Boss"))
+        {
             var hitBoss = other.GetComponentInParent<Boss>();
             hitBoss?.TakeDamage(player.damage);
             return;
         }
     }
-
 }

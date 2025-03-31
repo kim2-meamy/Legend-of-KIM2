@@ -3,24 +3,27 @@ public class EnemyHitState : HitState<Enemy>
     public override void Enter(Enemy enemy)
     {
         base.Enter(enemy);
-        enemy.agent.isStopped = true;
 
-        enemy.animator.SetTrigger(enemy.animatorToHash.animHit1);
+        enemy.animator.SetTrigger("Hit1");
         enemy.hitEffect.Play();
+        //switch (enemy.playerAttackPattern)
+        //{
+        //    case 1:
+        //        enemy.animator.SetTrigger("Hit1");
+        //        break;
+        //    case 2:
+        //        enemy.animator.SetTrigger("Hit2");
+        //        break;
+        //}
     }
 
     public override void Update(Enemy Enemy)
     {
         base.Update(Enemy);
         
-        if (timer >= Enemy.enemyData.hitRecoveryTime)
+        if (timer >= Enemy.stats.hitRecoveryTime)
         {
             Enemy.ChangeState(new EnemyChaseState());
         }
-    }
-
-    public override void Exit(Enemy enemy)
-    {
-        enemy.agent.isStopped = false;
     }
 }

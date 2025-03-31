@@ -2,9 +2,10 @@ using UnityEngine;
 
 public class ChaseState<T> : IBaseAIState<T> where T : BaseAI<T>
 {
-    public virtual void Enter(T ai)
+    public void Enter(T ai)
     {
-        ai.animator.SetBool(ai.animatorToHash.animIsChase, true);
+        ai.agent.isStopped = false;
+        ai.animator.SetBool("isChase", true);
     }
 
     public virtual void Update(T ai) { }

@@ -6,6 +6,7 @@ public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Enter(T ai)
     {
+        ai.agent.isStopped = true;
         timer = 0f;
     }
 
@@ -14,5 +15,8 @@ public class HitState<T> : IBaseAIState<T> where T : BaseAI<T>
         timer += Time.deltaTime;
     }
 
-    public virtual void Exit(T ai) { }
+    public virtual void Exit(T ai)
+    {
+        ai.agent.isStopped = false;
+    }
 }

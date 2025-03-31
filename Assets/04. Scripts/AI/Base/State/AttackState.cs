@@ -6,16 +6,16 @@ public class AttackState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Enter(T ai)
     {
-        timer = 0f;
+        ai.agent.isStopped = true;
     }
-    
     public virtual void Update(T ai)
     {
         timer += Time.deltaTime;
     }
 
-    public virtual void Exit(T ai)
+    public void Exit(T ai)
     {
-        ai.animator.SetTrigger(ai.animatorToHash.animAttackEnd);
+        ai.agent.isStopped = false;
+        ai.animator.SetTrigger("AttackEnd");
     }
 }
