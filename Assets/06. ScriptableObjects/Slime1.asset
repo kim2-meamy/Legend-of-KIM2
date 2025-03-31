@@ -14,10 +14,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 30
   damage: 10
-  rotationSpeed: 3.5
-  detectionRange: 10
+  rotationSpeed: 5
+  detectionRange: 8
   deathTime: 2
   hitRecoveryTime: 1.5
+  angleOffset: 10
   attackRange: 1.5
   attackDelay: 2
   hitboxAcitvaionTime: 0.7

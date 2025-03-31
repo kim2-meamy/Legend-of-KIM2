@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public class PalyerAnimEvent : MonoBehaviour
+public class PlayerAnimEvent : MonoBehaviour
 {
     public Collider meleeArea;
     public bool alreadyAttack = false;
@@ -28,13 +28,13 @@ public class PalyerAnimEvent : MonoBehaviour
 
     public void DodgeStart()
     {
-        controller.isDodging=true;
+        controller.isDodging = true;
         controller.walkSpeed = 8f;
     }
     
     public void DodgeEnd()
     {
-        controller.isDodging=false;
+        controller.isDodging = false;
         controller.walkSpeed = 3f;
     }
     

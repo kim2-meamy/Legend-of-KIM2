@@ -4,7 +4,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     public bool isDodging;
-    public Collider meleeArea;
+    public bool isDie;
+    
+    public PlayerManager playerManager;
     
     [Header("Stat")]
     public int hp = 100;
@@ -69,9 +71,18 @@ public class PlayerController : MonoBehaviour
         Attack();
     }
 
+    private IEnumerator DieCoroutine()
+    {
+        yield return new WaitForSeconds(3f);
+        playerManager.Respawn();
+        hp = 100;
+        isDie = false;
+    }
+    
     private void Die()
     {
         animator.SetTrigger(animatorToHash.animDie);
+        StartCoroutine(DieCoroutine());
     }
 
     private void Attack()
@@ -91,12 +102,17 @@ public class PlayerController : MonoBehaviour
     {
         if(isDodging)
             return;
-       
+
+        if (isDie)
+            return;
+        
         animator.SetTrigger(animatorToHash.animHit);
+        
         hp -= damage;
         if (hp <= 0)
         {
             Die();
+            isDie = true;
         }
     }
     
