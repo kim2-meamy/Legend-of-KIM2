@@ -36,15 +36,27 @@ public class PlayerController : MonoBehaviour
     
     private void Awake()
     {
+        Cursor.visible = false;
+        Cursor.lockState = CursorLockMode.Locked;
+        
+#if UNITY_EDITOR
+        var gameWindow = UnityEditor.EditorWindow.GetWindow(typeof(UnityEditor.EditorWindow).Assembly.GetType("UnityEditor.GameView"));
+        gameWindow.Focus();
+        gameWindow.SendEvent(new Event
+        {
+            button = 0,
+            clickCount = 1,
+            type = EventType.MouseDown,
+            mousePosition = gameWindow.rootVisualElement.contentRect.center
+        });
+#endif
+        
         controller = GetComponent<CharacterController>(); 
     }
 
     private void Start()
     {
-        Cursor.visible = false; 
-        Cursor.lockState = CursorLockMode.Locked; 
-        
-        controller = GetComponent<CharacterController>(); // 게임 개체에 연결된 캐릭터 컨트롤러 구성 요소를 가져오고 컨트롤러 변수에 할당
+        controller = GetComponent<CharacterController>(); 
         animatorToHash = new AnimatorToHash();    
     }
 
@@ -54,15 +66,7 @@ public class PlayerController : MonoBehaviour
         
         Movement(); 
         Dodging(); 
-        Attack(); 
-    
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            Cursor.visible = true;
-            Cursor.lockState = CursorLockMode.None; 
-        }
-
+        Attack();
     }
 
     private void Die()
@@ -151,19 +155,19 @@ public class PlayerController : MonoBehaviour
         if (controller.isGrounded) 
         {
             verticalVelocity = -1f; 
-            animator.SetBool(animatorToHash.animGrounded, true); // 캐릭터가 땅에 있을 때 grounded 부울을 true 로 설정
+            animator.SetBool(animatorToHash.animGrounded, true); 
             
             if (Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2f); 
-                animator.SetTrigger(animatorToHash.animJump); //플레이어가 점프를 하면 
+                animator.SetTrigger(animatorToHash.animJump); 
             }
         }
         else
         {
             
             verticalVelocity -= gravity * Time.deltaTime; 
-            animator.SetBool(animatorToHash.animGrounded, false); // 땅에 있지 않으면 false
+            animator.SetBool(animatorToHash.animGrounded, false); 
         }
 
         return verticalVelocity; 
