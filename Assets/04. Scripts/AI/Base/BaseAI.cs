@@ -1,7 +1,5 @@
-using System.IO;
 using CartoonFX;
 using UnityEngine;
-using UnityEngine.AI;
 
 public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 {
@@ -9,29 +7,29 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public ParticleSystem hitEffect;
     public ParticleSystem dieEffect;
     public ParticleSystem damageEffect;
+    public AnimatorToHash animatorToHash;
 
     [HideInInspector]
     public Animator animator;
     [HideInInspector]
-    public NavMeshAgent agent;
-    [HideInInspector]
-    public int playerAttackPattern;
-    [HideInInspector]
     public IBaseAIState<T> currentState;
+    [HideInInspector]
+    public BaseAIData data;
 
     [SerializeField]
-    private BaseAIStats stat;
+    private BaseAIStats stats;
 
     public U GetStats<U>() where U : BaseAIStats
     {
-        return stat as U;
+        return stats as U;
     }
 
 
     protected virtual void Awake()
     {
         animator = GetComponent<Animator>();
-        agent = GetComponent<NavMeshAgent>();
+        data = new BaseAIData(stats);
+        animatorToHash = new AnimatorToHash();
     }
 
     protected virtual void Start()
@@ -62,14 +60,9 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
 
     public abstract void Attack();
 
-    public virtual void Attack(int attackPattern)
-    {
-        Attack();
-    }
-
     public virtual void TakeDamage(int damage)
     {
-        stat.health -= damage;
+        data.health -= damage;
         damageEffect.GetComponent<CFXR_ParticleText>().UpdateText("-" + damage.ToString());
         damageEffect.Play();
     }
@@ -77,6 +70,5 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
     public virtual void Die()
     {
         currentState = null;
-        //Destroy(gameObject);
     }
 }

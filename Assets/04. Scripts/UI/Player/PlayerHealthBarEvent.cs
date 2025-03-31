@@ -2,33 +2,26 @@ using TMPro;
 using UnityEngine;
 using UnityEngine.UI;
 
-public class PlayerHealthBarEvent : MonoBehaviour
+public class playerHealthBarEvent : MonoBehaviour
 {
-    private const float PlayerHp = 100f;
+    public GameObject obj;
     
     private int hp;
-    private float fillPercent;
-    
     private Image healthBar;
-    private TextMeshProUGUI healthValue;
-    
+    private TextMeshProUGUI healthText;
     private PlayerController player;
 
-    private void Awake()
+    void Awake()
     {
-        var playerUIManager = GetComponentInParent<PlayerUIManager>();
-        player = playerUIManager.Player.GetComponent<PlayerController>();
-        
+        player = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerController>();
         healthBar = GetComponent<Image>();
-        healthValue = GetComponentInChildren<TextMeshProUGUI>();
+        healthText = GetComponentInChildren<TextMeshProUGUI>();
     }
     
-    private void Update()
+    void Update()
     {
         hp = player.hp;
-        fillPercent = 1f / PlayerHp;
-        
-        healthBar.fillAmount = hp * fillPercent;
-        healthValue.text = hp.ToString();
+        healthBar.fillAmount = hp * 0.01f;
+        healthText.text = hp.ToString();
     }
 }

@@ -5,113 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="54f56b43-ff9a-4800-bc8a-5e1aa91307a3" name="변경" comment="">
+      <change afterPath="$PROJECT_DIR$/Assets/04. Scripts/Utils.meta" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/04. Scripts/Utils/Utils.cs" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Assets/04. Scripts/Utils/Utils.cs.meta" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.Legend-of-KIM2/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/Enemy/Boss.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Prefabs/Enemy/Boss.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/Enemy/Slime_01.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Prefabs/Enemy/Slime_01.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/UI/NPC/Info.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/UI/NPC/Info.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/UI/NPC/NPC.prefab" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/UI/NPC/NPC.prefab.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/02. Prefabs/UI/Player/PlayerUI.prefab" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/02. Prefabs/UI/Player/PlayerUI.prefab" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/Medieval Cute Built.unity" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/LightingData.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/LightingData.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/LightingData.asset.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/LightingData.asset.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/ReflectionProbe-0.exr.meta" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/03. Scenes/SampleScene/ReflectionProbe-0.exr.meta" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAI.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAI.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAIStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/BaseAIStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/AttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/AttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/ChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/ChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/DieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/DieState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/HitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/HitState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/IdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Base/State/IdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/Boss.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/Boss.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossAnimationEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossAnimationEvent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStateUtils.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStateUtils.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/BossStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossAttackState.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossDieState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossHitState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Boss/State/BossIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/Enemy.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/Enemy.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/EnemyStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/EnemyStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyAttackState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyAttackState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyChaseState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyChaseState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyDieState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyDieState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyHitState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyHitState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyIdleState.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/AI/Enemy/State/EnemyIdleState.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Event/SlimeQuest.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Event/SlimeQuest.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/HitControll.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Player/HitControll.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/Player/playerController.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/DefaultScript.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/DefaultScript.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Menu/EndUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Menu/EndUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/AutoViewUI.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/AutoViewUI.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/HealthBarEvent.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/NpcScripts.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/NpcScripts.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/NpcStats.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/NpcStats.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/Talkable.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/NPC/Talkable.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/Inventory.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/Inventory.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/Move.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/Move.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/PlayerHealthBarEvent.cs" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/PlayerHealthBarEvent.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/PlayerStats.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/Player/PlayerStats.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestData.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestData.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestManager.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/QuestManager.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/ScriptFinder.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/UI/ScriptFinder.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Utils.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Utils/AnimatorToHash.cs" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/04. Scripts/Utils/AnimatorToHash.cs.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/AC_BullTank.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/AC_BullTank.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Charge_Loop.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Charge_Loop.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Charge_Start.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Charge_Start.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_End.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_End.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Run_Loop.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Run_Loop.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Run_Start.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack02_Run_Start.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack03_End.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack03_End.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack03_Loop.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack03_Loop.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack_01.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Attack_01.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Death.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Death.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Death_Loop.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Death_Loop.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Sit To Stand.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Sit To Stand.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Sitting Idle.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Sitting Idle.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Stand To Sit.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Stand To Sit.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Walk_F.anim" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Enemy/Boss/Walk_F.anim.meta" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/05. Animations/Player/PlayerAnimation.controller" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/05. Animations/Player/PlayerAnimation.controller" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/BossStats.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06. ScriptableObjects/BossStats.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime1.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/06. ScriptableObjects/Slime1.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/07. Resource/온글잎 박다현체 SDF.asset" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/07. Resource/온글잎 박다현체 SDF.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/Assets/Settings/InputSystem_Actions.inputactions" beforeDir="false" afterPath="$PROJECT_DIR$/Assets/Settings/InputSystem_Actions.inputactions" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/DynamicsManager.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/EditorBuildSettings.asset" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" beforeDir="false" afterPath="$PROJECT_DIR$/ProjectSettings/TagManager.asset" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -146,20 +45,20 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.git.unshallow&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;UI-renewal&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "git-widget-placeholder": "21-feedback",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RunManager" selected="Unity 에디터에 연결.Unity 에디터에 연결">
     <configuration name="유닛 테스트(배치 모드)" type="RunUnityExe" factoryName="Unity Executable">
       <option name="EXE_PATH" value="C:\Program Files\Unity\Hub\Editor\6000.0.40f1\Editor\Unity.exe" />
@@ -251,8 +150,6 @@
       <workItem from="1743058127088" duration="287000" />
       <workItem from="1743058535996" duration="3000" />
       <workItem from="1743058626166" duration="22879000" />
-      <workItem from="1743397609645" duration="34000" />
-      <workItem from="1743398255138" duration="45000" />
     </task>
     <servers />
   </component>

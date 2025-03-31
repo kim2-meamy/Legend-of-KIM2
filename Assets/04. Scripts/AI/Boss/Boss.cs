@@ -1,35 +1,27 @@
-using System.Collections;
 using UnityEngine;
 
 public class Boss : BaseAI<Boss>
 {
     public ParticleSystem armorBreakHit;
-    public Collider axeArea;
-    public Collider headButtArea;
-
+    
     [HideInInspector]
-    public BossStats stats;
+    public BossData bossData;
 
-    //private Collider axeArea;
-    //private Collider headButtArea;
     private CharacterController controller;
-    private float verticalVelocity = 0f;
-    private float gravityMultiplier = 1f;
-    private float lastHittedTime = float.MinValue;
+    private float verticalVelocity;
+    private float lastHitTime = float.MinValue;
 
     protected override void Awake()
     {
         base.Awake();
-        //axeArea = GetComponentInChildren<BoxCollider>();
-        //headButtArea = GetComponentInChildren<CapsuleCollider>();
         controller = GetComponent<CharacterController>();
-        stats = GetStats<BossStats>();
+        var stats = GetStats<BossStats>();
+        bossData = new BossData(stats);
+        data = bossData;
     }
 
     protected override void Start()
     {
-        agent.updatePosition = false;
-        agent.updateRotation = false;
         ChangeState(new BossIdleState());
     }
 
@@ -46,7 +38,7 @@ public class Boss : BaseAI<Boss>
         }
         else
         {
-            verticalVelocity += Physics.gravity.y * gravityMultiplier * Time.deltaTime;
+            verticalVelocity += Physics.gravity.y * Time.deltaTime;
         }
 
         Vector3 deltaPosition = animator.deltaPosition;
@@ -54,65 +46,30 @@ public class Boss : BaseAI<Boss>
         controller.Move(deltaPosition);
     }
 
-    private IEnumerator Attack1Coroutine()
-    {
-        yield return new WaitForSeconds(stats.Attack1hitboxAcitvaionTime);
-        axeArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack1hitboxDeactivationTime);
-        axeArea.enabled = false;
-    }
-
-    private IEnumerator Attack2Coroutine()
-    {
-        yield return new WaitForSeconds(stats.Attack2hitboxAcitvaionTime);
-        headButtArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack2hitboxDeactivationTime);
-        headButtArea.enabled = false;
-    }
-
-    private IEnumerator Attack3Coroutine()
-    {
-        yield return new WaitForSeconds(stats.Attack3hitboxAcitvaionTime);
-        axeArea.enabled = true;
-        yield return new WaitForSeconds(stats.Attack3hitboxDeactivationTime);
-        axeArea.enabled = false;
-    }
-
     public override void Attack() { }
-
-    public override void Attack(int attackPattern)
-    {
-        switch(attackPattern)
-        {
-            case 1:
-                StartCoroutine(Attack1Coroutine());
-                break;
-            case 2:
-                StartCoroutine(Attack2Coroutine());
-                break;
-            case 3:
-                StartCoroutine(Attack3Coroutine());
-                break;
-        }
-    }
 
     public override void TakeDamage(int damage)
     {
-        if (Time.time < lastHittedTime + 0.533f)
+        if (currentState is BossDieState)
+            return;
+        
+        float animationLength = 0.533f;
+        
+        if (Time.time < lastHitTime + animationLength)
             return;
 
-        lastHittedTime = Time.time;
+        lastHitTime = Time.time;
 
         base.TakeDamage(damage);
-        stats.armor -= damage;
+        bossData.armor -= damage;
 
-        if (stats.health <= 0)
+        if (bossData.health <= 0)
         {
             ChangeState(new BossDieState());
             return;
         }
         
-        if (stats.armor <= 0 && !(currentState is BossHitState))
+        if (bossData.armor <= 0 && !(currentState is BossHitState))
         {
             if (!(currentState is BossHitState))
                 OnStun();
@@ -134,8 +91,6 @@ public class Boss : BaseAI<Boss>
 
     public override void Die()
     {
-        //skin.SetActive(false);
         dieEffect.Play();
-        //Destroy(gameObject, 1f);
     }
 }

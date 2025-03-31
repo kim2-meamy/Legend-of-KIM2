@@ -1,20 +1,25 @@
 using System.Collections;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Enemy : BaseAI<Enemy>
 {
     public GameObject skin;
-
-    [HideInInspector]
+    
     protected Collider meleeArea;
     [HideInInspector]
-    public EnemyStats stats;
+    public NavMeshAgent agent;
+    [HideInInspector]
+    public EnemyData enemyData;
 
     protected override void Awake()
     {
         base.Awake();
         meleeArea = GetComponentsInChildren<SphereCollider>()[1];
-        stats = GetStats<EnemyStats>();
+        agent = GetComponent<NavMeshAgent>();
+        var stats = GetStats<EnemyStats>();
+        enemyData = new EnemyData(stats);
+        data = enemyData;
     }
 
     protected override IBaseAIState<Enemy> GetInitialState()
@@ -22,20 +27,11 @@ public class Enemy : BaseAI<Enemy>
         return new EnemyIdleState();
     }
 
-    // protected virtual void OnTriggerEnter(Collider other)
-    // {
-    //     if (other.CompareTag("Player"))
-    //     {
-    //         // Player.Damaged(stats.damage);
-    //         Debug.Log("Player Damaged");
-    //     }
-    // }
-
     private IEnumerator AttackCoroutine()
     {
-        yield return new WaitForSeconds(stats.hitboxAcitvaionTime);
+        yield return new WaitForSeconds(enemyData.hitboxAcitvaionTime);
         meleeArea.enabled = true;
-        yield return new WaitForSeconds(stats.hitboxDeactivationTime);
+        yield return new WaitForSeconds(enemyData.hitboxDeactivationTime);
         meleeArea.enabled = false;
     }
 
@@ -46,15 +42,18 @@ public class Enemy : BaseAI<Enemy>
 
     public override void TakeDamage(int damage)
     {
+        if (currentState is EnemyDieState)
+            return;
+        
         base.TakeDamage(damage);
-        if (stats.health <= 0)
-        {
-            ChangeState(new EnemyDieState());
-        }
-        else
+
+        if (enemyData.health > 0)
         {
             ChangeState(new EnemyHitState());
+            return;
         }
+        
+        ChangeState(new EnemyDieState());
     }
 
     public override void Die()

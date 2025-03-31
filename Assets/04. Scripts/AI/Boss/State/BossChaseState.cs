@@ -8,17 +8,17 @@ public class BossChaseState : ChaseState<Boss>
 
         float distance = Vector3.Distance(boss.transform.position, boss.target.position);
 
-        if (boss.target == null || distance >= boss.stats.detectionRange)
+        if (boss.target == null || distance >= boss.bossData.detectionRange)
         {
             boss.ChangeState(new BossIdleState());
         }
-        else if (distance <= boss.stats.rangedAttackRange)
+        else if (distance <= boss.bossData.rangedAttackRange)
         {
             Vector3 direction = boss.target.position - boss.transform.position;
             direction.y = 0;
             float angleDifference = Vector3.Angle(boss.transform.forward, direction);
 
-            if (angleDifference > 5f)
+            if (angleDifference > boss.bossData.angleOffset)
                 return;
             
             boss.ChangeState(new BossAttackState());

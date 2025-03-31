@@ -9,7 +9,7 @@ public class BossDieState : DieState<Boss>
     public override void Update(Boss boss)
     {
         base.Update(boss);
-        if (timer >= boss.stats.deathTime)
+        if (timer >= boss.bossData.deathTime)
         {
             boss.ChangeState(null);
         }
