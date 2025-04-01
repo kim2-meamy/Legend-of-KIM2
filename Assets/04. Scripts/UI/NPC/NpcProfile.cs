@@ -18,6 +18,6 @@ public static class NpcProfile
     
     public static Dictionary<string, NpcProfileForm> NpcIdList { get; } = new Dictionary<string, NpcProfileForm>()
     {
-        { "Jaewoo", new NpcProfileForm(0, 1) },
+        { "재우", new NpcProfileForm(0, 1) },
     };
 }

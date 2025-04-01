@@ -1,12 +1,19 @@
+using TMPro;
 using UnityEngine;
 
 public class AutoView : MonoBehaviour
 {
+    [SerializeField]
     private GameObject mainCamera;
+
+    [SerializeField]
+    private GameObject obj;
+    private TextMeshProUGUI nameValue;
 
     private void Awake()
     {
-        mainCamera = GameObject.FindGameObjectWithTag("MainCamera");
+        nameValue = GetComponent<TextMeshProUGUI>();
+        nameValue.text = obj.name;
     }
     
     private void Update()

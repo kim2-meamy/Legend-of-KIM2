@@ -2,8 +2,8 @@ using System.Collections.Generic;
 
 public class TreeNode
 {
-    public string Contents { get; set; }
-    public string PlayerAnswer { get; set; }
+    public string Contents { get; set; } = string.Empty;
+    public string PlayerAnswer { get; set; } = string.Empty;
     
     public bool IsQuestEntry { get; set; } = false;
     public bool IsQuestRegister { get; set; } = false;

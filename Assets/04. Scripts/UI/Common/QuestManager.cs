@@ -18,15 +18,13 @@ public class QuestManager : MonoBehaviour
         
         playerQuestListContents.text = QuestData.QuestDataList[questId].Name + "\n"
             + QuestData.QuestDataList[questId].Description;
+        
+        CheckClearQuests();
     }
     
     public void RemoveQuest(int questId)
     {
         registeredQuests.RemoveListener(QuestData.QuestDataList[questId].Contents);
-        
-        string questValue = QuestData.QuestDataList[questId].Name + "\n" +
-                      QuestData.QuestDataList[questId].Description;
-        playerQuestListContents.text = playerQuestListContents.text.Replace(questValue, "");
     }
 
     private void Awake()

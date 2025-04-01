@@ -1,5 +1,5 @@
 using System.Collections.Generic;
-using UnityEngine;
+using System.Linq;
 
 public class QuestData
 {
@@ -9,31 +9,15 @@ public class QuestData
     {
         QuestDataList = new Dictionary<int, QuestForm>();
         QuestDataList.Add(QuestId.QuestIdList["FirstStep"], new QuestForm(FirstStep,
-            "First step", "Talk to Jaewoo for 5 time!"));
+            "첫 번째 단서", ": 쿠쿠 대왕은 마을의 가장 높은 성에 있다."));
     }
 
     private void FirstStep(PlayerUIManager playerUIManager)
     {
         int questId = QuestId.QuestIdList["FirstStep"];
         
-        if (playerUIManager.ContactedNpcStats == null)
-        {
-            return;
-        }
-
-        if (playerUIManager.ContactedNpcStats.Id != 0)
-        {
-            return;
-        }
-        
-        if (!playerUIManager.ContactedNpcStats.DoConversation && Input.GetKeyDown(KeyCode.E))
-        {
-            playerUIManager.QuestManager.QuestData.QuestDataList[questId].AddCounter();
-        }
-
-        if (playerUIManager.QuestManager.QuestData.QuestDataList[questId].Counter == 5)
-        {
-            playerUIManager.QuestManager.QuestData.QuestDataList[questId].ClearQuest();
-        }
+        playerUIManager.QuestManager.NpcConversationData.
+            NpcConversationDataList[NpcProfile.NpcIdList["재우"].Id].Children.First().GetAward();
+        playerUIManager.QuestManager.RemoveQuest(questId);
     }
 }

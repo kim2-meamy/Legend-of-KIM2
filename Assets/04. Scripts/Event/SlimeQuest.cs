@@ -1,13 +1,17 @@
-using System;
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class SlimeQuest : MonoBehaviour
 {
-    public List<GameObject> list;
-    public GameObject player;
-    public GameObject playerUIText;
+    [SerializeField]
+    private GameObject eventObject;
+    [SerializeField]
+    private PlayerUIManager playerUIManager;
+    
+    [SerializeField]
+    private List<GameObject> list;
+    [SerializeField]
+    private GameObject player;
     
     void OnTriggerEnter(Collider other)
     {
@@ -19,11 +23,21 @@ public class SlimeQuest : MonoBehaviour
 
     private void Update()
     {
-        list.RemoveAll(item => item == null);;
+        if (playerUIManager.ContactedNpcStats == null)
+        {
+            return;
+        }
+        
+        playerUIManager.ContactedNpcStats.CanConversation = false;
+        playerUIManager.AskForConversation.SetActive(false);
+        
+        list.RemoveAll(item => item == null);
         
         if (list.Count == 0)
         {
-            playerUIText.SetActive(true);
+            playerUIManager.ContactedNpcStats.CanConversation = true;
+            playerUIManager.AskForConversation.SetActive(true);
+            eventObject.SetActive(false);
         }
     }
 }

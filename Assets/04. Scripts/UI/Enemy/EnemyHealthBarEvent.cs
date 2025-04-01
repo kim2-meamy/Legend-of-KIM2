@@ -9,7 +9,6 @@ public class EnemyHealthBarEvent : MonoBehaviour
     
     [SerializeField]
     private GameObject EnemyObject;
-    private TextMeshProUGUI nameValue;
     
     private int hp;
     private float fillPercent;
@@ -27,9 +26,6 @@ public class EnemyHealthBarEvent : MonoBehaviour
         
         healthBar = GetComponent<Image>();
         healthValue = GetComponentInChildren<TextMeshProUGUI>();
-        
-        nameValue = GetComponentInParent<TextMeshProUGUI>();
-        nameValue.text = EnemyObject.name;
     }
     
     private void Update()

@@ -11,7 +11,7 @@ public class NpcStats : MonoBehaviour
     public int QuestCount { get; private set; }
 
     public bool DoConversation { get; set; }
-    public bool CanConversation { get; private set; }
+    public bool CanConversation { get; set; }
 
     public void SubtractQuestCount()
     {

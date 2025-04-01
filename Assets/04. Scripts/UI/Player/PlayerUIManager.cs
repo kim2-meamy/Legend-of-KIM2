@@ -1,7 +1,8 @@
 using System;
+using System.Collections.Generic;
+using System.Linq;
 using TMPro;
 using UnityEngine;
-using UnityEngine.UI;
 
 public class PlayerUIManager : MonoBehaviour
 {
@@ -20,10 +21,21 @@ public class PlayerUIManager : MonoBehaviour
     public GameObject AskForConversation => askForConversation;
 
     [SerializeField]
-    private GameObject conversation; 
+    private GameObject conversation;
     public GameObject Conversation => conversation;
     private TextMeshProUGUI conversationText;
-    private Button questAcceptButton;
+    private RectTransform conversationRectTransform;
+
+    [SerializeField]
+    private GameObject defaultOptionImage;
+    [SerializeField]
+    private GameObject nonAcceptedQuestOptionImage;
+    [SerializeField]
+    private GameObject acceptedQuestOptionImage;
+    [SerializeField]
+    private GameObject clearedQuestOptionImage;
+    private GameObject selectedOptionImage;
+    private List<GameObject> instOptionImageList;
     
     [SerializeField]
     private GameObject questList;
@@ -37,8 +49,8 @@ public class PlayerUIManager : MonoBehaviour
     [SerializeField]
     private GameObject gameClear;
     
-    private TreeNode contactedNpcDataRootNode;
-    private TreeNode contactedNpcDataCurrentNode;
+    public TreeNode ContactedNpcDataRootNode { get; private set; }
+    public TreeNode ContactedNpcDataCurrentNode { get; private set; }
 
     public void ActivateUI(GameObject uiObject)
     {
@@ -50,10 +62,71 @@ public class PlayerUIManager : MonoBehaviour
         uiObject.SetActive(false);
     }
 
+    private void CreateOptionImage(TreeNode node)
+    {
+        const float DeltaY = 220f;
+        
+        float startX = 790f;
+        float startY = 330f;
+        
+        for (int i = 0; i < node.Children?.Count; i++)
+        {
+            if (node.Children[i].DidGetAward)
+            {
+                continue;
+            }
+            
+            if (node.Children[i].IsQuestEntry)
+            {
+                int questId = ContactedNpcStats.Id * NpcProfile.MaxQuestCount + node.Children[i].QuestId;
+                if (QuestManager.QuestData.QuestDataList[questId].DidAccept)
+                {
+                    if (QuestManager.QuestData.QuestDataList[questId].DidClear)
+                    {
+                        selectedOptionImage = clearedQuestOptionImage;
+                    }
+                    else
+                    {
+                        selectedOptionImage = acceptedQuestOptionImage;
+                    }
+                }
+                else
+                {
+                    selectedOptionImage = nonAcceptedQuestOptionImage;
+                }
+            }
+            else
+            {
+                selectedOptionImage = defaultOptionImage;
+            }
+            
+            Vector3 spawnLocation = new Vector3(startX, startY, 0f);
+            var optionImageInstance = Instantiate(selectedOptionImage,
+                spawnLocation, new Quaternion(0f, 0f, 0f, 0f));
+            optionImageInstance.transform.SetParent(conversationRectTransform.transform, false);
+            startY -= DeltaY;
+            
+            instOptionImageList.Add(optionImageInstance);
+            
+            var optionText = optionImageInstance.GetComponentInChildren<TextMeshProUGUI>();
+            optionText.text = $"{i + 1}) " + node.Children[i].PlayerAnswer;
+        }
+    }
+
+    private void DestroyOptionImage()
+    {
+        for (int i = 0; i < instOptionImageList.Count; i++)
+        {
+            Destroy(instOptionImageList[i]);
+        }
+    }
+
     private void Awake()
     {
         QuestManager = GetComponent<QuestManager>();
         conversationText = GetComponentInChildren<TextMeshProUGUI>();
+        conversationRectTransform = conversation.GetComponent<RectTransform>();
+        instOptionImageList = new List<GameObject>();
         
         // Hp 게이지 제외 모두 비활성화
         DeactivateUI(askForConversation);
@@ -145,20 +218,22 @@ public class PlayerUIManager : MonoBehaviour
         {
             ContactedNpcStats.DoConversation = true;
             ActivateUI(conversation);
-            contactedNpcDataRootNode = QuestManager.NpcConversationData.NpcConversationDataList[ContactedNpcStats.Id];
-            contactedNpcDataCurrentNode = contactedNpcDataRootNode;
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            ContactedNpcDataRootNode = QuestManager.NpcConversationData.NpcConversationDataList[ContactedNpcStats.Id];
+            ContactedNpcDataCurrentNode = ContactedNpcDataRootNode;
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
             DeactivateUI(askForConversation);
+            CreateOptionImage(ContactedNpcDataCurrentNode);
             
             // 말을 걸면 npc가 플레이어를 바라보게 함
             ContactedNpcStats.transform.LookAt(player.transform);
         }
         else
         {
+            DestroyOptionImage();
             ContactedNpcStats.DoConversation = false;
             ActivateUI(askForConversation);
-            contactedNpcDataRootNode = null;
-            contactedNpcDataCurrentNode = null;
+            ContactedNpcDataRootNode = null;
+            ContactedNpcDataCurrentNode = null;
             DeactivateUI(conversation);
         }
     }
@@ -172,13 +247,15 @@ public class PlayerUIManager : MonoBehaviour
         
         if (ContactedNpcStats.DoConversation)
         {
-            if (contactedNpcDataCurrentNode.Parent == null)
+            if (ContactedNpcDataCurrentNode.Parent == null)
             {
                 return;
             }
             
-            contactedNpcDataCurrentNode = contactedNpcDataCurrentNode.Parent;
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            DestroyOptionImage();
+            ContactedNpcDataCurrentNode = ContactedNpcDataCurrentNode.Parent;
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            CreateOptionImage(ContactedNpcDataCurrentNode);
         }
     }
 
@@ -198,41 +275,49 @@ public class PlayerUIManager : MonoBehaviour
                 return;
             }
 
-            if (contactedNpcDataCurrentNode.IsQuestEntry)
+            if (ContactedNpcDataCurrentNode.IsQuestEntry)
             {
-                int questId = ContactedNpcStats.Id * NpcProfile.MaxQuestCount + contactedNpcDataCurrentNode.QuestId;
+                int questId = ContactedNpcStats.Id * NpcProfile.MaxQuestCount + ContactedNpcDataCurrentNode.QuestId;
                 
                 if (QuestManager.QuestData.QuestDataList[questId].DidClear)
                 {
                     QuestManager.RemoveQuest(questId);
                     ContactedNpcStats.SubtractQuestCount();
                     
-                    contactedNpcDataCurrentNode.GetAward();
-                    contactedNpcDataCurrentNode = contactedNpcDataRootNode;
-                    conversationText.text = contactedNpcDataCurrentNode.Contents;
+                    ContactedNpcDataCurrentNode.GetAward();
+                    DestroyOptionImage();
+                    
+                    ContactedNpcDataCurrentNode = ContactedNpcDataRootNode;
+                    conversationText.text = ContactedNpcDataCurrentNode.Contents;
+                    CreateOptionImage(ContactedNpcDataCurrentNode);
 
                     return;
                 }
             }
                 
-            if (contactedNpcDataCurrentNode.IsQuestRegister)
+            if (ContactedNpcDataCurrentNode.IsQuestRegister)
             {
-                int questId = ContactedNpcStats.Id * NpcProfile.MaxQuestCount + contactedNpcDataCurrentNode.QuestId;
+                int questId = ContactedNpcStats.Id * NpcProfile.MaxQuestCount + ContactedNpcDataCurrentNode.QuestId;
                 
                 QuestManager.AddQuest(questId);
-                contactedNpcDataCurrentNode = contactedNpcDataRootNode;
+                QuestManager.QuestData.QuestDataList[questId].AcceptQuest();
+                DestroyOptionImage();
+                ContactedNpcDataCurrentNode = ContactedNpcDataRootNode;
             }
             else
             {
-                if (contactedNpcDataCurrentNode.Children[index].DidGetAward)
+                if (ContactedNpcDataCurrentNode.Children[index].DidGetAward)
                 {
                     return;   
                 }
                 
-                contactedNpcDataCurrentNode = contactedNpcDataCurrentNode.Children[index];
+                DestroyOptionImage();
+                ContactedNpcDataCurrentNode = ContactedNpcDataCurrentNode.Children[index];
             }
             
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            CreateOptionImage(ContactedNpcDataCurrentNode);
         }
         catch (ArgumentOutOfRangeException)
         {
@@ -256,13 +341,15 @@ public class PlayerUIManager : MonoBehaviour
                 return;
             }
             
-            if (contactedNpcDataCurrentNode.Children[index].DidGetAward)
+            if (ContactedNpcDataCurrentNode.Children[index].DidGetAward)
             {
                 return;
             }
-                
-            contactedNpcDataCurrentNode = contactedNpcDataCurrentNode.Children[index];
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            
+            DestroyOptionImage();
+            ContactedNpcDataCurrentNode = ContactedNpcDataCurrentNode.Children[index];
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            CreateOptionImage(ContactedNpcDataCurrentNode);
         }
         catch (ArgumentOutOfRangeException)
         {
@@ -286,13 +373,15 @@ public class PlayerUIManager : MonoBehaviour
                 return;
             }
             
-            if (contactedNpcDataCurrentNode.Children[index].DidGetAward)
+            if (ContactedNpcDataCurrentNode.Children[index].DidGetAward)
             {
                 return;
             }
-                
-            contactedNpcDataCurrentNode = contactedNpcDataCurrentNode.Children[index];
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            
+            DestroyOptionImage();
+            ContactedNpcDataCurrentNode = ContactedNpcDataCurrentNode.Children[index];
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            CreateOptionImage(ContactedNpcDataCurrentNode);
         }
         catch (ArgumentOutOfRangeException)
         {
@@ -316,13 +405,15 @@ public class PlayerUIManager : MonoBehaviour
                 return;
             }
             
-            if (contactedNpcDataCurrentNode.Children[index].DidGetAward)
+            if (ContactedNpcDataCurrentNode.Children[index].DidGetAward)
             {
                 return;
             }
-                
-            contactedNpcDataCurrentNode = contactedNpcDataCurrentNode.Children[index];
-            conversationText.text = contactedNpcDataCurrentNode.Contents;
+            
+            DestroyOptionImage();
+            ContactedNpcDataCurrentNode = ContactedNpcDataCurrentNode.Children[index];
+            conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            CreateOptionImage(ContactedNpcDataCurrentNode);
         }
         catch (ArgumentOutOfRangeException)
         {
