@@ -87,6 +87,7 @@ public class PlayerController : MonoBehaviour
     {
         meleeArea.enabled = true;
         alreadyAttack = true;
+        // AudioManager.Instance.PlaySFXX(SFXType.PlayerAttack);
     }
 
     public void AttackEnd()
