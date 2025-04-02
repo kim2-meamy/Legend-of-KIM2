@@ -13,8 +13,9 @@ GameObject:
   - component: {fileID: 3854270100232118087}
   - component: {fileID: 2591768070041163161}
   - component: {fileID: 3337652464506724113}
+  - component: {fileID: 6373743386738817960}
   m_Layer: 8
-  m_Name: PlayerDemo
+  m_Name: Player
   m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -73,8 +74,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b009f540acb68ae4386a14dd45d89d21, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isDodging: 0
   meleeArea: {fileID: 5554392625860445340}
-  camera: {fileID: 0}
+  hp: 100
+  damage: 10
+  cameraReference: {fileID: 0}
   animator: {fileID: 2591768070041163161}
   walkSpeed: 3
   sprintspeed: 6
@@ -82,10 +86,6 @@ MonoBehaviour:
   turningSpeed: 8
   gravity: 9.81
   jumpHeight: 2
-  delay: 0.5
-  hp: 100
-  damage: 10
-  alreadyAttack: 0
 --- !u!95 &2591768070041163161
 Animator:
   serializedVersion: 7
@@ -135,6 +135,20 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &6373743386738817960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7213136569255952937}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fc7e0f590a7111e40b9eb6b17865a001, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  meleeArea: {fileID: 5554392625860445340}
+  alreadyAttack: 0
 --- !u!1001 &3884610703649008794
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -431,7 +445,8 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 8
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 9036980633323257398, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
     m_RemovedGameObjects:
     - {fileID: 944110246844731764, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}
     - {fileID: 7787725740055723973, guid: 2dfbb63c9cdf7504faf4ff26b0581598, type: 3}

@@ -8,7 +8,6 @@ public class BossData : BaseAIData
     public float attack1Delay;
     public float attack2Delay;
     public float attack3Delay;
-    public float angleOffset;
     
     public BossData(BossStats stats) : base(stats)
     {
@@ -18,7 +17,6 @@ public class BossData : BaseAIData
         attack1Delay = stats.attack1Delay;
         attack2Delay = stats.attack2Delay;
         attack3Delay = stats.attack3Delay;
-        angleOffset = stats.angleOffset;
     }
 }
 
@@ -31,5 +29,4 @@ public class BossStats : BaseAIStats
     public float attack1Delay = 2.5f;
     public float attack2Delay = 5f;
     public float attack3Delay = 2f;
-    public float angleOffset = 5f;
 }

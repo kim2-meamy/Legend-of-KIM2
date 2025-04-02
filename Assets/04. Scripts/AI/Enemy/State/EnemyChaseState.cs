@@ -26,6 +26,13 @@ public class EnemyChaseState : ChaseState<Enemy>
         }
         else if (distance <= enemy.enemyData.attackRange)
         {
+            Vector3 direction = enemy.target.position - enemy.transform.position;
+            direction.y = 0;
+            float angleDifference = Vector3.Angle(enemy.transform.forward, direction);
+
+            if (angleDifference > enemy.enemyData.angleOffset)
+                return;
+            
             enemy.ChangeState(new EnemyAttackState());
         }
     }

@@ -8,6 +8,7 @@ public class BaseAIData
     public float detectionRange;
     public float deathTime;
     public float hitRecoveryTime;
+    public float angleOffset;
 
     public BaseAIData(BaseAIStats stats)
     {
@@ -17,6 +18,7 @@ public class BaseAIData
         detectionRange = stats.detectionRange;
         deathTime = stats.deathTime;
         hitRecoveryTime = stats.hitRecoveryTime;
+        angleOffset = stats.angleOffset;
     }
 }
 
@@ -28,4 +30,5 @@ public class BaseAIStats : ScriptableObject
     public float detectionRange = 10f;
     public float deathTime = 2f;
     public float hitRecoveryTime = 2f;
+    public float angleOffset = 5f;
 }
