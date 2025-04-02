@@ -18,6 +18,7 @@ public class QuestData
         
         playerUIManager.QuestManager.NpcConversationData.
             NpcConversationDataList[NpcProfile.NpcIdList["재우"].Id].Children.First().GetAward();
+        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         playerUIManager.QuestManager.RemoveQuest(questId);
     }
 }

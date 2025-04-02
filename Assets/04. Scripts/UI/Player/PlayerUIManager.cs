@@ -23,11 +23,16 @@ public class PlayerUIManager : MonoBehaviour
     [SerializeField]
     private GameObject conversation;
     public GameObject Conversation => conversation;
+    [SerializeField]
     private TextMeshProUGUI conversationText;
+    [SerializeField]
+    private TextMeshProUGUI npcNameText;
     private RectTransform conversationRectTransform;
 
     [SerializeField]
     private GameObject defaultOptionImage;
+    [SerializeField]
+    private GameObject prevOptionImage;
     [SerializeField]
     private GameObject nonAcceptedQuestOptionImage;
     [SerializeField]
@@ -64,12 +69,18 @@ public class PlayerUIManager : MonoBehaviour
 
     private void CreateOptionImage(TreeNode node)
     {
-        const float DeltaY = 220f;
+        const float DeltaY = 110f;
+        const float StartX = 450f;
+        const float StartY = 230f;
         
-        float startX = 790f;
-        float startY = 330f;
+        float nextX = 450f;
+        float nextY = 230f;
+
+        Vector3 spawnLocation;
+        GameObject optionImageInstance;
+        TextMeshProUGUI optionText;
         
-        for (int i = 0; i < node.Children?.Count; i++)
+        for (int i = node.Children.Count - 1; i >= 0; i--)
         {
             if (node.Children[i].DidGetAward)
             {
@@ -99,18 +110,48 @@ public class PlayerUIManager : MonoBehaviour
             {
                 selectedOptionImage = defaultOptionImage;
             }
+
+            for (int j = node.Children[i].PlayerAnswer.Count - 1; j >= 0 ; j--)
+            {
+                spawnLocation = new Vector3(nextX, nextY, 0f);
+                    
+                optionImageInstance = Instantiate(selectedOptionImage,
+                    spawnLocation, Quaternion.identity);
+                optionImageInstance.transform.SetParent(conversationRectTransform.transform, false);
             
-            Vector3 spawnLocation = new Vector3(startX, startY, 0f);
-            var optionImageInstance = Instantiate(selectedOptionImage,
-                spawnLocation, new Quaternion(0f, 0f, 0f, 0f));
-            optionImageInstance.transform.SetParent(conversationRectTransform.transform, false);
-            startY -= DeltaY;
-            
-            instOptionImageList.Add(optionImageInstance);
-            
-            var optionText = optionImageInstance.GetComponentInChildren<TextMeshProUGUI>();
-            optionText.text = $"{i + 1}) " + node.Children[i].PlayerAnswer;
+                instOptionImageList.Add(optionImageInstance);
+                    
+                nextY += DeltaY;
+                optionText = optionImageInstance.GetComponentInChildren<TextMeshProUGUI>();
+                
+                if (j == 0)
+                {
+                    optionText.text = $"{i + 1}) " + node.Children[i].PlayerAnswer[j];
+                }
+                else
+                {
+                    optionText.text = node.Children[i].PlayerAnswer[j];
+                }
+            }
         }
+        
+        if (node == ContactedNpcDataRootNode)
+        {
+            return;
+        }
+                    
+        const float InitDeltaX = 1100f;
+                    
+        spawnLocation = new Vector3(StartX - InitDeltaX, StartY, 0f);
+                    
+        optionImageInstance = Instantiate(prevOptionImage,
+            spawnLocation, Quaternion.identity);
+        optionImageInstance.transform.SetParent(conversationRectTransform.transform, false);
+            
+        instOptionImageList.Add(optionImageInstance);
+                    
+        optionText = optionImageInstance.GetComponentInChildren<TextMeshProUGUI>();
+        optionText.text = NpcConversationData.PrevOptionImageText;
     }
 
     private void DestroyOptionImage()
@@ -124,7 +165,6 @@ public class PlayerUIManager : MonoBehaviour
     private void Awake()
     {
         QuestManager = GetComponent<QuestManager>();
-        conversationText = GetComponentInChildren<TextMeshProUGUI>();
         conversationRectTransform = conversation.GetComponent<RectTransform>();
         instOptionImageList = new List<GameObject>();
         
@@ -221,6 +261,7 @@ public class PlayerUIManager : MonoBehaviour
             ContactedNpcDataRootNode = QuestManager.NpcConversationData.NpcConversationDataList[ContactedNpcStats.Id];
             ContactedNpcDataCurrentNode = ContactedNpcDataRootNode;
             conversationText.text = ContactedNpcDataCurrentNode.Contents;
+            npcNameText.text = ContactedNpcStats.NpcObject.name;
             DeactivateUI(askForConversation);
             CreateOptionImage(ContactedNpcDataCurrentNode);
             

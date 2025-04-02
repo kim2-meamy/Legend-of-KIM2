@@ -4,6 +4,7 @@ public class NpcStats : MonoBehaviour
 {
     [SerializeField]
     private GameObject npcObject;
+    public GameObject NpcObject => npcObject;
     [SerializeField]
     private PlayerUIManager playerUIManager;
 
@@ -20,8 +21,8 @@ public class NpcStats : MonoBehaviour
 
     private void Awake()
     {
-        Id = NpcProfile.NpcIdList[npcObject.name].Id;
-        QuestCount = NpcProfile.NpcIdList[npcObject.name].QuestCount;
+        Id = NpcProfile.NpcIdList[NpcObject.name].Id;
+        QuestCount = NpcProfile.NpcIdList[NpcObject.name].QuestCount;
     }
 
     private void OnTriggerEnter(Collider other)

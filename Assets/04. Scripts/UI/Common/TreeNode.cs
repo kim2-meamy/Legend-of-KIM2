@@ -3,7 +3,7 @@ using System.Collections.Generic;
 public class TreeNode
 {
     public string Contents { get; set; } = string.Empty;
-    public string PlayerAnswer { get; set; } = string.Empty;
+    public List<string> PlayerAnswer { get; set; } = new List<string>();
     
     public bool IsQuestEntry { get; set; } = false;
     public bool IsQuestRegister { get; set; } = false;

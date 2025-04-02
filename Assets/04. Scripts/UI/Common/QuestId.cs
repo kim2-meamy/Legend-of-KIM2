@@ -4,6 +4,7 @@ public static class QuestId
 {
     public static Dictionary<string, int> QuestIdList { get; } = new Dictionary<string, int>()
     {
-        {"FirstStep", 1}
+        {"FirstStep", 1},
+        {"SecondStep", 101}
     };
 }

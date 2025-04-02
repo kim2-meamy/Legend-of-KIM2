@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class EnemyHealthBarEvent : MonoBehaviour
 {
-    private const float EnemyHp = 100f;
+    private const float EnemyHp = 30f;
     private const float BossHp = 200f;
     
     [SerializeField]
