@@ -166,13 +166,16 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    private float VerticalForceCalculation() 
+    private float VerticalForceCalculation()
     {
-        if (controller.isGrounded) 
+        Vector3 rayOrigin = transform.position + Vector3.up * 0.1f;
+        bool isGrounded = Physics.Raycast(rayOrigin, Vector3.down, 0.3f);
+    
+        if (isGrounded && verticalVelocity <= 0) 
         {
             verticalVelocity = -1f; 
             animator.SetBool(animatorToHash.animGrounded, true); 
-            
+        
             if (Input.GetButtonDown("Jump"))
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2f); 
@@ -181,7 +184,6 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            
             verticalVelocity -= gravity * Time.deltaTime; 
             animator.SetBool(animatorToHash.animGrounded, false); 
         }
