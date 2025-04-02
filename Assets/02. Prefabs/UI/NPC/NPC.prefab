@@ -269,15 +269,6 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}
       insertIndex: -1
       addedObject: {fileID: 8149214555334885264}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 8246355512910284721}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 6387094393108054100}
-    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 5210301823342768432}
   m_SourcePrefab: {fileID: 100100000, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}
 --- !u!1 &7101029016991470646 stripped
 GameObject:
@@ -354,58 +345,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 5
   m_Center: {x: 0, y: 0.5, z: 0}
---- !u!114 &8246355512910284721
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7101029016991470646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 34ef6dd012469894ab60096210fd1632, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  moveAction:
-    m_Name: Move
-    m_Type: 0
-    m_ExpectedControlType: 
-    m_Id: 736ca5d0-6108-4b0c-b53a-591498452f90
-    m_Processors: 
-    m_Interactions: 
-    m_SingletonActionBindings: []
-    m_Flags: 0
---- !u!114 &6387094393108054100
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7101029016991470646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e43e62b75e4d16245b5d2e43c318693e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  text: {fileID: 0}
-  isOpenScript: 0
-  canOpenScript: 0
---- !u!114 &5210301823342768432
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7101029016991470646}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: f99a688cc2de29e4ba37f1fe15f6c8a1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  Id: 1
-  questCount: 0
-  Name: Stranger
-  defaultScriptContents: Thank you for saving me!
 --- !u!4 &7620157537634274956 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 3cd0ee189a243446b9f5e4ac55143da0, type: 3}

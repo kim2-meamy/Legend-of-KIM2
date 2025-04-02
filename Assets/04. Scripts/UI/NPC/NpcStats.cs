@@ -1,10 +1,48 @@
 using UnityEngine;
-using UnityEngine.InputSystem;
 
 public class NpcStats : MonoBehaviour
 {
-    public int Id = 1;
-    public int questCount = 0;
-    public string Name = "Stranger";
-    public string defaultScriptContents = "Thank you for saving me!";
+    [SerializeField]
+    private GameObject npcObject;
+    [SerializeField]
+    private PlayerUIManager playerUIManager;
+
+    public int Id { get; private set; }
+    public int QuestCount { get; private set; }
+
+    public bool DoConversation { get; set; }
+    public bool CanConversation { get; set; }
+
+    public void SubtractQuestCount()
+    {
+        QuestCount--;
+    }
+
+    private void Awake()
+    {
+        Id = NpcProfile.NpcIdList[npcObject.name].Id;
+        QuestCount = NpcProfile.NpcIdList[npcObject.name].QuestCount;
+    }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CanConversation = true;
+            playerUIManager.ContactedNpcStats = this;
+            playerUIManager.ActivateUI(playerUIManager.AskForConversation);
+        }
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("Player"))
+        {
+            CanConversation = false;
+            DoConversation = false;
+            playerUIManager.DeactivateUI(playerUIManager.AskForConversation);
+            playerUIManager.DeactivateUI(playerUIManager.Conversation);
+            playerUIManager.ContactedNpcStats = null;
+        }
+    }
 }
