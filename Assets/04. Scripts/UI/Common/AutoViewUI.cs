@@ -12,6 +12,11 @@ public class AutoView : MonoBehaviour
 
     private void Awake()
     {
+        if (obj == null)
+        {
+            return;
+        }
+        
         nameValue = GetComponent<TextMeshProUGUI>();
         nameValue.text = obj.name;
     }

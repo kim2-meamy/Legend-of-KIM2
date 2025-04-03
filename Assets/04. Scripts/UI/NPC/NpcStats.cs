@@ -21,8 +21,8 @@ public class NpcStats : MonoBehaviour
 
     private void Awake()
     {
-        Id = NpcProfile.NpcIdList[NpcObject.name].Id;
-        QuestCount = NpcProfile.NpcIdList[NpcObject.name].QuestCount;
+        Id = NpcProfile.NpcProfileList[NpcObject.name].Id;
+        QuestCount = NpcProfile.NpcProfileList[NpcObject.name].QuestCount;
     }
 
     private void OnTriggerEnter(Collider other)
@@ -31,7 +31,7 @@ public class NpcStats : MonoBehaviour
         {
             CanConversation = true;
             playerUIManager.ContactedNpcStats = this;
-            playerUIManager.ActivateUI(playerUIManager.AskForConversation);
+            playerUIManager.AskForConversation.SetActive(true);
         }
     }
 
@@ -41,8 +41,9 @@ public class NpcStats : MonoBehaviour
         {
             CanConversation = false;
             DoConversation = false;
-            playerUIManager.DeactivateUI(playerUIManager.AskForConversation);
-            playerUIManager.DeactivateUI(playerUIManager.Conversation);
+            playerUIManager.AskForConversation.SetActive(false);
+            playerUIManager.Conversation.SetActive(false);
+            playerUIManager.DestroyOptionImage();
             playerUIManager.ContactedNpcStats = null;
         }
     }

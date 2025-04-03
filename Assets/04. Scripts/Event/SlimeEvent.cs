@@ -1,7 +1,8 @@
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class SlimeQuest : MonoBehaviour
+public class SlimeEvent : MonoBehaviour
 {
     [SerializeField]
     private GameObject eventObject;
@@ -17,6 +18,10 @@ public class SlimeQuest : MonoBehaviour
     {
         foreach(GameObject obj in list)
         {
+            if (obj.IsDestroyed() || obj == null)
+            {
+                continue;
+            }
             obj.GetComponent<Enemy>().target = player.transform;
         }
     }
@@ -27,16 +32,23 @@ public class SlimeQuest : MonoBehaviour
         {
             return;
         }
-        
-        playerUIManager.ContactedNpcStats.CanConversation = false;
-        playerUIManager.AskForConversation.SetActive(false);
+
+        if (playerUIManager.ContactedNpcStats.Id == NpcProfile.NpcProfileList["재우"].Id)
+        {
+            playerUIManager.ContactedNpcStats.CanConversation = false;
+            playerUIManager.AskForConversation.SetActive(false);
+        }
         
         list.RemoveAll(item => item == null);
         
         if (list.Count == 0)
         {
-            playerUIManager.ContactedNpcStats.CanConversation = true;
-            playerUIManager.AskForConversation.SetActive(true);
+            if (playerUIManager.ContactedNpcStats != null)
+            {
+                playerUIManager.ContactedNpcStats.CanConversation = true;
+                playerUIManager.AskForConversation.SetActive(true);
+            }
+            
             eventObject.SetActive(false);
         }
     }

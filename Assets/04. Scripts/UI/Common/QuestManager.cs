@@ -1,3 +1,4 @@
+using System;
 using TMPro;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,43 +8,38 @@ public class QuestManager : MonoBehaviour
     private UnityEvent<PlayerUIManager> registeredQuests;
 
     private PlayerUIManager playerUIManager;
-    private TextMeshProUGUI playerQuestListContents;
 
-    public QuestData QuestData { get; private set; }
-    public NpcConversationData NpcConversationData { get; private set; }
+    public QuestData InstQuestData { get; private set; }
+    public NpcConversationData InstNpcConversationData { get; private set; }
 
     public void AddQuest(int questId)
     {
-        registeredQuests.AddListener(QuestData.QuestDataList[questId].Contents);
-        
-        playerQuestListContents.text = QuestData.QuestDataList[questId].Name + "\n"
-            + QuestData.QuestDataList[questId].Description;
+        registeredQuests.AddListener(InstQuestData.QuestDataList[questId].Contents);
         
         CheckClearQuests();
     }
     
     public void RemoveQuest(int questId)
     {
-        registeredQuests.RemoveListener(QuestData.QuestDataList[questId].Contents);
+        registeredQuests.RemoveListener(InstQuestData.QuestDataList[questId].Contents);
+    }
+    
+    public void CheckClearQuests()
+    {
+        registeredQuests.Invoke(playerUIManager);
     }
 
     private void Awake()
     {
         playerUIManager = GetComponent<PlayerUIManager>();
-        playerQuestListContents = playerUIManager.QuestList.GetComponentInChildren<TextMeshProUGUI>();
         
         registeredQuests = new UnityEvent<PlayerUIManager>();
-        QuestData = new QuestData();
-        NpcConversationData = new NpcConversationData();
+        InstQuestData = new QuestData();
+        InstNpcConversationData = new NpcConversationData();
     }
 
     private void Update()
     {
         CheckClearQuests();
-    }
-    
-    private void CheckClearQuests()
-    {
-        registeredQuests.Invoke(playerUIManager);
     }
 }
