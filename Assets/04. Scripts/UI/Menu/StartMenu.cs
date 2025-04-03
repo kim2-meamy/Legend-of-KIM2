@@ -18,6 +18,7 @@ public class StartMenu : MonoBehaviour
     private void OnStart()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex + 1);
+        AudioManager.Instance.OnStop();
     }
 
     private void OnQuit()

@@ -5,29 +5,23 @@ using UnityEngine.Audio;
 
 public class AudioManager : MonoBehaviour
 {
-    public static float ttime = 0;
-    
     public static AudioManager Instance { get; private set; }
 
     [SerializeField] private AudioMixer mixer;
     [SerializeField] private List<AudioClip> clips;
     [SerializeField] private AudioSource backgroundMusic;
-    [SerializeField] private AudioClip gameBGM;
+    [SerializeField] private AudioClip startBGM;
     [SerializeField] private AudioClip endBGM;
     
     [SerializeField] private int sfxPoolSize = 5;
     private List<AudioSource> sfxPool;
-
-    private void Update()
-    {
-        ttime += Time.deltaTime;
-    }
     
     private void Awake()
     {
         if (Instance == null)
         {
             Instance = this;
+            DontDestroyOnLoad(gameObject);
         }
         else
         {
@@ -45,14 +39,19 @@ public class AudioManager : MonoBehaviour
         }
     }
 
-    public void OnPlay()
+    private void Start()
     {
-        PlayBGM(gameBGM);
+        OnPlay();
     }
 
+    public void OnPlay()
+    {
+        PlayBGM(startBGM);
+    }
+    
     public void OnStop()
     {
-        PlayBGM(endBGM);
+        StopBGM();
     }
 
     public void PlayBGM(AudioClip clip)
@@ -64,6 +63,12 @@ public class AudioManager : MonoBehaviour
         backgroundMusic.Play();
     }
 
+    public void StopBGM()
+    {
+        if (backgroundMusic.isPlaying)
+            backgroundMusic.Stop();
+    }
+    
     public void PlaySFX(SFXType type, float? volume = 1f, float? startTime = null, double? playDuration = null )
     {
         AudioClip clip = GetAudioClip(type);

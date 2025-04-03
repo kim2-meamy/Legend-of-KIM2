@@ -30,10 +30,10 @@ public class BossAttackState : AttackState<Boss>
         float durationTime = GetAudioDurationTime(attackPattern);
         if (type == SFXType.BossRangeAttack)
             boss.StartSFXCoroutine(type, startTime, durationTime, 0.4f);
-        else
-        {
+        else if (type == SFXType.BossMeleeAttack)
             AudioManager.Instance.PlaySFX(type, 0.3f, startTime, durationTime);
-        }
+        else
+            AudioManager.Instance.PlaySFX(type, 0.4f, startTime, durationTime);
         
         attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
     }

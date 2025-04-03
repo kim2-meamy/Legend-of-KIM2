@@ -316,7 +316,7 @@ public class NpcConversationData
     
     public void NpcId3ClearFirstQuest()
     {
-        // Npc Id 1번 - 두 번째 퀘스트
+        // Npc Id 3번 - 두 번째 퀘스트
         TreeNode thirdNpcSecondQuest;
         {
             TreeNode root = new TreeNode()

@@ -49,6 +49,7 @@ public class PassedEvent : MonoBehaviour
         {
             fatherSphereCollider.enabled = true;
             eventObject.SetActive(false);
+            
         }
     }
 }

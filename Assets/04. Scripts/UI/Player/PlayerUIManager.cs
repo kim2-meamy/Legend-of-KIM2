@@ -624,13 +624,17 @@ public class PlayerUIManager : MonoBehaviour
         if (!isGamePause)
         {
             gamePause.SetActive(true);
-            Time.timeScale = 0f;
             isGamePause = true;
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+            Time.timeScale = 0f;
         }
         else
         {
             gamePause.SetActive(false);
             isGamePause = false;
+            Cursor.lockState = CursorLockMode.Locked;
+            Cursor.visible = false;
             
             if (!isQuestListOpen)
             {

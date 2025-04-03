@@ -11,6 +11,10 @@ public class SlimeEvent : MonoBehaviour
     
     [SerializeField]
     private List<GameObject> list;
+    private bool isSlimesKilled = false;
+
+    [SerializeField]
+    private GameObject boundary;
     
     void OnTriggerEnter(Collider other)
     {
@@ -33,8 +37,11 @@ public class SlimeEvent : MonoBehaviour
 
         if (playerUIManager.ContactedNpcStats.Id == NpcProfile.NpcProfileList["재우"].Id)
         {
-            playerUIManager.ContactedNpcStats.CanConversation = false;
-            playerUIManager.AskForConversation.SetActive(false);
+            if (!isSlimesKilled)
+            {
+                playerUIManager.ContactedNpcStats.CanConversation = false;
+                playerUIManager.AskForConversation.SetActive(false);
+            }
         }
         
         list.RemoveAll(item => item == null);
@@ -43,11 +50,22 @@ public class SlimeEvent : MonoBehaviour
         {
             if (playerUIManager.ContactedNpcStats != null)
             {
-                playerUIManager.ContactedNpcStats.CanConversation = true;
-                playerUIManager.AskForConversation.SetActive(true);
+                if (!isSlimesKilled)
+                {
+                    playerUIManager.ContactedNpcStats.CanConversation = true;
+                    playerUIManager.AskForConversation.SetActive(true);
+                }
+                
+                isSlimesKilled = true;
             }
-            
-            eventObject.SetActive(false);
         }
+
+        if (!playerUIManager.InstQuestManager.InstQuestData.QuestDataList[QuestId.QuestIdList["FirstStep"]].DidGetAward)
+        {
+            return;
+        }
+        
+        boundary.SetActive(false);
+        eventObject.SetActive(false);
     }
 }

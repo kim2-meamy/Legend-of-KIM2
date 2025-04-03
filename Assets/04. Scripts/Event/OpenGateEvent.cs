@@ -1,5 +1,6 @@
 using System;
 using UnityEngine;
+using UnityEngine.Playables;
 
 public class OpenGateEvent : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class OpenGateEvent : MonoBehaviour
     private GameObject eventObject;
     [SerializeField]
     private PlayerUIManager playerUIManager;
+    [SerializeField]
+    private PlayableDirector playableDirector;
     
     private void Update()
     {
@@ -26,8 +29,10 @@ public class OpenGateEvent : MonoBehaviour
         playerUIManager.AskForConversation.SetActive(false);
         playerUIManager.ContactedNpcStats = null;
         
-        gateRock1.SetActive(false);
-        gateRock2.SetActive(false);
+        playableDirector.Play();
+        // gateRock1.SetActive(false);
+        // gateRock2.SetActive(false);
         eventObject.SetActive(false);
+        
     }
 }
