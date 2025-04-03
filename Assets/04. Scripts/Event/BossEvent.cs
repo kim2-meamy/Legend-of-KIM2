@@ -9,8 +9,6 @@ public class BossEvent : MonoBehaviour
     
     [SerializeField]
     private GameObject boss;
-    [SerializeField]
-    private GameObject player;
 
     private void Update()
     {
@@ -29,6 +27,6 @@ public class BossEvent : MonoBehaviour
         playerUIManager.ContactedNpcStats = null;
         playerUIManager.AskForConversation.SetActive(false);
         boss.GetComponent<NpcStats>().enabled = false;
-        boss.GetComponent<Boss>().target = player.transform;
+        boss.GetComponent<Boss>().target = playerUIManager.Player.transform;
     }
 }

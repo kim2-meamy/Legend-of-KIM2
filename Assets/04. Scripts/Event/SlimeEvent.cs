@@ -11,8 +11,6 @@ public class SlimeEvent : MonoBehaviour
     
     [SerializeField]
     private List<GameObject> list;
-    [SerializeField]
-    private GameObject player;
     
     void OnTriggerEnter(Collider other)
     {
@@ -22,7 +20,7 @@ public class SlimeEvent : MonoBehaviour
             {
                 continue;
             }
-            obj.GetComponent<Enemy>().target = player.transform;
+            obj.GetComponent<Enemy>().target = playerUIManager.Player.transform;
         }
     }
 
