@@ -4,6 +4,7 @@ using System.Collections;
 public class Boss : BaseAI<Boss>
 {
     public ParticleSystem armorBreakHit;
+    public PlayerUIManager playerUIManager;
     
     [HideInInspector]
     public BossData bossData;
@@ -51,6 +52,9 @@ public class Boss : BaseAI<Boss>
 
     public override void TakeDamage(int damage)
     {
+        if (!playerUIManager.InstQuestManager.InstQuestData.QuestDataList[QuestId.QuestIdList["BossFight"]].DidAccept)
+            return;
+        
         if (currentState is BossDieState)
             return;
         
@@ -96,6 +100,7 @@ public class Boss : BaseAI<Boss>
     {
         dieEffect.Play();
         AudioManager.Instance.PlaySFX(SFXType.BossDie);
+        playerUIManager.IsGameClear = true;
     }
 
     public void ChaseChangeState()
