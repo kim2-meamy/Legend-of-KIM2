@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 public class PlayerAnimEvent : MonoBehaviour
@@ -12,7 +11,6 @@ public class PlayerAnimEvent : MonoBehaviour
     {
         controller = GetComponent<PlayerController>();
     }
-
     
     public void AttackStart()
     {
@@ -26,10 +24,16 @@ public class PlayerAnimEvent : MonoBehaviour
         alreadyAttack = false;
     }
 
+    public void AttackSound()
+    {
+        AudioManager.Instance.PlaySFX(SFXType.PlayerAttack, 0.6f, 0.1f);
+    }
+
     public void DodgeStart()
     {
         controller.isDodging = true;
         controller.walkSpeed = 8f;
+        AudioManager.Instance.PlaySFX(SFXType.PlayerDodge, 0.5f, 0.2f, 0.15f);
     }
     
     public void DodgeEnd()
@@ -37,5 +41,14 @@ public class PlayerAnimEvent : MonoBehaviour
         controller.isDodging = false;
         controller.walkSpeed = 3f;
     }
-    
+
+    public void LeftStep()
+    {
+        AudioManager.Instance.PlaySFX(SFXType.PlayerLStep, 2f, 0.2f);
+    }
+
+    public void RightStep()
+    {
+        AudioManager.Instance.PlaySFX(SFXType.PlayerRStep, 2f, 0.2f);
+    }
 }

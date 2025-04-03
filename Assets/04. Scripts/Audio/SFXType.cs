@@ -1,9 +1,19 @@
-public enum SFXType 
+public enum SFXType
 {
+    PlayerLStep,
+    PlayerRStep,
+    PlayerDodge,
     PlayerAttack,
     PlayerJump,
-    PlayerDeath,
     PlayerHit,
-    EnemyAttack,
-    EnemyChase
+    PlayerDie,
+    SlimeAttack,
+    SlimeHit,
+    SlimeDie,
+    BossMeleeAttack,
+    BossChargeAttack,
+    BossRangeAttack,
+    BossArmorHit,
+    BossHit,
+    BossDie
 }

@@ -82,6 +82,7 @@ public class PlayerController : MonoBehaviour
     private void Die()
     {
         animator.SetTrigger(animatorToHash.animDie);
+        AudioManager.Instance.PlaySFX(SFXType.PlayerDie, 0.7f);
         StartCoroutine(DieCoroutine());
     }
 
@@ -107,6 +108,7 @@ public class PlayerController : MonoBehaviour
             return;
         
         animator.SetTrigger(animatorToHash.animHit);
+        AudioManager.Instance.PlaySFX(SFXType.PlayerHit, 0.5f);
         
         hp -= damage;
         if (hp <= 0)
@@ -142,8 +144,8 @@ public class PlayerController : MonoBehaviour
         
         move.y = VerticalForceCalculation(); 
         
-        controller.Move(move * Time.deltaTime); 
-        
+        controller.Move(move * Time.deltaTime);
+
         animator.SetFloat(animatorToHash.animMoveSpeed, speed * Mathf.Max(Mathf.Abs(moveInput), Mathf.Abs(turnInput)));
     }
 
@@ -180,6 +182,7 @@ public class PlayerController : MonoBehaviour
             {
                 verticalVelocity = Mathf.Sqrt(jumpHeight * gravity * 2f); 
                 animator.SetTrigger(animatorToHash.animJump); 
+                AudioManager.Instance.PlaySFX(SFXType.PlayerJump, 0.25f, 0.1f);
             }
         }
         else

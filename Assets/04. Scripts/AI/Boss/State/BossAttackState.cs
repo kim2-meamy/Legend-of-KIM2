@@ -1,5 +1,7 @@
 using System;
+using System.Collections;
 using UnityEngine;
+using UnityEngine.Audio;
 using Random = UnityEngine.Random;
 
 public class BossAttackState : AttackState<Boss>
@@ -20,7 +22,19 @@ public class BossAttackState : AttackState<Boss>
 
         BossStateUtils.RotateTowardsTarget(boss);
         attackPattern = ChooseAttackPattern(boss);
+        
         boss.animator.SetInteger(boss.animatorToHash.animBossAttack, attackPattern);
+
+        SFXType type = SFXType.BossMeleeAttack + attackPattern - 1;
+        float startTime = GetAudioStartTime(attackPattern);
+        float durationTime = GetAudioDurationTime(attackPattern);
+        if (type == SFXType.BossRangeAttack)
+            boss.StartSFXCoroutine(type, startTime, durationTime, 0.4f);
+        else
+        {
+            AudioManager.Instance.PlaySFX(type, 0.3f, startTime, durationTime);
+        }
+        
         attackDelay = GetAttackDelay(boss, (BossAttackPattern)attackPattern);
     }
 
@@ -37,11 +51,6 @@ public class BossAttackState : AttackState<Boss>
             return;
 
         base.Update(boss);
-
-        if (timer >= attackDelay)
-        {
-            boss.ChangeState(new BossChaseState());
-        }
     }
 
     private int ChooseAttackPattern(Boss boss)
@@ -66,6 +75,36 @@ public class BossAttackState : AttackState<Boss>
             case BossAttackPattern.chargeAttack: return boss.bossData.attack2Delay;
             case BossAttackPattern.rangedAttack: return boss.bossData.attack3Delay;
             default: return 1f;
+        }
+    }
+
+    private float GetAudioStartTime(int attackPattern)
+    {
+        switch (attackPattern)
+        {
+            case 1:
+                return 0f;
+            case 2:
+                return 1.2f;
+            case 3:
+                return 0f;
+            default:
+                return 0f;
+        }
+    }
+    
+    private float GetAudioDurationTime(int attackPattern)
+    {
+        switch (attackPattern)
+        {
+            case 1:
+                return 1f;
+            case 2:
+                return 2.5f;
+            case 3:
+                return 0.6f;
+            default:
+                return 0f;
         }
     }
 }

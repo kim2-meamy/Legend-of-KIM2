@@ -50,6 +50,7 @@ public abstract class BaseAI<T> : MonoBehaviour where T : BaseAI<T>
         currentState?.Exit((T)this);
         currentState = newState;
         
+        
         if (currentState != null)
         {
             currentState?.Enter((T)this);

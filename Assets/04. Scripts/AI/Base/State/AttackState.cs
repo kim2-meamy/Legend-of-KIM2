@@ -16,6 +16,7 @@ public class AttackState<T> : IBaseAIState<T> where T : BaseAI<T>
 
     public virtual void Exit(T ai)
     {
+        ai.animator.SetInteger(ai.animatorToHash.animBossAttack, 0);
         ai.animator.SetTrigger(ai.animatorToHash.animAttackEnd);
     }
 }

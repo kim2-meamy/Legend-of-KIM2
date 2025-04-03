@@ -1,4 +1,5 @@
 using UnityEngine;
+using System.Collections;
 
 public class Boss : BaseAI<Boss>
 {
@@ -77,10 +78,12 @@ public class Boss : BaseAI<Boss>
         else if (currentState is BossHitState)
         {
             armorBreakHit.Play();
+            AudioManager.Instance.PlaySFX(SFXType.BossHit);
         }
         else
         {
             hitEffect.Play();
+            AudioManager.Instance.PlaySFX(SFXType.BossArmorHit);
         }
     }
 
@@ -92,5 +95,22 @@ public class Boss : BaseAI<Boss>
     public override void Die()
     {
         dieEffect.Play();
+        AudioManager.Instance.PlaySFX(SFXType.BossDie);
+    }
+
+    public void ChaseChangeState()
+    {
+        ChangeState(new BossChaseState());
+    }
+
+    public void StartSFXCoroutine(SFXType type, float startTime, float durationTime, float delay = 0f)
+    {
+        StartCoroutine(SFXCoroutine(type, startTime, durationTime, delay));
+    }
+     
+    private IEnumerator SFXCoroutine(SFXType type, float startTime, float durationTime, float delay = 0f)
+    {
+        yield return new WaitForSeconds(delay);
+        AudioManager.Instance.PlaySFX(type, 0.3f, startTime, durationTime);
     }
 }

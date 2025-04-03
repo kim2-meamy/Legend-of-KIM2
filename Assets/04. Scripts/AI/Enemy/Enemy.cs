@@ -30,6 +30,7 @@ public class Enemy : BaseAI<Enemy>
     private IEnumerator AttackCoroutine()
     {
         yield return new WaitForSeconds(enemyData.hitboxAcitvaionTime);
+        AudioManager.Instance.PlaySFX(SFXType.SlimeAttack, 0.5f);
         meleeArea.enabled = true;
         yield return new WaitForSeconds(enemyData.hitboxDeactivationTime);
         meleeArea.enabled = false;
@@ -46,7 +47,8 @@ public class Enemy : BaseAI<Enemy>
             return;
         
         base.TakeDamage(damage);
-
+        AudioManager.Instance.PlaySFX(SFXType.SlimeHit, 0.7f);
+        
         if (enemyData.health > 0)
         {
             ChangeState(new EnemyHitState());
@@ -61,5 +63,6 @@ public class Enemy : BaseAI<Enemy>
         skin.SetActive(false);
         dieEffect.Play();
         Destroy(gameObject, 1f);
+        AudioManager.Instance.PlaySFX(SFXType.SlimeDie, 0.3f);
     }
 }
