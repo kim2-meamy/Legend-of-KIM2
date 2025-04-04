@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 public class GhostEvent : MonoBehaviour
 {
+    private const float WaitDistance = 6f;
+    private const float ArriveDistance = 5f;
+    
     [SerializeField]
     private GameObject boy;
     private NavMeshAgent boyNavMeshAgent;
@@ -42,7 +45,7 @@ public class GhostEvent : MonoBehaviour
         boyNavMeshAgent = boy.GetComponent<NavMeshAgent>();
         boyNavMeshAgent.SetDestination(father.transform.position);
 
-        if (Vector3.Distance(playerUIManager.Player.transform.position, boy.transform.position) > 6f)
+        if (Vector3.Distance(playerUIManager.Player.transform.position, boy.transform.position) > WaitDistance)
         {
             boyNavMeshAgent.isStopped = true;
         }
@@ -51,7 +54,7 @@ public class GhostEvent : MonoBehaviour
             boyNavMeshAgent.isStopped = false;
         }
 
-        if (Vector3.Distance(boy.transform.position, father.transform.position) < 5f)
+        if (Vector3.Distance(boy.transform.position, father.transform.position) < ArriveDistance)
         {
             fatherSphereCollider.enabled = true;
             eventObject.SetActive(false);

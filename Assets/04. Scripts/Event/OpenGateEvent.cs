@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 using UnityEngine.Playables;
 
@@ -6,10 +5,6 @@ public class OpenGateEvent : MonoBehaviour
 {
     [SerializeField]
     private GameObject father;
-    [SerializeField]
-    private GameObject gateRock1;
-    [SerializeField]
-    private GameObject gateRock2;
     [SerializeField]
     private GameObject eventObject;
     [SerializeField]
@@ -30,8 +25,6 @@ public class OpenGateEvent : MonoBehaviour
         playerUIManager.ContactedNpcStats = null;
         
         playableDirector.Play();
-        // gateRock1.SetActive(false);
-        // gateRock2.SetActive(false);
         eventObject.SetActive(false);
         
     }

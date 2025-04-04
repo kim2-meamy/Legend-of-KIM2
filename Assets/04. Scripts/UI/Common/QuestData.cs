@@ -1,7 +1,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using UnityEngine;
 
 public class QuestData
 {
@@ -58,7 +57,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["재우"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.RemoveQuest(questId);
     }
@@ -79,8 +77,6 @@ public class QuestData
             return;
         }
         
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
-        
         playerUIManager.InstQuestManager.InstNpcConversationData.NpcId1ClearFirstQuest();
         playerUIManager.ContactedNpcDataRootNode =
             playerUIManager.InstQuestManager.
@@ -96,7 +92,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["두루마리 서신"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.RemoveQuest(questId);
     }
@@ -109,7 +104,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["우는 아이"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.RemoveQuest(questId);
     }
@@ -122,7 +116,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["우는 아이의 아버지"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.InstNpcConversationData.NpcId3ClearFirstQuest();
         playerUIManager.ContactedNpcDataRootNode =
@@ -140,7 +133,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["우는 아이의 아버지"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.RemoveQuest(questId);
     }
@@ -158,7 +150,6 @@ public class QuestData
             NpcConversationDataList[NpcProfile.NpcProfileList["쿠쿠 대왕"].Id].Children.First().GetAward();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].ClearQuest();
         playerUIManager.InstQuestManager.InstQuestData.QuestDataList[questId].GetAward();
-        playerUIManager.ContactedNpcStats.SubtractQuestCount();
         
         playerUIManager.InstQuestManager.RemoveQuest(questId);
     }

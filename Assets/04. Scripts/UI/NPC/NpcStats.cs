@@ -9,20 +9,13 @@ public class NpcStats : MonoBehaviour
     private PlayerUIManager playerUIManager;
 
     public int Id { get; private set; }
-    public int QuestCount { get; private set; }
 
     public bool DoConversation { get; set; }
     public bool CanConversation { get; set; }
 
-    public void SubtractQuestCount()
-    {
-        QuestCount--;
-    }
-
     private void Awake()
     {
         Id = NpcProfile.NpcProfileList[NpcObject.name].Id;
-        QuestCount = NpcProfile.NpcProfileList[NpcObject.name].QuestCount;
     }
 
     private void OnTriggerEnter(Collider other)

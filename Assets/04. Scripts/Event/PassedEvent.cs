@@ -3,6 +3,9 @@ using UnityEngine.AI;
 
 public class PassedEvent : MonoBehaviour
 {
+    private const float WaitDistance = 6f;
+    private const float ArriveDistance = 5f;
+    
     [SerializeField]
     private GameObject father;
     private NavMeshAgent fatherNavMeshAgent;
@@ -36,7 +39,7 @@ public class PassedEvent : MonoBehaviour
         fatherNavMeshAgent = father.GetComponent<NavMeshAgent>();
         fatherNavMeshAgent.SetDestination(eventDestination.transform.position);
 
-        if (Vector3.Distance(playerUIManager.Player.transform.position, father.transform.position) > 6f)
+        if (Vector3.Distance(playerUIManager.Player.transform.position, father.transform.position) > WaitDistance)
         {
             fatherNavMeshAgent.isStopped = true;
         }
@@ -45,7 +48,7 @@ public class PassedEvent : MonoBehaviour
             fatherNavMeshAgent.isStopped = false;
         }
 
-        if (Vector3.Distance(father.transform.position, eventDestination.transform.position) < 5f)
+        if (Vector3.Distance(father.transform.position, eventDestination.transform.position) < ArriveDistance)
         {
             fatherSphereCollider.enabled = true;
             eventObject.SetActive(false);

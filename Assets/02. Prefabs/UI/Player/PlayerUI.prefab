@@ -590,7 +590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9d5b8d71941f6c64581db36de16bc5be, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mainMenuButton: {fileID: 6599075889990523116}
 --- !u!1 &2435990908607687765
 GameObject:
   m_ObjectHideFlags: 0
@@ -2061,7 +2060,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 4679808390210532954}
   m_Direction: 2
   m_Value: 1
-  m_Size: 0.20162748
+  m_Size: 0.20160002
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -2890,7 +2889,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1470487394330372960}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 636890651435201549}
+        m_TargetAssemblyTypeName: PauseMenu, Assembly-CSharp
+        m_MethodName: OnMainMenu
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6988373875090502782
 GameObject:
   m_ObjectHideFlags: 0
