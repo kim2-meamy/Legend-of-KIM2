@@ -63,6 +63,6 @@ public class Enemy : BaseAI<Enemy>
         skin.SetActive(false);
         dieEffect.Play();
         Destroy(gameObject, 1f);
-        AudioManager.Instance.PlaySFX(SFXType.SlimeDie, 0.3f);
+        AudioManager.Instance.PlaySFX(SFXType.SlimeDie, 0.5f);
     }
 }
