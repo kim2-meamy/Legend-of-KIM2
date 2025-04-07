@@ -3,15 +3,8 @@ using UnityEngine.SceneManagement;
 
 public class GameClear : MonoBehaviour
 {
-    private GameObject endUI;
-    
-    void Awake()
+    public void OnReturn()
     {
-        endUI = GameObject.FindGameObjectWithTag("End");
-    }
-
-    void OnReturn()
-    {
-        SceneManager.LoadScene("StartMenu");
+        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex - 1);
     }
 }

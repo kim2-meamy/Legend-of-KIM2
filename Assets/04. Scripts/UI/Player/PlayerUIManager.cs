@@ -64,8 +64,7 @@ public class PlayerUIManager : MonoBehaviour
     private GameObject gamePause;
     private bool isGamePause = false;
     
-    [SerializeField]
-    private GameObject gameClear;
+    public GameObject gameClear;
     public bool IsGameClear { get; set; }
     
     public TreeNode ContactedNpcDataRootNode { get; set; }

@@ -100,7 +100,8 @@ public class Boss : BaseAI<Boss>
     {
         dieEffect.Play();
         AudioManager.Instance.PlaySFX(SFXType.BossDie);
-        playerUIManager.IsGameClear = true;
+
+        Invoke(nameof(EndScene), 2f);
     }
 
     public void ChaseChangeState()
@@ -117,5 +118,14 @@ public class Boss : BaseAI<Boss>
     {
         yield return new WaitForSeconds(delay);
         AudioManager.Instance.PlaySFX(type, 0.3f, startTime, durationTime);
+    }
+
+    private void EndScene()
+    {
+        playerUIManager.IsGameClear = true;
+        playerUIManager.gameClear.SetActive(true);
+        Time.timeScale = 0f;
+        Cursor.visible = true;
+        Cursor.lockState = CursorLockMode.None;
     }
 }
